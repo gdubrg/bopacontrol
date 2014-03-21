@@ -1,0 +1,17 @@
+<HTML>
+<BODY>
+<center>
+<H1> Benvenuto in BoPa Control </H1>
+<H2>Login Form</h2>
+</center>
+<p>Inserisci le tue credenziali o registrati:<br>
+<FORM action="prova3.jsp">
+Username: <INPUT TYPE="text" NAME="username" /><BR>
+Password: <INPUT TYPE="password" NAME="password" /><BR>
+<BR>
+<INPUT TYPE="submit" VALUE="Login"/>
+<INPUT TYPE="submit" VALUE="SIgn Up"/>
+<FORM>
+</BODY>
+</HTML>
+
