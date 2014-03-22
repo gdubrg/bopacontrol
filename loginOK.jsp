@@ -1,23 +1,15 @@
-<html>
-<body>
-<% if (session.isNew() || session.getAttribute("autenticaton") == null)
-{
-response.sendRedirect(response.encodeRedirectURL("index.html"));
-}
-
-else {
-
-}
-%>
-<%@ page language="java"%>
-<%
-String username = request.getParameter("username");
-String password = request.getParameter("password");
-%>
-<p> You are logging in with:<br/>
-username: <%=username%><br/>
-password: <%=password%><br/>
-</p>
-<body>
-<html>
+<web-app>
+<security-constraint>
+	<!-- web resources that are protected -->
+	<web-resource-collection>
+      <web-resource-name>Protected Resource</web-resource-name>
+      <url-pattern>/loginOK.jsp</url-pattern> 
+   </web-resource-collection>
+   <auth-constraint>
+   <!--	role-name indicates roles that are allowed
+	to access the web resources specified above -->
+   <role-name>customer</role-name>
+   </auth-constraint>
+</security-constraint>
+</web-app>
 
