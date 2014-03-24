@@ -1,0 +1,33 @@
+Installare MySql da terminale (circa 90Mb):
+
+sudo apt-get install mysql-server
+
+ 
+
+Durante l'installazione settare una nuova password per l'utente root. 
+
+Dopo l'installazione il database risulta già attivo e in ascolto su una qualche porta.
+
+Da terminale dare:
+mysql -u root -p
+
+ 
+
+in questo modo ci si autentica come root in MySql.
+
+Alcuni comandi utili da terminale:
+
+SHOW DATABASES;
+
+CREATE DATABASE <nome>;
+
+DROP DATABASE <nome>;
+
+
+Consiglio di scaricare un'interfaccia grafica; una accettabile e gratuita potrebbe 
+
+essere Emma, scaricabile dall'Ubuntu Software Center.
+
+Una volta installato cliccare col tasto destro su "localhost" nella colonna a sinistra, poi
+
+su New Connection; aggiungere il database creato da terminale prima (il mio l'ho chiamato "controllo").
