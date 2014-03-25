@@ -1,0 +1,40 @@
+Installare MySql da terminale (circa 90Mb):
+sudo apt-get install mysql-server
+
+ Durante l'installazione settare una nuova password per l'utente root. 
+Dopo l'installazione il database risulta già attivo e in ascolto su una qualche porta.
+
+Da terminale dare:
+mysql -u root -p
+
+in questo modo ci si autentica come root in MySql.
+
+Alcuni comandi utili da terminale:
+
+SHOW DATABASES;
+CREATE DATABASE <nome>;
+DROP DATABASE <nome>;
+SHOW TABLES <tabella>;
+
+
+Consiglio di scaricare un'interfaccia grafica; una accettabile e gratuita potrebbe essere Emma, scaricabile dall'Ubuntu Software Center.
+
+Una volta installato cliccare col tasto destro su "localhost" nella colonna a sinistra, poi su New Connection; aggiungere il database creato da terminale prima (il mio l'ho chiamato "controllo").
+
+Per aggiungere valori random che vanno da i (grande) a j (piccolo):
+insert into MIATABELLA(MIACOLONNA) values (FLOOR(1+RAND()*(i-j)));
+
+Per inserire molteplici valori random: 
+insert into sensoreA(unita, valore1, valore2) values ('bar',FLOOR(1+RAND()*(10-1)),FLOOR(1+RAND()*(10-1)));
+
+**************************
+Uso di jsp + MySql
+
+Per eseguire query è necessario scaricare la libreria di collegamento.
+Andare al link http://dev.mysql.com/downloads/connector/j/3.1.html ed eseguire il download.
+Estrarre il file .jar e inserirlo nella cartella lib subito sotto Tomcat (luogo in cui staranno tutte le librerie delle webapp, attenzione che non è sincornizzata con git).
+Riavviare Tomcat in modo che aggiorni l'elenco delle librerie.
+
+
+
+

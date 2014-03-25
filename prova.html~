@@ -78,9 +78,9 @@
 <!-------- ESPERIMENTI CON THUMBNAILS ---------->
 <br/><br/>
 <h3> Prova thumbnails <h3/>
-<img src="img/fox.jpg" class="img-thumbnail">
-<img src="img/fox.jpg" class="img-thumbnail">
-<img src="img/fox.jpg" class="img-thumbnail">
+<img src="fox.jpg" class="img-thumbnail">
+<img src="fox.jpg" class="img-thumbnail">
+<img src="fox.jpg" class="img-thumbnail">
 
 <!-------- ESPERIMENTI CON BARRE DI STATO ---------->
 <br/> <br/>
