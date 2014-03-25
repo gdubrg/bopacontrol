@@ -12,7 +12,7 @@ java.sql.Connection conn;
 conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 Statement sqlStatement = conn.createStatement();
 
-String query = "SELECT * FROM sensoreA";
+String query = "SELECT * FROM sensoreC";
 
 ResultSet sqlResult = sqlStatement.executeQuery(query);
 while(sqlResult.next()) {
