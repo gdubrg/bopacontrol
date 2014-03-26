@@ -22,16 +22,31 @@
   <![endif]-->
  </head>
 
- <body>
-<br>
-<div class="btn-toolbar">
-<div class="btn-group">
-  <button type="button" class="btn btn-default">Home</button>
-  <button type="button" class="btn btn-default">Impostazioni</button>
-</div>
-<div class="btn-group">
-  <button type="button" class="btn btn-default">Silos Polimeri</button>
-  <button type="button" class="btn btn-default">Macchina Estrusione</button>
-  <button type="button" class="btn btn-default">Macchina Stampo</button>
-</div>
-</div>
+ <nav class="navbar navbar-default">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">BoPa Controller</a>
+  </div>
+ 
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="#">Stato corrente</a></li>
+      <li><a href="#">Evoluzione storica</a></li>
+      <li><a href="#">Allarmi</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sensori<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Sensore pressione</a></li>
+          <li><a href="#">Sensore temperatura</a></li>
+          <li><a href="#">Sensore umidità</a></li>
+          <li><a href="#">Energia utilizzata</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
