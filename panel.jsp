@@ -23,18 +23,7 @@
  </head>
 
  <body>
-<br>
-<div class="btn-toolbar">
-<div class="btn-group">
-  <button type="button" class="btn btn-default">Home</button>
-  <button type="button" class="btn btn-default">Impostazioni</button>
-</div>
-<div class="btn-group">
-  <button type="button" class="btn btn-default">Silos Polimeri</button>
-  <button type="button" class="btn btn-default">Macchina Estrusione</button>
-  <button type="button" class="btn btn-default">Macchina Stampo</button>
-</div>
-</div>
+<%@ include file="header.jsp" %>
 
 <div id="pnlTop">
 <h1>Pannello di controllo</h1>
