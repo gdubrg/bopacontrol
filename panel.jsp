@@ -56,14 +56,12 @@
 
 <div id="tab">
 <table class="table">
-  <thead>
+<tbody>
     <tr>
       <th>ID Sensore</th>
       <th>Nome</th>
       <th>Valore</th>
     </tr>
-  </thead>
-  <tbody>
     <tr>
       <td>001</td>
       <td>Temp</td>
@@ -81,8 +79,9 @@
     </tr>
   </tbody>
 </table>
+<br>
 </div>
-
+<input class="btn btn-default" type="submit" value="STOP">
 </div>
 
 
