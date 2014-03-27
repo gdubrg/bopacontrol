@@ -27,4 +27,6 @@
 <br>
 <button type="button" class="btn btn-primary btn-large btn-block">Impostazioni</button>
 <br>
+<button type="button" class="btn btn-primary btn-large btn-block">Stop</button>
+<br>
 </div>

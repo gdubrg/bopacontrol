@@ -51,7 +51,7 @@
 <%@ include file="threeBtn.jsp" %>
 </div>
 <div id="pnlCenter">
-<h2><b>Macchina Estrusione</b></h2>
+<h2>Macchina Estrusione</h2>
 <p>Qui ci vanno i controlli della macchina di estrusione</p>
 <%@ include file="tblSns.jsp" %>
 <%@ include file="threeBtn.jsp" %>
@@ -59,7 +59,7 @@
 </div>
 
 <div id="pnlLeft">
-<h2><b>Silos Polimeri</b></h2>
+<h2>Silos Polimeri</h2>
 <p>Variabili di controllo</p>
 
 <%@ include file="tblSns.jsp" %>
