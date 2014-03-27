@@ -10,9 +10,10 @@ width:1200px;
 
 #imgTop{
     float: left;
-    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     margin-right: 10px;
-    width: 390px;
+    width: 400px;
 }
 
 #alrm{
