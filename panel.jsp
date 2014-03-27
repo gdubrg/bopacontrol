@@ -37,16 +37,14 @@
 <div id="pnlRight">
 <h2>Macchina Stampo</h2>
 <p>Qui vengono inserite le variabili di controllo</p>
-<input class="btn btn-default" type="submit" value="Storico">
-<br>
-<input class="btn btn-default" type="submit" value="STOP">
+<%@ include file="tblSns.jsp" %>
+<%@ include file="threeBtn.jsp" %>
 </div>
 <div id="pnlCenter">
 <h2>Macchina Estrusione</h2>
 <p>Qui ci vanno i controlli della macchina di estrusione</p>
-<input class="btn btn-default" type="submit" value="Storico">
-<br>
-<input class="btn btn-default" type="submit" value="STOP">
+<%@ include file="tblSns.jsp" %>
+<%@ include file="threeBtn.jsp" %>
 </div>
 </div>
 
@@ -54,34 +52,9 @@
 <h2>Silos Polimeri</h2>
 <p>Variabili di controllo</p>
 
-<div id="tab">
-<table class="table">
-<tbody>
-    <tr>
-      <th>ID Sensore</th>
-      <th>Nome</th>
-      <th>Valore</th>
-    </tr>
-    <tr>
-      <td>001</td>
-      <td>Temp</td>
-      <td>500</td>
-    </tr>
-    <tr>
-      <td>002</td>
-      <td>Liv</td>
-      <td>400</td>
-    </tr>
-    <tr>
-      <td>003</td>
-      <td>Ext</td>
-      <td>0.02</td>
-    </tr>
-  </tbody>
-</table>
-<br>
-</div>
-<input class="btn btn-default" type="submit" value="STOP">
+<%@ include file="tblSns.jsp" %>
+<%@ include file="threeBtn.jsp" %>
+
 </div>
 
 
