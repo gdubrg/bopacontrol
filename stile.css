@@ -3,22 +3,29 @@ margin: 0 auto;
 width:1200px;
 }
 
-#indoSisDx{
+#infoSisDx{
     float: right;
+    
+}
+
+#imgTop{
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 390px;
+}
+
+#alrm{
+    float: right;
+    margin-left: 20px;
+    width: 360px;
 }
 
 #infoSisSx{
     float: left;
-    width: 340px;
+    width: 360px;
     margin-left: 30px;
-    margin-right: 30px;
-}
-
-#imgTop{
-    foat: left;
-    margin-left: 30px;
-    margin-right: 30px;
-    width: 40%;
+    margin-right: 10px;
 }
 
 #pnlTop {
