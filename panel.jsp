@@ -52,7 +52,7 @@
 <h2>Macchina Stampo</h2>
 
 
-<iframe src="prove_jsp/genera_dati_sensori.jsp" frameborder="0" height="350">
+<iframe src="prove_jsp/genera_dati_sensori.jsp" frameborder="0" >
 </iframe>
 
 

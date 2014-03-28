@@ -51,9 +51,9 @@
 <body>
 
 <%= "Temperatura [K]:&nbsp&nbsp&nbsp<b>"+roundedTempRandomValue+"</b>" %>
-<br/>
+<br/><br>
 <%= "Pressione [Bar]:&nbsp&nbsp&nbsp&nbsp<b>"+roundedPressureRandomValue+"</b>" %>
-<br/>
+<br/><br>
 <%= "Energia [W]:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>"+roundedEnergyRandomValue+"</b>" %>
 
 
