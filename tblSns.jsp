@@ -21,8 +21,9 @@
   <script src="js/respond.min.js"></script>
   <![endif]-->
  </head>
- 
- <%@ page language="java"%>
+ <%
+ response.setIntHeader("Refresh", 1);
+ %>
 
 <div id="tab">
 <table class="table">

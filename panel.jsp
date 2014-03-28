@@ -51,13 +51,18 @@
 <div id="pnlRight">
 <h2><b>Macchina Stampo</b></h2>
 <p>Qui vengono inserite le variabili di controllo</p>
-<%@ include file="tblSns.jsp" %>
+
+<iframe src="prove_jsp/autorefresh.jsp" frameborder="0">
+</iframe>
+
+
 <%@ include file="threeBtn.jsp" %>
 </div>
 <div id="pnlCenter">
 <h2><b>Macchina Estrusione</b></h2>
 <p>Qui ci vanno i controlli della macchina di estrusione</p>
-<%@ include file="tblSns.jsp" %>
+<iframe src="prove_jsp/autorefresh.jsp" frameborder="0">
+</iframe>
 <%@ include file="threeBtn.jsp" %>
 </div>
 </div>
@@ -66,14 +71,14 @@
 <h2><b>Silos Polimeri</b></h2>
 <p>Variabili di controllo</p>
 
-<%@ include file="tblSns.jsp" %>
+<iframe src="prove_jsp/autorefresh.jsp" frameborder="0">
+</iframe>
 <%@ include file="threeBtn.jsp" %>
 
 </div>
 
-
 <div id="pnlDown">
-<h5>BoPa C0ntroller - Progetto SAR 2014 - Guido Borghi, Andrea Palazzi</h5>
+<h5>BoPa Controller - Progetto SAR 2014 - Guido Borghi, Andrea Palazzi</h5>
 </div>
 
 
