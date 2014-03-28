@@ -51,6 +51,7 @@ text-align: center;
 margin-left: 30px;
    margin-right: 30px;
 background-color: #DDDDDD;
+margin-bottom: 5px;
 }
 
 #pnlRight{
@@ -60,6 +61,7 @@ text-align: center;
 margin-left: 30px;
    margin-right: 30px;
 background-color: #DDDDDD;
+margin-bottom: 5px;
 }
 
 #pnlCenter{
@@ -69,6 +71,7 @@ text-align: center;
 margin-left: 30px;
    margin-right: 30px;
 background-color: #DDDDDD;
+margin-bottom: 5px;
 }
 
 #pnlDown {

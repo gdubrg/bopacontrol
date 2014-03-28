@@ -73,7 +73,7 @@
 
 
 <div id="pnlDown">
-<h3>Impostazioni Generali</h3>
+<h5>BoPa C0ntroller - Progetto SAR 2014 - Guido Borghi, Andrea Palazzi</h5>
 </div>
 
 
