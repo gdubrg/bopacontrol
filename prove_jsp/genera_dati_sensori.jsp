@@ -50,10 +50,11 @@
 
 <body>
 
-<% out.print("<h4>Temperatura [K]:</h4><h3>"+roundedTempRandomValue+"</h3>"); %>
-<p> <h4>Pressione [Bar]:</h4> <% out.print("<h3>"+roundedPressureRandomValue+"</h3>"); %>
-<p> <h4>Energia [W]:</h4> <% out.print("<h3>"+roundedEnergyRandomValue+"</h3>"); %>
-<br/><br/>
+<%= "Temperatura [K]:&nbsp&nbsp&nbsp<b>"+roundedTempRandomValue+"</b>" %>
+<br/>
+<%= "Pressione [Bar]:&nbsp&nbsp&nbsp&nbsp<b>"+roundedPressureRandomValue+"</b>" %>
+<br/>
+<%= "Energia [W]:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>"+roundedEnergyRandomValue+"</b>" %>
 
 
 </body>
