@@ -49,29 +49,28 @@
 
 <div id="cont">
 <div id="pnlRight">
-<h2><b>Macchina Stampo</b></h2>
-<p>Qui vengono inserite le variabili di controllo</p>
+<h2>Macchina Stampo</h2>
 
-<iframe src="prove_jsp/autorefresh.jsp" frameborder="0">
+
+<iframe src="prove_jsp/genera_dati_sensori.jsp" frameborder="0" height="350">
 </iframe>
 
 
 <%@ include file="threeBtn.jsp" %>
 </div>
 <div id="pnlCenter">
-<h2><b>Macchina Estrusione</b></h2>
-<p>Qui ci vanno i controlli della macchina di estrusione</p>
-<iframe src="prove_jsp/autorefresh.jsp" frameborder="0">
+<h2>Macchina Estrusione</h2>
+
+<iframe src="prove_jsp/genera_dati_sensori.jsp" frameborder="0">
 </iframe>
 <%@ include file="threeBtn.jsp" %>
 </div>
 </div>
 
 <div id="pnlLeft">
-<h2><b>Silos Polimeri</b></h2>
-<p>Variabili di controllo</p>
+<h2>Silos Polimeri</h2>
 
-<iframe src="prove_jsp/autorefresh.jsp" frameborder="0">
+<iframe src="prove_jsp/genera_dati_sensori.jsp" frameborder="0">
 </iframe>
 <%@ include file="threeBtn.jsp" %>
 
