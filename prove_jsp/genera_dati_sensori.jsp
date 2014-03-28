@@ -4,25 +4,44 @@
 <%
         response.setIntHeader("Refresh", 1);
         
-        int lowerLimit = 1;
-        int upperLimit = 100;
+        // Dichiarazione limiti dei sensori
+        int lowerTempLimit = 400;
+        int upperTempLimit = 500;
         
-        //Generate a random value - between lower and upper limits
-        double randomValue = Math.random()*100*(upperLimit-lowerLimit)/100+lowerLimit;
+        int lowerPressureLimit = 10;
+        int upperPressureLimit = 12;
         
-        // Next few steps, to round this double to 2 decimal places
+        int lowerEnergyLimit = 3000;
+        int upperEnergyLimit = 3500;
+        
         long factor = (long)Math.pow(10,2);
         
-        // Shift the decimal the correct number of places
-        // to the right.
-        randomValue = randomValue * factor;
+        // TEMPERATURA
+        double randomTempValue = Math.random()*100*(upperTempLimit-lowerTempLimit)/100+lowerTempLimit;
+
+        randomTempValue = randomTempValue * factor;
+
+        long tmp1 = Math.round(randomTempValue);
+
+        double roundedTempRandomValue=Math.round((double)tmp1 / factor);
         
-        // Round to the nearest integer.
-        long tmp = Math.round(randomValue);
+        // PRESSIONE
+        double randomPressureValue = Math.random()*100*(upperPressureLimit-lowerPressureLimit)/100+lowerPressureLimit;
+
+        randomPressureValue = randomPressureValue * factor;
+
+        long tmp2 = Math.round(randomPressureValue);
+
+        double roundedPressureRandomValue=Math.round((double)tmp2 / factor);
         
-        // Shift the decimal the correct number of places
-        // back to the left.
-        double roundedRandomValue=Math.round((double)tmp / factor);
+        // ENERGIA
+        double randomEnergyValue = Math.random()*100*(upperEnergyLimit-lowerEnergyLimit)/100+lowerEnergyLimit;
+
+        randomEnergyValue = randomEnergyValue * factor;
+
+        long tmp3 = Math.round(randomEnergyValue);
+
+        double roundedEnergyRandomValue=Math.round((double)tmp3 / factor);
         
 
 %>
@@ -30,15 +49,11 @@
 <head> </head>
 
 <body>
-<h2> Silos </h2>
-<p> <h4>Riempimento:</h4> <% out.print("<h1>roundedRandomValue</h1>"); %>
 
+<% out.print("<h4>Temperatura [K]:</h4><h3>"+roundedTempRandomValue+"</h3>"); %>
+<p> <h4>Pressione [Bar]:</h4> <% out.print("<h3>"+roundedPressureRandomValue+"</h3>"); %>
+<p> <h4>Energia [W]:</h4> <% out.print("<h3>"+roundedEnergyRandomValue+"</h3>"); %>
 <br/><br/>
-<h2> Estrusione </h2>
-
-<br/><br/>
-<h2> Stampo </h2>
-
 
 
 </body>
