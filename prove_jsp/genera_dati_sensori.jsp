@@ -2,7 +2,7 @@
 
 <html>
 <%
-        response.setIntHeader("Refresh", 1);
+        response.setIntHeader("Refresh", 3);
         
         // Dichiarazione limiti dei sensori
         int lowerTempLimit = 400;
