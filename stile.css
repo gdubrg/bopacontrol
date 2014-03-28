@@ -5,7 +5,6 @@ width:1200px;
 
 #infoSisDx{
     float: right;
-    
 }
 
 #imgTop{
@@ -14,20 +13,27 @@ width:1200px;
     margin-bottom: 20px;
     margin-right: 10px;
     width: 400px;
-    hover: 
 }
 
 #alrm{
     float: right;
-    margin-left: 20px;
-    width: 360px;
+    margin-right: 30px;
+    width: 340px;
+    height: 200px;
+    background-color: #DDDDDD;
+    text-align: center;
+    margin-top: 5px;
 }
 
 #infoSisSx{
     float: left;
-    width: 360px;
+    width: 340px;
+    height: 200px;
     margin-left: 30px;
     margin-right: 10px;
+    background-color: #DDDDDD;
+    text-align: center;
+    margin-top: 5px;
 }
 
 #pnlTop {

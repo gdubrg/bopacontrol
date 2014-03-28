@@ -21,6 +21,8 @@
   <script src="js/respond.min.js"></script>
   <![endif]-->
  </head>
+ 
+ <%@ page language="java"%>
 
 <div id="tab">
 <table class="table">
