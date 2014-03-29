@@ -15,12 +15,12 @@ Statement sqlStatement = conn.createStatement();
 String query = "SELECT * FROM sensoreA";
 
 ResultSet sqlResult = sqlStatement.executeQuery(query);
-while(sqlResult.next()) {
+//while(sqlResult.next()) {
 unita = sqlResult.getString("unita");
 val1 = sqlResult.getString("valore1");
 val2 = sqlResult.getString("valore2");
 out.println("<b>" + unita + "</b>" + "     " + val1 +"    " + val2 + "<hr>" + "<br />"); 
-}
+//}
 
 sqlResult.close(); sqlStatement.close(); conn.close(); %> </body> </html> 
 
