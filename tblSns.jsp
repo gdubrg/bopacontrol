@@ -28,11 +28,14 @@
 <div id="tab">
 <table class="table">
 <tbody>
+    <thead>
     <tr>
       <th>ID Sensore</th>
       <th>Nome</th>
       <th>Valore</th>
     </tr>
+    </thead>
+    <tbody>
     <tr>
       <td>001</td>
       <td>Temp</td>

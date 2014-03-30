@@ -1,13 +1,11 @@
+Per avviare la generazione casuale di dati da database, è sufficiente creare un database
+chiamato "controllo" e creare la tabella estrusione come riportato sotto.
+
 CREAZIONE TABELLA
 create table estrusione(
 temperatura varchar(20),
 pressione varchar(20),
 energia varchar(20),
 data timestamp);
-   
-INSERIMENTO VALORI
-INSERT INTO
-estrusione
-(temperatura, pressione, energia, data)
-VALUES
-(FLOOR(1+RAND()*(10-1)), FLOOR(1+RAND()*(10-1)), FLOOR(1+RAND()*(10-1)), CURRENT_TIMESTAMP)
+
+

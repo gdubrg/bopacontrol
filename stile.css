@@ -82,8 +82,8 @@ text-align: center;
 
 #tab{
 text-align: left;
-margin-left: 30px;
-   margin-right: 30px;
+background-color: #DDDDDD;
+   width: 300;
 }
 
 #btnPnl{
