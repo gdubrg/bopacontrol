@@ -39,8 +39,8 @@
 	response.setIntHeader("Refresh", 1);
 	
 	// Generazione di un valore casuale
-	int lowerBound = 10;
-	int upperBound = 90;
+	int lowerBound = 1;
+	int upperBound = 20;
 	
 	double randomValue = Math.random()*100*(upperBound-lowerBound)/100+lowerBound;
     randomValue = randomValue * 100;
