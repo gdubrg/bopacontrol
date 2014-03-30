@@ -35,34 +35,53 @@
 <%@ page import="org.jfree.data.general.DefaultPieDataset" %>
 
 <%
-		DefaultPieDataset pieDataset = new DefaultPieDataset();
+	//response.setIntHeader("Refresh", 1);
+	
+	// Generazione di un valore casuale
+	int lowerBound = 10;
+	int upperBound = 90;
+	
+	double randomValue = Math.random()*100*(upperBound-lowerBound)/100+lowerBound;
+    randomValue = randomValue * 100;
+    long tmp1 = Math.round(randomValue);
+    double roundedRandomValue=Math.round((double)tmp1 / 100);
+    
+    // Creazione del dataset del diagramma a torta
 
-		pieDataset.setValue("Legna fine", new Integer(25));
-		pieDataset.setValue("Legna grossa", new Integer(15));
-		pieDataset.setValue("Legna media", new Integer(60));
+	DefaultPieDataset pieDataset = new DefaultPieDataset();
 
-		JFreeChart chart = ChartFactory.createPieChart("Legna tagliata oggi", pieDataset, true, true, true);
+	int valore1 = (int)(roundedRandomValue);
+	int valore2 =  100 - valore1;
+	pieDataset.setValue("Legna fine", valore1);
+	pieDataset.setValue("Legna grossa", valore2);
 
-		//PiePlot P = (PiePlot)chart.getPlot();
+	JFreeChart chart = ChartFactory.createPieChart("Legna tagliata oggi", pieDataset, true, true, true);
 
-		BufferedImage image = chart.createBufferedImage(500, 500);
-		try {
-			File outputfile = new File("webapps/ROOT/img/Chart2.png");
-			ImageIO.write(image, "png", outputfile);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	//PiePlot P = (PiePlot)chart.getPlot();
+
+	BufferedImage image = chart.createBufferedImage(500, 500);
+	try {
+		File outputfile = new File("webapps/ROOT/img/Chart2.png");
+		ImageIO.write(image, "png", outputfile);
+	} catch (FileNotFoundException e) {
+		e.printStackTrace();
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
 
 %>
 
+<META HTTP-EQUIV="refresh" CONTENT="5">
 
 <img src="../img/Chart2.png" class="img-responsive">
+
+<% out.print("<h2>Legna fine: "+valore1+"</h2>"); %>
+<% out.print("<h2>Legna grossa: "+valore2+"</h2>"); %>
 
  <!-- jQuery e plugin JavaScript  -->
  <script src="http://code.jquery.com/jquery.js"></script>
  <script src="../bootstrap/js/bootstrap.min.js"></script>
+ 
  </body>
 </html>
 
