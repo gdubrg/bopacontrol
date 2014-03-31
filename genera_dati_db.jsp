@@ -69,7 +69,7 @@ sqlResult.close(); sqlStatement.close(); conn.close();
       <td>700</td>
     </tr>
     <tr>
-      <td>Potenza [W]</td>
+      <td>Potenza [KW]</td>
       <td><%=ener%></td>
       <td>5</td>
     </tr>
