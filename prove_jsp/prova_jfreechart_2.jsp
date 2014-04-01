@@ -35,7 +35,8 @@
 <%@ page import="org.jfree.data.general.DefaultPieDataset" %>
 
 <%
-	//response.setIntHeader("Refresh", 1);
+	response.setContentType("image/png");
+	response.setIntHeader("Refresh", 1);
 	
 	// Generazione di un valore casuale
 	int lowerBound = 1;
@@ -57,26 +58,10 @@
 
 	JFreeChart chart = ChartFactory.createPieChart("Legna tagliata oggi", pieDataset, true, true, true);
 
-	//PiePlot P = (PiePlot)chart.getPlot();
-
-	BufferedImage image = chart.createBufferedImage(500, 500);
-	try {
-		File outputfile = new File("webapps/ROOT/img/Chart2.png");
-		ImageIO.write(image, "png", outputfile);
-	} catch (FileNotFoundException e) {
-		e.printStackTrace();
-	} catch (IOException e) {
-		e.printStackTrace();
-	}
+	ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,1000,500);
 
 %>
 
-<META HTTP-EQUIV="refresh" CONTENT="5">
-
-<img src="../img/Chart2.png" class="img-responsive">
-
-<% out.print("<h2>Legna fine: "+valore1+"</h2>"); %>
-<% out.print("<h2>Legna grossa: "+valore2+"</h2>"); %>
 
  <!-- jQuery e plugin JavaScript  -->
  <script src="http://code.jquery.com/jquery.js"></script>

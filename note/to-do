@@ -1,0 +1,21 @@
+Ho creato anch'io la tabella del DB, tutto funziona come dovrebbe.
+
+Il (mio) passo successivo sarebbe lavorare su diagrammi di tipo diverso dal PieChart, ma ci sono due problemi:
+   1) Non ho internet
+   2) Non ho lo storico dei valori
+   
+Secondo me i valori generati casualmente non dovrebbero essere scartati, ma inseriti ("impilati") nel DB.
+
+La pagina "panel.jsp" dovrebbe quindi ogni tot estrarre l'ultimo inserito e visualizzarlo nella tabella.
+
+La politica LIFO può essere implementata virtualmente, nel senso di inserire nelle tuple anche un'informazione temporale.
+Esempio: (val, t)
+         (200, 1)
+         (203, 2)
+         (202, 3)
+         etc
+In questo modo per prendere il valore più aggiornato basta una select * where t = MAX
+
+Gli altri valori però rimangono nel DB in modo da poter farci un bel grafichetto...
+
+Ovviamente è solo un abbozzo. Propongo di lavorare su questo domattina (storico + grafico dello storico).
