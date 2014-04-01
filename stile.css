@@ -75,18 +75,18 @@ body{
 }
 
 #pnlDown {
-   border-top: 1px solid #000;
-text-align: center;
-   clear:both;
+	border-top: 1px solid #000;
+	text-align: center;
+	clear:both;
 }
 
 #tab{
-text-align: left;
-background-color: #DDDDDD;
-   width: 300;
+	text-align: left;
+	background-color: #DDDDDD;
+	width: 300;
 }
 
 #btnPnl{
-margin-left: 50px;
-   margin-right: 50px;
+	margin-left: 50px;
+	margin-right: 50px;
 }
