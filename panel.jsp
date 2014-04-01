@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" ><![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js" ><!--<![endif]-->
 <html>
- <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pannello Principale</title>
-
-  <!-- Fogli di stile -->
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-  <link href="bootstrap/css/stili-custom.css" rel="stylesheet" media="screen">
-  <link rel="stylesheet" href="stile.css">
-
-  <!-- Modernizr -->
-  <script src="bootstrap/js/bootstrap-min.js"></script>
-
-  <!-- respond.js per IE8 -->
-  <!--[if lt IE 9]>
-  <script src="js/respond.min.js"></script>
-  <![endif]-->
- </head>
-
- <body>
 <%@ include file="header.jsp" %>
+<title>Pannello Principale</title>
+
+<body>
 
 <div id="pnlTop">
     <h1>Pannello di controllo</h1>
@@ -36,49 +15,45 @@
     <button type="button" class="btn btn-primary btn-lg btn-danger">STOP</button>
 </div>
 
-
 <div id="infoSisDx">
-    <div id="imgTop">
-        
-<img src="img/ingmoul.gif" class="img-responsive">
+    <div id="imgTop">       
+        <img src="img/ingmoul.gif" class="img-responsive">
     </div>
     <div id="alrm">
-    <h2><b>Allarmi</b></h2>
+        <h2><b>Allarmi</b></h2>
     </div>
 </div>
 
 <div id="cont">
-<div id="pnlRight">
-<h2>Macchina Stampo</h2>
-
-
-<iframe src="genera_dati_db.jsp" frameborder="0" scrolling="No" height="150">
-</iframe><br><br>
-
-
-<%@ include file="threeBtn.jsp" %>
-</div>
-<div id="pnlCenter">
-<h2>Macchina Estrusione</h2>
-
-<iframe src="genera_dati_db.jsp" frameborder="0" scrolling="No" height="150">
-</iframe><br><br>
-<%@ include file="threeBtn.jsp" %>
-</div>
+    <div id="pnlRight">
+        <h2>Macchina Stampo</h2>
+        <iframe src="genera_dati_stampa.jsp" frameborder="0" scrolling="No" height="150">
+        </iframe>
+        <br><br>
+        <%@ include file="threeBtnSta.jsp" %>
+    </div>
+    <div id="pnlCenter">
+        <h2>Macchina Estrusione</h2>
+        <iframe src="genera_dati_estrusione.jsp" frameborder="0" scrolling="No" height="150">
+        </iframe>
+        <br><br>
+        <%@ include file="threeBtnEstr.jsp" %>
+    </div>
 </div>
 
 <div id="pnlLeft">
-<h2>Silos Polimeri</h2>
-
-<iframe src="genera_dati_db.jsp" frameborder="0" scrolling="No" height="150">
-</iframe><br><br>
-<%@ include file="threeBtn.jsp" %>
-
+    <h2>Silos Polimeri</h2>
+    <iframe src="genera_dati_silos.jsp" frameborder="0" scrolling="No" height="150">
+    </iframe>
+    <br><br>
+    <%@ include file="threeBtnSil.jsp" %>
 </div>
 
 <div id="pnlDown">
-<h5>BoPa Controller - Progetto SAR 2014 - Guido Borghi, Andrea Palazzi</h5>
+    <h5>BoPa Controller - Progetto SAR 2014 - Guido Borghi, Andrea Palazzi</h5>
 </div>
+
+</html>
 
 
 
