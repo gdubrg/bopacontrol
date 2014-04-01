@@ -28,7 +28,7 @@ Statement sqlStatement = conn.createStatement();
 String ins = "INSERT INTO estrusione (temperatura, pressione, energia, data) VALUES (FLOOR(200+RAND()*(10-1)), FLOOR(3+RAND()*(5-3)), FLOOR(500+RAND()*(10-1)), CURRENT_TIMESTAMP)";
 sqlStatement.executeUpdate(ins);
 
-String query = "SELECT * FROM estrusione ORDER BY data LIMIT 0,1";
+String query = "SELECT * FROM estrusione ORDER BY data DESC LIMIT 0,1";
 
 ResultSet sqlResult = sqlStatement.executeQuery(query);
 while(sqlResult.next()) {
@@ -40,7 +40,7 @@ while(sqlResult.next()) {
     
     
 String canc = "DELETE FROM estrusione WHERE data='" + date + "'";
-sqlStatement.executeUpdate(canc);
+
 
 sqlResult.close(); sqlStatement.close(); conn.close();
 

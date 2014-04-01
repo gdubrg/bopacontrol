@@ -52,8 +52,8 @@
 <h2>Macchina Stampo</h2>
 
 
-<iframe src="prove_jsp/genera_dati_sensori.jsp" frameborder="0" >
-</iframe>
+<iframe src="genera_dati_db.jsp" frameborder="0" scrolling="No" height="150">
+</iframe><br><br>
 
 
 <%@ include file="threeBtn.jsp" %>
@@ -61,8 +61,8 @@
 <div id="pnlCenter">
 <h2>Macchina Estrusione</h2>
 
-<iframe src="prove_jsp/genera_dati_sensori.jsp" frameborder="0">
-</iframe>
+<iframe src="genera_dati_db.jsp" frameborder="0" scrolling="No" height="150">
+</iframe><br><br>
 <%@ include file="threeBtn.jsp" %>
 </div>
 </div>
