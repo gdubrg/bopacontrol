@@ -27,7 +27,7 @@
 <div id="cont">
     <div id="pnlRight">
         <h2>Macchina Stampo</h2>
-        <iframe src="genera_dati_stampa.jsp" frameborder="0" scrolling="No" height="150">
+        <iframe src="genera_dati_stampo.jsp" frameborder="0" scrolling="No" height="150">
         </iframe>
         <br><br>
         <%@ include file="threeBtnSta.jsp" %>
