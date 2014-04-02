@@ -48,16 +48,7 @@ sqlResult.close(); sqlStatement.close(); conn.close();
 </head>
 <body>
 
-<%
-String sogliaT="";
-Cookie cookie = null;
-Cookie[] cookies = null;
-cookies = request.getCookies();
-//if(cookies != null){
-//    for(int i=0;i<cookies.length;i++)
-        sogliaT = cookies[1].getValue();
-//}
-%>
+<%@ include file="getCookie.jsp" %>
 
 <div id="tab">
 <table class="table">
@@ -73,17 +64,17 @@ cookies = request.getCookies();
     <tr>
       <td>Temperatura [K]</td>
       <td><%=temp%></td>
-      <td><%=sogliaT%></td>
+      <td><%=soglia11%></td>
     </tr>
     <tr>
       <td>Pressione [Bar]</td>
       <td><%=press%></td>
-      <td>700</td>
+      <td><%=soglia12%></td>
     </tr>
     <tr>
       <td>Potenza [KW]</td>
       <td><%=ener%></td>
-      <td>5</td>
+      <td><%=soglia13%></td>
     </tr>
     </tbody>
 </table>
