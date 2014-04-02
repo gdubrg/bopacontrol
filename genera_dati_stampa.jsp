@@ -25,10 +25,10 @@ java.sql.Connection conn;
 conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 Statement sqlStatement = conn.createStatement();
 
-String ins = "INSERT INTO stampa (temperatura, pressione, energia, data) VALUES (FLOOR(200+RAND()*(10-1)), FLOOR(3+RAND()*(5-3)), FLOOR(500+RAND()*(10-1)), CURRENT_TIMESTAMP)";
+String ins = "INSERT INTO stampo (temperatura, pressione, energia, data) VALUES (FLOOR(200+RAND()*(10-1)), FLOOR(3+RAND()*(5-3)), FLOOR(500+RAND()*(10-1)), CURRENT_TIMESTAMP)";
 sqlStatement.executeUpdate(ins);
 
-String query = "SELECT * FROM stampa ORDER BY data DESC LIMIT 0,1";
+String query = "SELECT * FROM stampo ORDER BY data DESC LIMIT 0,1";
 
 ResultSet sqlResult = sqlStatement.executeQuery(query);
 while(sqlResult.next()) {

@@ -47,6 +47,18 @@ sqlResult.close(); sqlStatement.close(); conn.close();
 %>
 </head>
 <body>
+
+<%
+String sogliaT="";
+Cookie cookie = null;
+Cookie[] cookies = null;
+cookies = request.getCookies();
+//if(cookies != null){
+//    for(int i=0;i<cookies.length;i++)
+        sogliaT = cookies[1].getValue();
+//}
+%>
+
 <div id="tab">
 <table class="table">
 <tbody>
@@ -61,7 +73,7 @@ sqlResult.close(); sqlStatement.close(); conn.close();
     <tr>
       <td>Temperatura [K]</td>
       <td><%=temp%></td>
-      <td>600</td>
+      <td><%=sogliaT%></td>
     </tr>
     <tr>
       <td>Pressione [Bar]</td>
