@@ -33,8 +33,8 @@ String query = "SELECT * FROM stampo ORDER BY data DESC LIMIT 0,1";
 ResultSet sqlResult = sqlStatement.executeQuery(query);
 while(sqlResult.next()) {
     temp = sqlResult.getString("temperatura");
-    ener = sqlResult.getString("pressione");
-    press = sqlResult.getString("energia");
+    ener = sqlResult.getString("energia");
+    press = sqlResult.getString("pressione");
     date = sqlResult.getString("data");
     }
     
@@ -69,12 +69,20 @@ sqlResult.close(); sqlStatement.close(); conn.close();
     <tr>
       <td>Pressione [Bar]</td>
       <td><%=press%></td>
+<<<<<<< HEAD
       <td><%=soglia12%></td>
+=======
+      <td>5</td>
+>>>>>>> 38b96413e60b8b61c86e3542ed7cef6bd283f6ef
     </tr>
     <tr>
       <td>Potenza [KW]</td>
       <td><%=ener%></td>
+<<<<<<< HEAD
       <td><%=soglia13%></td>
+=======
+      <td>700</td>
+>>>>>>> 38b96413e60b8b61c86e3542ed7cef6bd283f6ef
     </tr>
     </tbody>
 </table>

@@ -10,12 +10,10 @@
 
     <%@ page import="org.jfree.chart.ChartUtilities"      %>
 
+	// import per DB
 	<%@ page import="java.sql.DriverManager" %> 
-	
 	<%@ page import="java.sql.Statement" %> 
-	
 	<%@ page import="java.sql.ResultSet" %> 
-	
 	<%@ page import="java.sql.Date" %>
 	
 	<%@ page import="java.io.*" %>
@@ -30,8 +28,6 @@
 	<%@ page import = "org.jfree.chart.axis.NumberAxis" %>
 	<%@ page import = "org.jfree.chart.renderer.category.LineAndShapeRenderer" %>
 	
-	//~ import java.awt.Dimension;
-	//~ import java.awt.Font;
 
 
 	<%
@@ -97,6 +93,7 @@
 	// change the auto tick unit selection to integer units only...
 	NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
 	rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+	rangeAxis.setRange(175,225);
 
 	// customise the renderer...
 	LineAndShapeRenderer renderer	= (LineAndShapeRenderer) plot.getRenderer();

@@ -25,7 +25,7 @@ java.sql.Connection conn;
 conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 Statement sqlStatement = conn.createStatement();
 
-String ins = "INSERT INTO silos (temperatura, pressione, energia, data) VALUES (FLOOR(200+RAND()*(10-1)), FLOOR(3+RAND()*(5-3)), FLOOR(500+RAND()*(10-1)), CURRENT_TIMESTAMP)";
+String ins = "INSERT INTO silos (temperatura, pressione, energia, data) VALUES (FLOOR(200+RAND()*(80-1)), FLOOR(3+RAND()*(5-3)), FLOOR(500+RAND()*(10-1)), CURRENT_TIMESTAMP)";
 sqlStatement.executeUpdate(ins);
 
 String query = "SELECT * FROM silos ORDER BY data DESC LIMIT 0,1";
@@ -33,8 +33,8 @@ String query = "SELECT * FROM silos ORDER BY data DESC LIMIT 0,1";
 ResultSet sqlResult = sqlStatement.executeQuery(query);
 while(sqlResult.next()) {
     temp = sqlResult.getString("temperatura");
-    ener = sqlResult.getString("pressione");
-    press = sqlResult.getString("energia");
+    ener = sqlResult.getString("energia");
+    press = sqlResult.getString("pressione");
     date = sqlResult.getString("data");
     }
     
@@ -66,12 +66,12 @@ sqlResult.close(); sqlStatement.close(); conn.close();
     <tr>
       <td>Pressione [Bar]</td>
       <td><%=press%></td>
-      <td>700</td>
+      <td>5</td>
     </tr>
     <tr>
       <td>Potenza [KW]</td>
       <td><%=ener%></td>
-      <td>5</td>
+      <td>700</td>
     </tr>
     </tbody>
 </table>
