@@ -45,7 +45,7 @@ response.setIntHeader("Refresh", 3);
 
 	// create the chart...
 	final ThermometerPlot plot = new ThermometerPlot(dataset);
-	final JFreeChart chart = new JFreeChart("Temperatura rilevata nel silos",  // chart title
+	final JFreeChart chart = new JFreeChart("Temperatura rilevata",  // chart title
 									  JFreeChart.DEFAULT_TITLE_FONT,
 									  plot,                 // plot
 									  false);               // include legend
