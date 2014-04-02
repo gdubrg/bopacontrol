@@ -53,10 +53,10 @@ String sogliaT="";
 Cookie cookie = null;
 Cookie[] cookies = null;
 cookies = request.getCookies();
-if(cookies != null){
-    for(int i=0;i<cookies.length;i++)
-        sogliaT = cookies[i].getValue();
-}
+//if(cookies != null){
+//    for(int i=0;i<cookies.length;i++)
+        sogliaT = cookies[1].getValue();
+//}
 %>
 
 <div id="tab">
