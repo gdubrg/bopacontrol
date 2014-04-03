@@ -10,9 +10,12 @@
 
 <div id="infoSisSx">
     <h2>Stato del sistema: <b>OK</b></h2>
-    <button type="button" class="btn btn-primary btn-lg btn-success">START</button>
+    <form method="post">
+    <button type="submit" class="btn btn-primary btn-lg btn-success" onclick="window.open('start.jsp')">START</button>
+    </form>
     &nbsp;&nbsp;&nbsp;
-    <button type="button" class="btn btn-primary btn-lg btn-danger">STOP</button>
+    <form method="post">
+    <button type="button" class="btn btn-primary btn-lg btn-danger" onclick="window.open('stop.jsp')">STOP</button>
 </div>
 
 <div id="infoSisDx">

@@ -2,6 +2,7 @@
 String soglia11="500";
 String soglia12="600";
 String soglia13="700";
+String statoSis = "0";
 
 Cookie cookie = null;
 Cookie[] cookies = null;
@@ -19,6 +20,8 @@ if(cookies.length < 2){
             soglia12 = cookie.getValue();
         if(cookie.getName().compareTo("sogliaE") == 0)
             soglia13 = cookie.getValue();
+        if(cookie.getName().compareTo("stato") == 0)
+            statoSis = cookie.getValue();
         }
     }
     }

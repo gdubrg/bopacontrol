@@ -10,14 +10,18 @@
   <link href="bootstrap/css/stili-custom.css" rel="stylesheet" media="screen">
   <link rel="stylesheet" href="stile.css">
 <title>JDBC test with Connector/J</title>
-
+<%@ include file="getCookie.jsp" %>
 <%
 String temp="";
 String ener="";
 String press="";
 String date="";
 
+
+
+if(statoSis.compareTo("1") == 0){
 response.setIntHeader("Refresh", 3);
+}
 
 Class.forName("com.mysql.jdbc.Driver").newInstance();
 java.sql.Connection conn;
@@ -48,7 +52,7 @@ sqlResult.close(); sqlStatement.close(); conn.close();
 </head>
 <body>
 
-<%@ include file="getCookie.jsp" %>
+
 
 <div id="tab">
 <table class="table">
@@ -69,20 +73,12 @@ sqlResult.close(); sqlStatement.close(); conn.close();
     <tr>
       <td>Pressione [Bar]</td>
       <td><%=press%></td>
-<<<<<<< HEAD
       <td><%=soglia12%></td>
-=======
-      <td>5</td>
->>>>>>> 38b96413e60b8b61c86e3542ed7cef6bd283f6ef
     </tr>
     <tr>
       <td>Potenza [KW]</td>
       <td><%=ener%></td>
-<<<<<<< HEAD
       <td><%=soglia13%></td>
-=======
-      <td>700</td>
->>>>>>> 38b96413e60b8b61c86e3542ed7cef6bd283f6ef
     </tr>
     </tbody>
 </table>
