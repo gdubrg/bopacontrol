@@ -103,17 +103,17 @@
 	conn3.close();
 
 	// AGGIUNGI AL DATASET LE TEMPERATURE DEL SILOS
-	XYSeries series1 = new XYSeries("First");
+	XYSeries series1 = new XYSeries("Temperatura SILOS");
 	for (int i=silos_temperatures.size()-1; i>=0; --i)
 		series1.add(Double.parseDouble(silos_dates.get(i).substring(17)),Integer.parseInt(silos_temperatures.get(i)));
 		
 	// AGGIUNGI AL DATASET LE TEMPERATURE ESTRUSIONE
-	XYSeries series2 = new XYSeries("Second");
+	XYSeries series2 = new XYSeries("Temperatura ESTRUSORE");
 	for (int i=estr_temperatures.size()-1; i>=0; --i)
 		series2.add(Double.parseDouble(estr_dates.get(i).substring(17)),Integer.parseInt(estr_temperatures.get(i)));
 		
 	// AGGIUNGI AL DATASET LE TEMPERATURE DELLO STAMPO
-	XYSeries series3 = new XYSeries("Third");
+	XYSeries series3 = new XYSeries("Temperatura STAMPO");
 	for (int i=stampo_temperatures.size()-1; i>=0; --i)
 		series3.add(Double.parseDouble(stampo_dates.get(i).substring(17)),Integer.parseInt(stampo_temperatures.get(i)));
 
@@ -124,7 +124,7 @@
 	dataset.addSeries(series3);
 
     //CREATE CHART.
-    boolean legend = false;
+    boolean legend = true;
     boolean tooltips = false;
     boolean urls = false;
 
