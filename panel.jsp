@@ -11,11 +11,10 @@
 <div id="infoSisSx">
     <h2>Stato del sistema: <b>OK</b></h2>
     <form method="post">
-    <button type="submit" class="btn btn-primary btn-lg btn-success" onclick="window.open('start.jsp')">START</button>
+    <button type="submit" class="btn btn-primary btn-lg btn-success" onclick="window.open('start.jsp', 'Start', 'width=400, height=200, left=screen.width/2, resizable=no, status, scrollbars=1, location=no');">START</button>
     </form>
-    &nbsp;&nbsp;&nbsp;
     <form method="post">
-    <button type="button" class="btn btn-primary btn-lg btn-danger" onclick="window.open('stop.jsp')">STOP</button>
+    <button type="button" class="btn btn-primary btn-lg btn-danger" onclick="window.open('stop.jsp', 'Stop', 'width=400, height=200, resizable=no, status, scrollbars=1, location');">STOP</button>
 </div>
 
 <div id="infoSisDx">

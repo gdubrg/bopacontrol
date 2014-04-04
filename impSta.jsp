@@ -39,7 +39,7 @@ if(request.getParameter("sogliaEner") != null){
     <h1>Impostazioni Macchina Stampa</h1>
 </div>
 
-<div id="pnlOnly">
+<div id="pnlOnlyCenter">
     <form method="POST">
     <p>Soglia <b>Temperatura</b>: <INPUT TYPE="text" NAME="sogliaTemp" />
     <button type="submit" class="btn btn-primary btn-large"/>Salva</button>

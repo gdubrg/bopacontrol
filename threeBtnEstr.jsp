@@ -26,7 +26,6 @@
     <form method="post" action="detEstr.jsp">
     <button type="submit" class="btn btn-primary btn-large btn-block">Dettaglio</button>
     </form>
-    <br>
     <form method="post" action="impEstr.jsp">
     <button type="submit" class="btn btn-primary btn-large btn-block">Impostazioni</button>
     </form>

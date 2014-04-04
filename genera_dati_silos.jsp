@@ -25,8 +25,6 @@ java.sql.Connection conn;
 conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 Statement sqlStatement = conn.createStatement();
 
-String ins = "INSERT INTO silos (temperatura, pressione, energia, data) VALUES (FLOOR(200+RAND()*(80-1)), FLOOR(3+RAND()*(5-3)), FLOOR(500+RAND()*(10-1)), CURRENT_TIMESTAMP)";
-sqlStatement.executeUpdate(ins);
 
 String query = "SELECT * FROM silos ORDER BY data DESC LIMIT 0,1";
 

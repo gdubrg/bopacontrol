@@ -26,7 +26,6 @@
     <form method="post" action="detSil.jsp">
     <button type="submit" class="btn btn-primary btn-large btn-block">Dettaglio</button>
     </form>
-    <br>
     <form method="post" action="impSil.jsp">
     <button type="submit" class="btn btn-primary btn-large btn-block">Impostazioni</button>
     </form>
