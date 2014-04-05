@@ -8,4 +8,33 @@ pressione varchar(20),
 energia varchar(20),
 data timestamp);
 
+create table silos(
+temperatura varchar(20),
+carico varchar(20),
+energia varchar(20),
+data timestamp);
+
+create table estrusione(
+temperatura varchar(20),
+pressione varchar(20),
+energia varchar(20),
+data timestamp);
+
+create table soglie_silos(
+temp_sil varchar(20),
+car_sil varchar(20),
+ene_sil varchar(20));
+
+
+Valori soglie:
+temp_sil, car_sil, ene_sil, temp_est, pre_est, ene_est, temp_sta, pre_sta, ene_sta
+40, 800, 70, 300, 1500, 45, 200, 1000, 30
+INSERT INTO soglie (nome, valore) VALUES ('ene_sta', 30);
+
+CANCELLARE  TUTTI I RECORD
+delete from <table>
+
+CANCELLARE TABELLA
+drop table <table>
+
 

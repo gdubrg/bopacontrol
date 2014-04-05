@@ -14,7 +14,7 @@
 <%
 String temp="";
 String ener="";
-String press="";
+String car="";
 String date="";
 
 response.setIntHeader("Refresh", 3);
@@ -31,14 +31,27 @@ String query = "SELECT * FROM silos ORDER BY data DESC LIMIT 0,1";
 ResultSet sqlResult = sqlStatement.executeQuery(query);
 while(sqlResult.next()) {
     temp = sqlResult.getString("temperatura");
+    car = sqlResult.getString("carico");
     ener = sqlResult.getString("energia");
-    press = sqlResult.getString("pressione");
     date = sqlResult.getString("data");
     }
-    
-    
-String canc = "DELETE FROM estrusione WHERE data='" + date + "'";
 
+String soglia11="";
+String soglia12="";
+String soglia13="";
+ 
+query = "SELECT * FROM soglie_silos";
+
+sqlResult = sqlStatement.executeQuery(query);
+while(sqlResult.next()) {
+    soglia11 = sqlResult.getString("temp_sil");
+    soglia12 = sqlResult.getString("car_sil");
+    soglia13 = sqlResult.getString("ene_sil");
+    }
+    
+session.setAttribute("s11", soglia11);
+session.setAttribute("s12", soglia12);
+session.setAttribute("s13", soglia13);
 
 sqlResult.close(); sqlStatement.close(); conn.close();
 
@@ -59,17 +72,17 @@ sqlResult.close(); sqlStatement.close(); conn.close();
     <tr>
       <td>Temperatura [K]</td>
       <td><%=temp%></td>
-      <td>600</td>
+      <td><%=soglia11%></td>
     </tr>
     <tr>
-      <td>Pressione [Bar]</td>
-      <td><%=press%></td>
-      <td>5</td>
+      <td>Carico [kg]</td>
+      <td><%=car%></td>
+      <td><%=soglia12%></td>
     </tr>
     <tr>
-      <td>Potenza [KW]</td>
+      <td>Potenza [kW]</td>
       <td><%=ener%></td>
-      <td>700</td>
+      <td><%=soglia13%></td>
     </tr>
     </tbody>
 </table>
