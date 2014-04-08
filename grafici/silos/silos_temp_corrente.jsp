@@ -63,6 +63,6 @@
 
 	//CREATE OUTPUT STREAM.
 	response.setContentType("image/png");
-	ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,350,350);
+	ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,340,340);
     
 %>

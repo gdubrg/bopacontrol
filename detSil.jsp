@@ -10,7 +10,7 @@
 <h3>Temperatura:</h3>
 <div id="pnlOnly">
     <div id="graLeft">
-		<iframe src="grafici/silos/silos_temp_trend.jsp" frameborder="0" scrolling="No" height="350px" width="740px">
+		<iframe src="grafici/silos/silos_temp_trend.jsp" frameborder="0" scrolling="No" height="350px" width="750px">
 		</iframe>
     </div>
     <div id="graRight">
