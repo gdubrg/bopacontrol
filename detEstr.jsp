@@ -4,7 +4,7 @@
 <body>
 
 <div id="pnlTop">
-<h1>Dettaglio Macchina Estrusione</h1>
+<h2>Dettaglio Macchina Estrusione</h2>
 </div>
 
 <div id="pnlOnly">
@@ -35,6 +35,5 @@
 </div>
 
 
-<p>Grafico sensore</p>
 </body>
 </html>

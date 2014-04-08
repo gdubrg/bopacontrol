@@ -46,7 +46,7 @@
 
 	// create the chart...
 	final ThermometerPlot plot = new ThermometerPlot(dataset);
-	final JFreeChart chart = new JFreeChart("Temperatura rilevata",  // chart title
+	final JFreeChart chart = new JFreeChart("Silos: temperatura rilevata",  // chart title
 									  JFreeChart.DEFAULT_TITLE_FONT,
 									  plot,                 // plot
 									  false);               // include legend
@@ -54,11 +54,11 @@
 	plot.setThermometerStroke(new BasicStroke(2.0f));
 	plot.setThermometerPaint(Color.lightGray);
 	
-	plot.setRange(0.0, 300);
+	plot.setRange(0.0, 100);
 
-	plot.setSubrange(ThermometerPlot.NORMAL, 0.0, 220.0);
-	plot.setSubrange(ThermometerPlot.WARNING, 220.0, 250.0);
-	plot.setSubrange(ThermometerPlot.CRITICAL, 250.0, 300.0);
+	plot.setSubrange(ThermometerPlot.NORMAL, 0.0, 40.0);
+	plot.setSubrange(ThermometerPlot.WARNING, 40.0, 60.0);
+	plot.setSubrange(ThermometerPlot.CRITICAL, 60.0, 100.0);
         
 
 	//CREATE OUTPUT STREAM.

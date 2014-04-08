@@ -22,16 +22,12 @@
 	<%@ page import = "org.jfree.chart.axis.NumberAxis" %>
 	<%@ page import = "org.jfree.chart.renderer.category.LineAndShapeRenderer" %>
 	
-
-
 	<%
 	
 	response.setIntHeader("Refresh", 3);
 	
-	// QUERY
+	// QQuery al DB per ottenere le ultime temperature rilevate nel silos
 	ArrayList<String> temperatures = new ArrayList<String>();
-	String ener="";
-	String press="";
 	ArrayList<String> dates = new ArrayList<String>();
 	
 	Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -40,34 +36,27 @@
 	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 	Statement sqlStatement = conn.createStatement();
 	
-	String query = "SELECT * FROM estrusione ORDER BY data DESC LIMIT 0,10";
+	String query = "SELECT * FROM silos ORDER BY data DESC LIMIT 0,10";
 
 	ResultSet sqlResult = sqlStatement.executeQuery(query);
 	while(sqlResult.next()) {
 		temperatures.add(sqlResult.getString("temperatura"));
-		ener = sqlResult.getString("pressione");
-		press = sqlResult.getString("energia");
 		dates.add(sqlResult.getString("data"));
-				
 	}
-	out.print(temperatures);
-	out.print(dates);
 
 	sqlResult.close();
 	sqlStatement.close();
 	conn.close();
-	
-      //ENTER POINTS.
 
-      DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+
+	// Popola il dataset
+    DefaultCategoryDataset dataset = new DefaultCategoryDataset();
       
-      for (int i=(temperatures.size()-1); i>=0; --i)
+    for (int i=(temperatures.size()-1); i>=0; --i)
 		dataset.addValue(Integer.parseInt(temperatures.get(i)), "Classes", dates.get(i).substring(14));
-		
-	
 
-		// create the chart...
-		JFreeChart chart = ChartFactory.createLineChart(
+	// Crea il grafico
+	JFreeChart chart = ChartFactory.createLineChart(
 		"Andamento temperatura Silos", // chart title
 		"Minuti e secondi ora corrente", // domain axis label
 		"Gradi Celsius", // range axis label
@@ -76,7 +65,7 @@
 		false, // include legend
 		true, // tooltips
 		false // urls
-		);
+	);
 
 
 	CategoryPlot plot = (CategoryPlot) chart.getPlot();
@@ -84,12 +73,12 @@
 	plot.setRangeGridlinePaint(Color.white);
 
 
-	// change the auto tick unit selection to integer units only...
+	// Impostazioni degli assi
 	NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
 	rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
-	rangeAxis.setRange(0,225);
+	rangeAxis.setRange(10,50);
 
-	// customise the renderer...
+	// Impostazioni di rendering
 	LineAndShapeRenderer renderer	= (LineAndShapeRenderer) plot.getRenderer();
 	renderer.setShapesVisible(true);
 	renderer.setDrawOutlines(true);
@@ -97,7 +86,7 @@
 	renderer.setFillPaint(Color.white);
 
 
-    //CREATE OUTPUT STREAM.
+    // Crea lo stream in output
     response.setContentType("image/png");
     ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,1000,500);
 
