@@ -57,8 +57,8 @@
 
 	// Crea il grafico
 	JFreeChart chart = ChartFactory.createLineChart(
-		"Andamento temperatura Silos", // chart title
-		"Minuti e secondi ora corrente", // domain axis label
+		 "Silos: storico temperatura",// chart title
+		null, // domain axis label
 		"Gradi Celsius", // range axis label
 		dataset, // data
 		PlotOrientation.VERTICAL, // orientation
@@ -88,7 +88,7 @@
 
     // Crea lo stream in output
     response.setContentType("image/png");
-    ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,1000,500);
+    ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,740,350);
 
 
 
