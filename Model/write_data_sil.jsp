@@ -4,7 +4,6 @@
 <%@ page import="java.sql.Statement" %> 
 <%@ page import="java.sql.ResultSet" %> 
 <%@ page import="java.sql.Date" %>
-<%@ include file="header.jsp" %>
 <body>
 <%
 String s11 = (String)session.getAttribute("s11");
@@ -46,5 +45,5 @@ if( sE != null){
     }  
 %>
 
-<% request.getRequestDispatcher("impSil.jsp").forward(request, response); %>
+<% request.getRequestDispatcher("../View/settings_sil.jsp").forward(request, response); %>
 
