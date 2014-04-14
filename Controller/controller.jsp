@@ -14,11 +14,13 @@ if(request.getParameter("sogliaTemp") != null){
 	
 		try{
 			n = Integer.parseInt(request.getParameter("sogliaTemp"));
-			request.getRequestDispatcher("../View/settings_sil.jsp").forward(request, response);
-			//response.sendRedirect("impSil_db.jsp");
+			request.getRequestDispatcher("../Model/write_data_sil.jsp").forward(request, response);
+			
+			//response.sendRedirect("../Model/write_data_sil.jsp");
 		}
 		catch(Exception ex){
-			request.getRequestDispatcher("../View/settings_sil_err.jsp").forward(request, response);
+			//request.getRequestDispatcher("../View/settings_sil_err.jsp").forward(request, response);
+			response.sendRedirect("../View/settings_sil_err.jsp");
 		}
 		
 		
