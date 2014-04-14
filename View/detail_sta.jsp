@@ -30,10 +30,12 @@
  <h3>Pressione</h3>
 <div id="pnlOnly">
     <div id="graLeft">
-    metti qui il grafico che poi si sistema
+		<iframe src="charts/stampo/sta_pressure_trend.jsp" frameborder="0" scrolling="No" height="350px" width="750px">
+		</iframe>
     </div>
     <div id="graRight">
-    metti qui il grafico che poi si sistema
+		<iframe src="charts/stampo/sta_pressure_current.jsp" frameborder="0" scrolling="No" height="350px" width="750px">
+		</iframe>
     </div>
 </div>
 </div>
