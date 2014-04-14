@@ -19,7 +19,7 @@
 
 <div id="infoSisDx">
     <div id="imgTop">       
-        <img src="img/ingmoul.gif" class="img-responsive">
+        <img src="View/img/ingmoul.gif" class="img-responsive">
     </div>
     <div id="alrm">
         <h2><b>Allarmi</b></h2>

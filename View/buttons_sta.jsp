@@ -21,36 +21,14 @@
   <script src="js/respond.min.js"></script>
   <![endif]-->
  </head>
- <%
- response.setIntHeader("Refresh", 1);
- %>
 
-<div id="tab">
-<table class="table">
-<tbody>
-    <thead>
-    <tr>
-      <th>ID Sensore</th>
-      <th>Nome</th>
-      <th>Valore</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>001</td>
-      <td>Temp</td>
-      <td>500</td>
-    </tr>
-    <tr>
-      <td>002</td>
-      <td>Liv</td>
-      <td>400</td>
-    </tr>
-    <tr>
-      <td>003</td>
-      <td>Ext</td>
-      <td>0.02</td>
-    </tr>
-  </tbody>
-</table>
+<div id="btnPnl">
+    <form method="post" action="detSta.jsp">
+    <button type="submit" class="btn btn-primary btn-large btn-block">Dettaglio</button>
+    </form>
+    <br>
+     <form method="post" action="impSta.jsp">
+    <button type="submit" class="btn btn-primary btn-large btn-block">Impostazioni</button>
+    </form>
+    <br>
 </div>
