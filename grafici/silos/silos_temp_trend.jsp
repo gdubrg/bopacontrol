@@ -67,7 +67,8 @@
 		false // urls
 	);
 
-
+	chart.setBackgroundPaint(new java.awt.Color(221,221,221));
+	
 	CategoryPlot plot = (CategoryPlot) chart.getPlot();
 	plot.setBackgroundPaint(Color.lightGray);
 	plot.setRangeGridlinePaint(Color.white);

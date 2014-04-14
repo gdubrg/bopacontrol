@@ -50,6 +50,10 @@
 									  JFreeChart.DEFAULT_TITLE_FONT,
 									  plot,                 // plot
 									  false);               // include legend
+									  
+									  
+	chart.setBackgroundPaint(new java.awt.Color(221,221,221));
+
 
 	plot.setThermometerStroke(new BasicStroke(2.0f));
 	plot.setThermometerPaint(Color.lightGray);
