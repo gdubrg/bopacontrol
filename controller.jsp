@@ -5,11 +5,14 @@ if(request.getParameter("sogliaTemp") != null){
 	
 		try{
 			n = Integer.parseInt(request.getParameter("sogliaTemp"));
-			%><jsp:forward page="/impSil.jsp" /><%
+			request.getRequestDispatcher("impSil_db.jsp").forward(request, response);
+			//response.sendRedirect("impSil_db.jsp");
 		}
 		catch(Exception ex){
-			%><jsp:forward page="/impSilErr.jsp" /><%
+			request.getRequestDispatcher("impSilErr.jsp").forward(request, response);
 		}
+		
+		
 		
 }
 %>
