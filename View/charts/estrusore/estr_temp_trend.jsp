@@ -67,7 +67,8 @@
 		false // urls
 	);
 
-
+	chart.setBackgroundPaint(new java.awt.Color(221,221,221));
+	
 	CategoryPlot plot = (CategoryPlot) chart.getPlot();
 	plot.setBackgroundPaint(Color.lightGray);
 	plot.setRangeGridlinePaint(Color.white);
@@ -76,7 +77,7 @@
 	// Impostazioni degli assi
 	NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
 	rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
-	rangeAxis.setRange(100,800);
+	rangeAxis.setRange(100,700);
 
 	// Impostazioni di rendering
 	LineAndShapeRenderer renderer	= (LineAndShapeRenderer) plot.getRenderer();
@@ -88,7 +89,7 @@
 
     // Crea lo stream in output
     response.setContentType("image/png");
-    ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,1000,500);
+    ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,740,340);
 
 
 

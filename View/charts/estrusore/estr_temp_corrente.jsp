@@ -51,18 +51,20 @@
 									  plot,                 // plot
 									  false);               // include legend
 
+	chart.setBackgroundPaint(new java.awt.Color(221,221,221));
+	
 	plot.setThermometerStroke(new BasicStroke(2.0f));
 	plot.setThermometerPaint(Color.lightGray);
 	
-	plot.setRange(0.0, 800);
+	plot.setRange(0.0, 700);
 
 	plot.setSubrange(ThermometerPlot.NORMAL, 0.0, 400.0);
 	plot.setSubrange(ThermometerPlot.WARNING, 400.0, 600.0);
-	plot.setSubrange(ThermometerPlot.CRITICAL, 600.0, 800.0);
+	plot.setSubrange(ThermometerPlot.CRITICAL, 600.0, 700.0);
         
 
 	//CREATE OUTPUT STREAM.
 	response.setContentType("image/png");
-	ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,500,500);
+	ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,340,340);
     
 %>
