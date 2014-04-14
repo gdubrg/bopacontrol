@@ -42,8 +42,10 @@ if( sE != null){
     sqlStatement.executeUpdate(query);
     session.setAttribute("s13", sE);
     s13 = (String)session.getAttribute("s13");
-    }  
+    } 
+    
+    response.sendRedirect("../View/settings_sil.jsp"); 
 %>
 
-<% request.getRequestDispatcher("../View/settings_sil.jsp").forward(request, response); %>
+
 
