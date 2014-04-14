@@ -12,15 +12,10 @@
   <!-- Fogli di stile -->
   <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
   <link href="bootstrap/css/stili-custom.css" rel="stylesheet" media="screen">
-  <link rel="stylesheet" href="stile.css">
+  <link rel="stylesheet" href="style.css">
 
   <!-- Modernizr -->
   <script src="bootstrap/js/bootstrap-min.js"></script>
-
-  <!-- respond.js per IE8 -->
-  <!--[if lt IE 9]>
-  <script src="js/respond.min.js"></script>
-  <![endif]-->
  </head>
 
 <br>
@@ -41,17 +36,17 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Impostazioni<b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="impSil.jsp">Silos Polimeri</a></li>
-          <li><a href="impEstr.jsp">Macchina Estrusione</a></li>
-          <li><a href="impSta.jsp">Macchina Stampo</a></li>
+          <li><a href="settings_sil.jsp">Silos Polimeri</a></li>
+          <li><a href="settings_estr.jsp">Macchina Estrusione</a></li>
+          <li><a href="settings_sta.jsp">Macchina Stampo</a></li>
         </ul>
       </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dettaglio<b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="detSil.jsp">Silos Polimeri</a></li>
-          <li><a href="detEstr.jsp">Macchina Estrusione</a></li>
-          <li><a href="detSta.jsp">Macchina Stampo</a></li>
+          <li><a href="detail_sil.jsp">Silos Polimeri</a></li>
+          <li><a href="detail_estr.jsp">Macchina Estrusione</a></li>
+          <li><a href="detail_sta.jsp">Macchina Stampo</a></li>
         </ul>
       </li>
     </ul>

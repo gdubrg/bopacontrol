@@ -11,7 +11,7 @@
   <!-- Fogli di stile -->
   <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
   <link href="bootstrap/css/stili-custom.css" rel="stylesheet" media="screen">
-  <link rel="stylesheet" href="stile.css">
+  <link rel="stylesheet" href="style.css">
 
   <!-- Modernizr -->
   <script src="bootstrap/js/bootstrap-min.js"></script>
@@ -22,12 +22,11 @@
   <![endif]-->
  </head>
 
-<div id="btnPnl">
-    <form method="post" action="detSta.jsp">
+<div id="btnPnl"><form></form>
+    <form method="post" action="detail_sta.jsp">
     <button type="submit" class="btn btn-primary btn-large btn-block">Dettaglio</button>
-    </form>
-    <br>
-     <form method="post" action="impSta.jsp">
+    </form> 
+    <form method="post" action="settings_sta.jsp">
     <button type="submit" class="btn btn-primary btn-large btn-block">Impostazioni</button>
     </form>
     <br>

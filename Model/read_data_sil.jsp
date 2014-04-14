@@ -6,9 +6,9 @@
 <%@ page import="java.sql.Date" %>
 <head> 
   <!-- Fogli di stile -->
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-  <link href="bootstrap/css/stili-custom.css" rel="stylesheet" media="screen">
-  <link rel="stylesheet" href="stile.css">
+  <link rel="stylesheet" href="../View/bootstrap/css/bootstrap.css">
+  <link href="../View/bootstrap/css/stili-custom.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="../View/style.css">
 <title>JDBC test with Connector/J</title>
 
 <%
@@ -24,7 +24,6 @@ java.sql.Connection conn;
 
 conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 Statement sqlStatement = conn.createStatement();
-
 
 String query = "SELECT * FROM silos ORDER BY data DESC LIMIT 0,1";
 
