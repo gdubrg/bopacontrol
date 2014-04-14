@@ -19,7 +19,7 @@ String s13 = (String)session.getAttribute("s13");
 </div>
 
 <div id="pnlOnlyCenter">
-    <form ACTION="controller.jsp" method="POST">
+    <form ACTION="../Controller/controller.jsp" method="POST">
     <p>Soglia <b>Temperatura</b>: 
     <INPUT TYPE="text" NAME="sogliaTemp"/>
     <button type="submit" class="btn btn-primary btn-large"/>Salva</button>

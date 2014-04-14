@@ -6,22 +6,18 @@
 <%@ page import="java.sql.Date" %>
 <head> 
   <!-- Fogli di stile -->
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-  <link href="bootstrap/css/stili-custom.css" rel="stylesheet" media="screen">
-  <link rel="stylesheet" href="stile.css">
+  <link rel="stylesheet" href="../View/bootstrap/css/bootstrap.css">
+  <link href="../View/bootstrap/css/stili-custom.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="../View/style.css">
 <title>JDBC test with Connector/J</title>
-<%@ include file="getCookie.jsp" %>
+
 <%
 String temp="";
 String ener="";
 String press="";
 String date="";
 
-
-
-if(statoSis.compareTo("1") == 0){
 response.setIntHeader("Refresh", 3);
-}
 
 Class.forName("com.mysql.jdbc.Driver").newInstance();
 java.sql.Connection conn;
@@ -40,8 +36,6 @@ while(sqlResult.next()) {
     date = sqlResult.getString("data");
     }
     
-    
-String canc = "DELETE FROM estrusione WHERE data='" + date + "'";
 
 
 sqlResult.close(); sqlStatement.close(); conn.close();
@@ -49,9 +43,6 @@ sqlResult.close(); sqlStatement.close(); conn.close();
 %>
 </head>
 <body>
-
-
-
 <div id="tab">
 <table class="table">
 <tbody>
@@ -66,17 +57,17 @@ sqlResult.close(); sqlStatement.close(); conn.close();
     <tr>
       <td>Temperatura [K]</td>
       <td><%=temp%></td>
-      <td><%=soglia11%></td>
+      <td>600</td>
     </tr>
     <tr>
       <td>Pressione [Bar]</td>
       <td><%=press%></td>
-      <td><%=soglia12%></td>
+      <td>5</td>
     </tr>
     <tr>
       <td>Potenza [KW]</td>
       <td><%=ener%></td>
-      <td><%=soglia13%></td>
+      <td>700</td>
     </tr>
     </tbody>
 </table>

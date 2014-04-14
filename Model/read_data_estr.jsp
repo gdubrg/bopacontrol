@@ -6,9 +6,9 @@
 <%@ page import="java.sql.Date" %>
 <head> 
   <!-- Fogli di stile -->
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-  <link href="bootstrap/css/stili-custom.css" rel="stylesheet" media="screen">
-  <link rel="stylesheet" href="stile.css">
+  <link rel="stylesheet" href="../View/bootstrap/css/bootstrap.css">
+  <link href="../View/bootstrap/css/stili-custom.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="../View/style.css">
 <title>JDBC test with Connector/J</title>
 
 <%
@@ -36,8 +36,6 @@ while(sqlResult.next()) {
     date = sqlResult.getString("data");
     }
     
-    
-String canc = "DELETE FROM estrusione WHERE data='" + date + "'";
 
 
 sqlResult.close(); sqlStatement.close(); conn.close();
