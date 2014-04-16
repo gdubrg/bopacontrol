@@ -41,20 +41,21 @@
  <h3>Potenza</h3>
 <div id="pnlOnly">
     <div id="graLeft">
-    metti qui il grafico che poi si sistema
+		<iframe src="charts/silos/silos_energy_trend.jsp" frameborder="0" scrolling="No" height="350px" width="750px">
+		</iframe>
     </div>
     <div id="graRight">
-    metti qui il grafico che poi si sistema
+		<iframe src="charts/silos/silos_energy_current.jsp" frameborder="0" scrolling="No" height="350px" width="350px">
+		</iframe>
     </div>
 </div>
 </div>
 </div>
 
 
-
-
-
-
+<div id="pnlDown">
+    <h5>BoPa Controller - Progetto SAR 2014 - Guido Borghi, Andrea Palazzi</h5>
+</div>
 
 
 </body>

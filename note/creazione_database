@@ -20,29 +20,20 @@ pressione varchar(20),
 energia varchar(20),
 data timestamp);
 
-create table soglie_silos(
-temp_sil varchar(20),
-car_sil varchar(20),
-ene_sil varchar(20));
+create table soglie_silos(temp_sil varchar(20),car_sil varchar(20),ene_sil varchar(20));
 
-create table soglie_estr(
-temp_estr varchar(20),
-press_estr varchar(20),
-ene_estr varchar(20));
+create table soglie_estr(temp_estr varchar(20),press_estr varchar(20),ene_estr varchar(20));
 
-create table soglie_sta(
-temp_sta varchar(20),
-press_sta varchar(20),
-ene_sta varchar(20));
+create table soglie_sta(temp_sta varchar(20),press_sta varchar(20),ene_sta varchar(20));
 
 
 Valori soglie:
 
-INSERT INTO soglie_sil (temp_sil, car_sil, ene_sil) VALUES (40, 800, 202);
+INSERT INTO soglie_sil (temp_sil, car_sil, ene_sil) VALUES (40, 800, 8);
 
-INSERT INTO soglie_estr (temp_estr, press_estr, ene_estr) VALUES (1500, 300, 45);
+INSERT INTO soglie_estr (temp_estr, press_estr, ene_estr) VALUES (1500, 300, 15);
 
-INSERT INTO soglie_sta (temp_sta, press_sta, ene_sta) VALUES (1000, 200, 30);
+INSERT INTO soglie_sta (temp_sta, press_sta, ene_sta) VALUES (1000, 200, 12);
 
 CANCELLARE  TUTTI I RECORD
 delete from <table>
