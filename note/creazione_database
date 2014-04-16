@@ -25,11 +25,24 @@ temp_sil varchar(20),
 car_sil varchar(20),
 ene_sil varchar(20));
 
+create table soglie_estr(
+temp_estr varchar(20),
+press_estr varchar(20),
+ene_estr varchar(20));
+
+create table soglie_sta(
+temp_sta varchar(20),
+press_sta varchar(20),
+ene_sta varchar(20));
+
 
 Valori soglie:
-temp_sil, car_sil, ene_sil, temp_est, pre_est, ene_est, temp_sta, pre_sta, ene_sta
-40, 800, 70, 300, 1500, 45, 200, 1000, 30
-INSERT INTO soglie (nome, valore) VALUES ('ene_sta', 30);
+
+INSERT INTO soglie_sil (temp_sil, car_sil, ene_sil) VALUES (40, 800, 202);
+
+INSERT INTO soglie_estr (temp_estr, press_estr, ene_estr) VALUES (1500, 300, 45);
+
+INSERT INTO soglie_sta (temp_sta, press_sta, ene_sta) VALUES (1000, 200, 30);
 
 CANCELLARE  TUTTI I RECORD
 delete from <table>

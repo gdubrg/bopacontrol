@@ -25,7 +25,6 @@ java.sql.Connection conn;
 conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 Statement sqlStatement = conn.createStatement();
 
-
 String query = "SELECT * FROM estrusione ORDER BY data DESC LIMIT 0,1";
 
 ResultSet sqlResult = sqlStatement.executeQuery(query);
@@ -35,6 +34,24 @@ while(sqlResult.next()) {
     press = sqlResult.getString("pressione");
     date = sqlResult.getString("data");
     }
+    
+String soglia21="";
+String soglia22="";
+String soglia23="";
+ 
+query = "SELECT * FROM soglie_estr";
+
+sqlResult = sqlStatement.executeQuery(query);
+while(sqlResult.next()) {
+    soglia21 = sqlResult.getString("temp_estr");
+    soglia22 = sqlResult.getString("press_estr");
+    soglia23 = sqlResult.getString("ene_estr");
+    }
+    
+session.setAttribute("s21", soglia21);
+session.setAttribute("s22", soglia22);
+session.setAttribute("s23", soglia23);
+
     
 
 
@@ -57,17 +74,17 @@ sqlResult.close(); sqlStatement.close(); conn.close();
     <tr>
       <td>Temperatura [K]</td>
       <td><%=temp%></td>
-      <td>600</td>
+      <td><%=soglia21%></td>
     </tr>
     <tr>
       <td>Pressione [Bar]</td>
       <td><%=press%></td>
-      <td>5</td>
+      <td><%=soglia22%></td>
     </tr>
     <tr>
       <td>Potenza [KW]</td>
       <td><%=ener%></td>
-      <td>700</td>
+      <td><%=soglia23%></td>
     </tr>
     </tbody>
 </table>

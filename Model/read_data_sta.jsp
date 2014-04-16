@@ -35,7 +35,23 @@ while(sqlResult.next()) {
     press = sqlResult.getString("pressione");
     date = sqlResult.getString("data");
     }
+
+String soglia31="";
+String soglia32="";
+String soglia33="";
+ 
+query = "SELECT * FROM soglie_sta";
+
+sqlResult = sqlStatement.executeQuery(query);
+while(sqlResult.next()) {
+    soglia31 = sqlResult.getString("temp_sta");
+    soglia32 = sqlResult.getString("press_sta");
+    soglia33 = sqlResult.getString("ene_sta");
+    }
     
+session.setAttribute("s31", soglia31);
+session.setAttribute("s32", soglia32);
+session.setAttribute("s33", soglia33);   
 
 
 sqlResult.close(); sqlStatement.close(); conn.close();
@@ -57,17 +73,17 @@ sqlResult.close(); sqlStatement.close(); conn.close();
     <tr>
       <td>Temperatura [K]</td>
       <td><%=temp%></td>
-      <td>600</td>
+      <td><%=soglia31%></td>
     </tr>
     <tr>
       <td>Pressione [Bar]</td>
       <td><%=press%></td>
-      <td>5</td>
+      <td><%=soglia32%></td>
     </tr>
     <tr>
       <td>Potenza [KW]</td>
       <td><%=ener%></td>
-      <td>700</td>
+      <td><%=soglia33%></td>
     </tr>
     </tbody>
 </table>

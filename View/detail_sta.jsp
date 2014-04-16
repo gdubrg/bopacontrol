@@ -34,7 +34,7 @@
 		</iframe>
     </div>
     <div id="graRight">
-		<iframe src="charts/stampo/sta_pressure_current.jsp" frameborder="0" scrolling="No" height="350px" width="750px">
+		<iframe src="charts/stampo/sta_pressure_current.jsp" frameborder="0" scrolling="No" height="350px" width="350px">
 		</iframe>
     </div>
 </div>

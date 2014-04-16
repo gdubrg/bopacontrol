@@ -6,12 +6,12 @@
 <%@ page import="java.sql.Date" %>
 <body>
 <%
-String s11 = (String)session.getAttribute("s11");
-String s12 = (String)session.getAttribute("s12");
-String s13 = (String)session.getAttribute("s13");
+String s31 = (String)session.getAttribute("s31");
+String s32 = (String)session.getAttribute("s32");
+String s33 = (String)session.getAttribute("s33");
 String query = "";
 String sT = "";
-String sC = "";
+String sP = "";
 String sE = "";
 
 Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -20,20 +20,20 @@ java.sql.Connection conn;
 conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 Statement sqlStatement = conn.createStatement();
 
-sT = request.getParameter("soglia_temp_silos");
+sT = request.getParameter("soglia_temp_sta");
 if( sT != null){
-    query = "UPDATE soglie_silos SET temp_sil='"+sT+"' ";
+    query = "UPDATE soglie_sta SET temp_sta='"+sT+"' ";
     sqlStatement.executeUpdate(query);
-    session.setAttribute("s11", sT);
-    s11 = (String)session.getAttribute("s11");
+    session.setAttribute("s31", sT);
+    s31 = (String)session.getAttribute("s31");
     }
     
-    sC = request.getParameter("soglia_car_silos");
-if( sC != null){
-    query = "UPDATE soglie_silos SET car_sil='"+sC+"' ";
+    sP = request.getParameter("soglia_car_silos");
+if( sP != null){
+    query = "UPDATE soglie_silos SET car_sil='"+sP+"' ";
     sqlStatement.executeUpdate(query);
-    session.setAttribute("s12", sC);
-    s12 = (String)session.getAttribute("s12");
+    session.setAttribute("s12", sP);
+    s32 = (String)session.getAttribute("s12");
     }
     
     sE = request.getParameter("soglia_pot_silos");
@@ -41,10 +41,10 @@ if( sE != null){
     query = "UPDATE soglie_silos SET ene_sil='"+sE+"' ";
     sqlStatement.executeUpdate(query);
     session.setAttribute("s13", sE);
-    s13 = (String)session.getAttribute("s13");
+    s33 = (String)session.getAttribute("s13");
     } 
     
-    response.sendRedirect("../View/settings_sil.jsp"); 
+    response.sendRedirect("../View/settings_sta.jsp"); 
 %>
 
 
