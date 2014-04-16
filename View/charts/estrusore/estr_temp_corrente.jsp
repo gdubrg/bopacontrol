@@ -5,6 +5,7 @@
 <%@ page import ="org.jfree.chart.plot.ThermometerPlot" %>
 <%@ page import ="org.jfree.data.general.DefaultValueDataset" %>
 <%@ page import ="org.jfree.ui.ApplicationFrame" %>
+<%@ page import ="org.jfree.ui.RectangleInsets" %>
 <%@ page import ="java.awt.BasicStroke" %>
 <%@ page import ="java.awt.Color" %>
 <%@ page import="org.jfree.chart.ChartUtilities"%>
@@ -52,10 +53,10 @@
 									  false);               // include legend
 
 	chart.setBackgroundPaint(new java.awt.Color(221,221,221));
-	
 	plot.setThermometerStroke(new BasicStroke(2.0f));
-	plot.setThermometerPaint(Color.lightGray);
-	
+	plot.setThermometerPaint(new java.awt.Color(0,0,0));
+	plot.setBackgroundPaint(new java.awt.Color(221,221,221));
+	plot.setOutlineVisible(false);
 	plot.setRange(0.0, 700);
 
 	plot.setSubrange(ThermometerPlot.NORMAL, 0.0, 400.0);

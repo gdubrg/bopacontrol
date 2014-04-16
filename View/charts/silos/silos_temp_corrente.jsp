@@ -53,10 +53,10 @@
 									  
 									  
 	chart.setBackgroundPaint(new java.awt.Color(221,221,221));
-
-
 	plot.setThermometerStroke(new BasicStroke(2.0f));
-	plot.setThermometerPaint(Color.lightGray);
+	plot.setThermometerPaint(new java.awt.Color(0,0,0));
+	plot.setBackgroundPaint(new java.awt.Color(221,221,221));
+	plot.setOutlineVisible(false);
 	
 	plot.setRange(0.0, 100);
 
