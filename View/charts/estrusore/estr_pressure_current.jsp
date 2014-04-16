@@ -70,7 +70,7 @@
     plot.addScale(0, scale);	
     
     
-    JFreeChart chart = new JFreeChart("Pressione rilevata", JFreeChart.DEFAULT_TITLE_FONT, plot, false);
+    JFreeChart chart = new JFreeChart("Estrusore: pressione rilevata", JFreeChart.DEFAULT_TITLE_FONT, plot, false);
     chart.setBackgroundPaint(new java.awt.Color(221,221,221));
 
 	//CREATE OUTPUT STREAM.

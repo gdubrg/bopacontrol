@@ -27,7 +27,7 @@
 	response.setIntHeader("Refresh", 3);
 	
 	// QQuery al DB per ottenere le ultime pressioni rilevate nell'estrusore
-	ArrayList<String> energies = new ArrayList<String>();
+	ArrayList<String> loads = new ArrayList<String>();
 	ArrayList<String> dates = new ArrayList<String>();
 	
 	Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -40,7 +40,7 @@
 
 	ResultSet sqlResult = sqlStatement.executeQuery(query);
 	while(sqlResult.next()) {
-		energies.add(sqlResult.getString("energia"));
+		loads.add(sqlResult.getString("carico"));
 		dates.add(sqlResult.getString("data"));
 	}
 
@@ -52,14 +52,14 @@
 	// Popola il dataset
     DefaultCategoryDataset dataset = new DefaultCategoryDataset();
       
-    for (int i=(energies.size()-1); i>=0; --i)
-		dataset.addValue(Integer.parseInt(energies.get(i)), "Classes", dates.get(i).substring(14));
+    for (int i=(loads.size()-1); i>=0; --i)
+		dataset.addValue(Integer.parseInt(loads.get(i)), "Classes", dates.get(i).substring(14));
 
 	// Crea il grafico
 	JFreeChart chart = ChartFactory.createLineChart(
-		"Andamento potenza Silos", // chart title
+		"Andamento carico Silos", // chart title
 		"Minuti e secondi ora corrente", // domain axis label
-		"kW", // range axis label
+		"KG", // range axis label
 		dataset, // data
 		PlotOrientation.VERTICAL, // orientation
 		false, // include legend
@@ -77,7 +77,7 @@
 	// Impostazioni degli assi
 	NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
 	rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
-	rangeAxis.setRange(0,60);
+	rangeAxis.setRange(0,1000);
 
 	// Impostazioni di rendering
 	LineAndShapeRenderer renderer	= (LineAndShapeRenderer) plot.getRenderer();
