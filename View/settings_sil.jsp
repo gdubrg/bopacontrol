@@ -19,6 +19,7 @@ String s13 = (String)session.getAttribute("s13");
 </div>
 
 <div id="pnlOnlyCenter">
+    
     <form ACTION="../Controller/controller.jsp" method="POST">
     <p>Soglia <b>Temperatura</b>: 
     <INPUT TYPE="text" NAME="soglia_temp_silos"/>
@@ -26,22 +27,27 @@ String s13 = (String)session.getAttribute("s13");
     </p>
     Hai impostato il valore di soglia della temperatura a: <b><%=s11%> </b>K
     </form>
+    
     <br><br>
-    <form method="POST">
+   
+    <form ACTION="../Controller/controller.jsp" method="POST">
     <p>Soglia <b>Pressione</b>:&nbsp&nbsp&nbsp&nbsp
     <INPUT TYPE="text" NAME="soglia_car_silos" />
     <button type="submit" class="btn btn-primary btn-large"/>Salva</button>
     </p>
     Hai impostato il valore di soglia del carico a: <b><%=s12%> </b>kg
     </form>
+    
     <br><br>
-    <form method="POST">
+    
+    <form ACTION="../Controller/controller.jsp" method="POST">
     <p>Soglia <b>Potenza</b>:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <INPUT TYPE="text" NAME="soglia_pot_silos" />
     <button type="submit" class="btn btn-primary btn-large"/>Salva</button>
     </p>
     Hai impostato il valore di soglia dell'energia a: <b><%=s13%> </b>kW
     </form>
+   
     <br><br>
 </div>
 

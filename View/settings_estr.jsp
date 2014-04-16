@@ -29,21 +29,24 @@ String s23 = (String)session.getAttribute("s23");
     </form>
     
     <br><br>
-    <form method="POST">
+    <form ACTION="../Controller/controller.jsp" method="POST">
     <p>Soglia <b>Pressione</b>:&nbsp&nbsp&nbsp&nbsp
     <INPUT TYPE="text" NAME="soglia_press_estr" />
     <button type="submit" class="btn btn-primary btn-large"/>Salva</button>
     </p>
     Hai impostato il valore di soglia della pressione a: <b><%=s22%> </b>bar
     </form>
+    
     <br><br>
-    <form method="POST">
+    
+    <form ACTION="../Controller/controller.jsp" method="POST">
     <p>Soglia <b>Potenza</b>:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <INPUT TYPE="text" NAME="soglia_pot_estr" />
     <button type="submit" class="btn btn-primary btn-large"/>Salva</button>
     </p>
     Hai impostato il valore di soglia della potenza a: <b><%=s23%> </b>kW
     </form>
+    
     <br><br>
 </div>
 

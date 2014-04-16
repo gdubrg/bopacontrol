@@ -28,20 +28,20 @@ if( sT != null){
     s31 = (String)session.getAttribute("s31");
     }
     
-    sP = request.getParameter("soglia_car_silos");
+    sP = request.getParameter("soglia_press_sta");
 if( sP != null){
-    query = "UPDATE soglie_silos SET car_sil='"+sP+"' ";
+    query = "UPDATE soglie_sta SET press_sta='"+sP+"' ";
     sqlStatement.executeUpdate(query);
-    session.setAttribute("s12", sP);
-    s32 = (String)session.getAttribute("s12");
+    session.setAttribute("s32", sP);
+    s32 = (String)session.getAttribute("s32");
     }
     
-    sE = request.getParameter("soglia_pot_silos");
+    sE = request.getParameter("soglia_pot_sta");
 if( sE != null){
-    query = "UPDATE soglie_silos SET ene_sil='"+sE+"' ";
+    query = "UPDATE soglie_sta SET ene_sta='"+sE+"' ";
     sqlStatement.executeUpdate(query);
-    session.setAttribute("s13", sE);
-    s33 = (String)session.getAttribute("s13");
+    session.setAttribute("s33", sE);
+    s33 = (String)session.getAttribute("s33");
     } 
     
     response.sendRedirect("../View/settings_sta.jsp"); 
