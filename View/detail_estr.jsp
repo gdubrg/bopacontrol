@@ -21,7 +21,7 @@
 		</iframe>
     </div>
     <div id="graRight">
-		<iframe src="charts/estrusore/estr_temp_corrente.jsp" frameborder="0" scrolling="No" height="350px" width="350px">
+		<iframe src="charts/estrusore/estr_temp_current.jsp" frameborder="0" scrolling="No" height="350px" width="350px">
 		</iframe>
     </div>
 </div>

@@ -17,11 +17,11 @@
  <h3>Temperatura</h3>
 <div id="pnlOnly">
     <div id="graLeft">
-		<iframe src="charts/stampo/stampo_temp_trend.jsp" frameborder="0" scrolling="No" height="350px" width="750px">
+		<iframe src="charts/stampo/sta_temp_trend.jsp" frameborder="0" scrolling="No" height="350px" width="750px">
 		</iframe>
     </div>
     <div id="graRight">
-		<iframe src="charts/stampo/stampo_temp_corrente.jsp" frameborder="0" scrolling="No" height="350px" width="350px">
+		<iframe src="charts/stampo/sta_temp_current.jsp" frameborder="0" scrolling="No" height="350px" width="350px">
 		</iframe>
     </div>
 </div>

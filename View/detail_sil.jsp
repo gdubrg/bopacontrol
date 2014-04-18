@@ -21,7 +21,7 @@
 		</iframe>
     </div>
     <div id="graRight">
-		<iframe src="charts/silos/silos_temp_corrente.jsp" frameborder="0" scrolling="No" height="350px" width="350px">
+		<iframe src="charts/silos/silos_temp_current.jsp" frameborder="0" scrolling="No" height="350px" width="350px">
 		</iframe>
     </div>
 </div>

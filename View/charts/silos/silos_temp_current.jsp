@@ -38,9 +38,11 @@
 		cur_date = sqlResult.getString("data");
 	}
 
-	sqlResult.close();
-	sqlStatement.close();
-	conn.close();
+	// Estrazione della soglia dal DB
+	query = "SELECT * FROM soglie_silos";
+	sqlResult = sqlStatement.executeQuery(query);
+	sqlResult.next();
+	int thresh_value = sqlResult.getInt("temp_sil");
 
 	DefaultValueDataset dataset = new DefaultValueDataset(Double.parseDouble(cur_temp));
 
@@ -58,13 +60,17 @@
 	plot.setBackgroundPaint(new java.awt.Color(221,221,221));
 	plot.setOutlineVisible(false);
 	
-	plot.setRange(0.0, 100);
+	plot.setRange(0.0, 50);
 
 	plot.setSubrange(ThermometerPlot.NORMAL, 0.0, 40.0);
-	plot.setSubrange(ThermometerPlot.WARNING, 40.0, 60.0);
-	plot.setSubrange(ThermometerPlot.CRITICAL, 60.0, 100.0);
+	plot.setSubrange(ThermometerPlot.WARNING, thresh_value-5, 60.0);
+	plot.setSubrange(ThermometerPlot.CRITICAL, thresh_value, 100.0);
         
-
+	// Chiudi le connsessioni col DB
+	sqlResult.close();
+	sqlStatement.close();
+	conn.close();
+	
 	//CREATE OUTPUT STREAM.
 	response.setContentType("image/png");
 	ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,340,340);
