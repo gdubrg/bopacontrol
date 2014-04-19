@@ -21,12 +21,14 @@
     <%@ page import="org.jfree.chart.ChartUtilities"      %>
 	<%@ page import = "org.jfree.chart.axis.NumberAxis" %>
 	<%@ page import = "org.jfree.chart.renderer.category.LineAndShapeRenderer" %>
+	<%@ page import = "org.jfree.chart.plot.ValueMarker" %>
+	<%@ page import = "org.jfree.ui.Layer" %>
 	
 	<%
 	
 	response.setIntHeader("Refresh", 3);
 	
-	// QQuery al DB per ottenere le ultime pressioni rilevate nell'estrusore
+	// Query al DB per ottenere le ultime pressioni rilevate nell'estrusore
 	ArrayList<String> pressures = new ArrayList<String>();
 	ArrayList<String> dates = new ArrayList<String>();
 	
@@ -43,11 +45,6 @@
 		pressures.add(sqlResult.getString("pressione"));
 		dates.add(sqlResult.getString("data"));
 	}
-
-	sqlResult.close();
-	sqlStatement.close();
-	conn.close();
-
 
 	// Popola il dataset
     DefaultCategoryDataset dataset = new DefaultCategoryDataset();
@@ -66,14 +63,24 @@
 		true, // tooltips
 		false // urls
 	);
-
 	chart.setBackgroundPaint(new java.awt.Color(221,221,221));
 	
+	// Impstazioni plotting
 	CategoryPlot plot = (CategoryPlot) chart.getPlot();
 	plot.setBackgroundPaint(Color.lightGray);
 	plot.setRangeGridlinePaint(Color.white);
 
+	// Estrazione della soglia dal DB
+	query = "SELECT * FROM soglie_estr";
+	sqlResult = sqlStatement.executeQuery(query);
+	sqlResult.next();
+	int thresh_value = sqlResult.getInt("press_estr");
 
+	// Aggiunta della soglia sul grafico
+	ValueMarker thresh_marker = new ValueMarker(thresh_value);
+	thresh_marker.setPaint(Color.black);
+	plot.addRangeMarker(thresh_marker, Layer.BACKGROUND);
+	
 	// Impostazioni degli assi
 	NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
 	rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
@@ -86,6 +93,10 @@
 	renderer.setUseFillPaint(true);
 	renderer.setFillPaint(Color.white);
 
+	// Chiudi le connsessioni col DB
+	sqlResult.close();
+	sqlStatement.close();
+	conn.close();
 
     // Crea lo stream in output
     response.setContentType("image/png");

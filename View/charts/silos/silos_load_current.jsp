@@ -39,10 +39,6 @@
 		cur_date = sqlResult.getString("data");
 	}
 
-	sqlResult.close();
-	sqlStatement.close();
-	conn.close();
-
 	DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 	dataset.setValue(Double.parseDouble(cur_load), "", "");
 
@@ -62,6 +58,11 @@
 	NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
 	rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
 	rangeAxis.setRange(0,1000);
+	
+	// Chiudi le connsessioni col DB
+	sqlResult.close();
+	sqlStatement.close();
+	conn.close();
 	
 	//CREATE OUTPUT STREAM.
 	response.setContentType("image/png");

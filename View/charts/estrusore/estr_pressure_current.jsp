@@ -37,10 +37,6 @@
 		currentDate = sqlResult.getString("data");
 	}
 
-	sqlResult.close();
-	sqlStatement.close();
-	conn.close();
-
 	DefaultValueDataset dataset = new DefaultValueDataset(Double.parseDouble(currentPressure));
 	
 	// create the chart...
@@ -73,6 +69,11 @@
     JFreeChart chart = new JFreeChart("Estrusore: pressione rilevata", JFreeChart.DEFAULT_TITLE_FONT, plot, false);
     chart.setBackgroundPaint(new java.awt.Color(221,221,221));
 
+	// Chiudi le connsessioni col DB
+	sqlResult.close();
+	sqlStatement.close();
+	conn.close();
+	
 	//CREATE OUTPUT STREAM.
 	response.setContentType("image/png");
 	ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,340,340);
