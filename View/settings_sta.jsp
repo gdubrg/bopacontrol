@@ -1,5 +1,5 @@
 <html>
-<title>Impostazioni Macchina Estrusione</title>
+<title>Impostazioni Stampo</title>
 <%@page language="java"%>
 <%@ page import="java.sql.DriverManager" %> 
 <%@ page import="java.sql.Statement" %> 
@@ -15,7 +15,7 @@ String s33 = (String)session.getAttribute("s33");
  %>
 
 <div id="pnlTop">
-<h1>Impostazioni Macchina Stampa</h1>
+<h1>Impostazioni Stampo</h1>
 </div>
 
 <div id="pnlOnlyCenter">

@@ -1,5 +1,5 @@
 <html>
-<title>Impostazioni Macchina Stampa</title>
+<title>Impostazioni Stampo</title>
 <%@page language="java"%>
 <%@ page import="java.sql.DriverManager" %> 
 <%@ page import="java.sql.Statement" %> 

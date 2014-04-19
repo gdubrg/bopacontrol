@@ -27,7 +27,7 @@
 	
 	response.setIntHeader("Refresh", 3);
 	
-	// QQuery al DB per ottenere le ultime temperature rilevate nel silos
+	// Query al DB per ottenere le ultime temperature rilevate nel silos
 	ArrayList<String> temperatures = new ArrayList<String>();
 	ArrayList<String> dates = new ArrayList<String>();
 	
@@ -44,8 +44,6 @@
 		temperatures.add(sqlResult.getString("temperatura"));
 		dates.add(sqlResult.getString("data"));
 	}
-
-
 
 	// Popola il dataset
     DefaultCategoryDataset dataset = new DefaultCategoryDataset();
@@ -64,7 +62,6 @@
 		true, // tooltips
 		false // urls
 	);
-
 	chart.setBackgroundPaint(new java.awt.Color(221,221,221));
 	
 	// Impostazioni plotting

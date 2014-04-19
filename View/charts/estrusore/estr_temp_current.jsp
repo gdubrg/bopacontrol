@@ -1,26 +1,27 @@
 <%@ page language = "java" %>
 
+// Import per jfreechart
 <%@ page import ="org.jfree.chart.ChartPanel" %>
 <%@ page import ="org.jfree.chart.JFreeChart" %>
 <%@ page import ="org.jfree.chart.plot.ThermometerPlot" %>
 <%@ page import ="org.jfree.data.general.DefaultValueDataset" %>
 <%@ page import ="org.jfree.ui.ApplicationFrame" %>
-<%@ page import ="org.jfree.ui.RectangleInsets" %>
 <%@ page import ="java.awt.BasicStroke" %>
 <%@ page import ="java.awt.Color" %>
 <%@ page import="org.jfree.chart.ChartUtilities"%>
 
-// import per DB
+// Import per DB
 <%@ page import="java.sql.DriverManager" %> 
 <%@ page import="java.sql.Statement" %> 
 <%@ page import="java.sql.ResultSet" %> 
 <%@ page import="java.sql.Date" %>
 
 <%
-
+	
+	// Refresh della pagina
 	response.setIntHeader("Refresh", 3);
 	
-	// QUERY
+	// Query al DB
 	String cur_temp = new String();
 	String cur_date = new String();
 	
@@ -39,32 +40,44 @@
 		cur_date = sqlResult.getString("data");
 	}
 
-	sqlResult.close();
-	sqlStatement.close();
-	conn.close();
+	// Estrazione della soglia dal DB
+	query = "SELECT * FROM soglie_estr";
+	sqlResult = sqlStatement.executeQuery(query);
+	sqlResult.next();
+	int thresh_val = sqlResult.getInt("temp_estr");
 
 	DefaultValueDataset dataset = new DefaultValueDataset(Double.parseDouble(cur_temp));
 
-	// create the chart...
+	// Creazione del grafico
 	final ThermometerPlot plot = new ThermometerPlot(dataset);
 	final JFreeChart chart = new JFreeChart("Estrusore: temperatura rilevata",  // chart title
 									  JFreeChart.DEFAULT_TITLE_FONT,
 									  plot,                 // plot
 									  false);               // include legend
-
+									  
+									  
 	chart.setBackgroundPaint(new java.awt.Color(221,221,221));
 	plot.setThermometerStroke(new BasicStroke(2.0f));
 	plot.setThermometerPaint(new java.awt.Color(0,0,0));
 	plot.setBackgroundPaint(new java.awt.Color(221,221,221));
 	plot.setOutlineVisible(false);
-	plot.setRange(0.0, 700);
+	
+	// Crea i livelli minimi e massimi del termostato
+	int max_level = thresh_val + 100;
+	int min_level = 0;
+	int margin = (int)(max_level/10);
+	plot.setRange(min_level, max_level);
 
-	plot.setSubrange(ThermometerPlot.NORMAL, 0.0, 400.0);
-	plot.setSubrange(ThermometerPlot.WARNING, 400.0, 600.0);
-	plot.setSubrange(ThermometerPlot.CRITICAL, 600.0, 700.0);
+	plot.setSubrange(ThermometerPlot.NORMAL, min_level, thresh_val-margin);
+	plot.setSubrange(ThermometerPlot.WARNING, thresh_val-margin, thresh_val);
+	plot.setSubrange(ThermometerPlot.CRITICAL, thresh_val, max_level);
         
-
-	//CREATE OUTPUT STREAM.
+	// Chiudi le connsessioni col DB
+	sqlResult.close();
+	sqlStatement.close();
+	conn.close();
+	
+	// Crea lo stream di output
 	response.setContentType("image/png");
 	ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,340,340);
     
