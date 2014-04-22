@@ -10,7 +10,7 @@
 
 <div id="infoSisSx">
     <h2>Stato del sistema:</h2>
-    <iframe src="../../View/status_system.jsp" frameborder="0" scrolling="No" height="50">
+    <iframe src="../../View/status_system.jsp" frameborder="0" scrolling="No" height="50";>
     </iframe>
     <form method="post">
     <button type="submit" class="btn btn-primary btn-lg btn-success" onclick="window.open('', 'Start', 'width=400, height=200, left=screen.width/2, resizable=no, status, scrollbars=1, location=no');">START</button>

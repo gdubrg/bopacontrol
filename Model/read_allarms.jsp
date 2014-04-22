@@ -9,11 +9,11 @@
   <link rel="stylesheet" href="../View/bootstrap/css/bootstrap.css">
   <link href="../View/bootstrap/css/stili-custom.css" rel="stylesheet" media="screen">
   <link rel="stylesheet" href="../View/style.css">
-<title>JDBC test with Connector/J</title>
+<title>Allarmi</title>
 
 <%
-String macc ="";
-String descr="";
+String[] macc = new String[3];
+String[] descr= new String[3];
 String date="";
 
 response.setIntHeader("Refresh", 3);
@@ -26,16 +26,48 @@ Statement sqlStatement = conn.createStatement();
 String query = "SELECT * FROM allarmi ORDER BY data DESC LIMIT 0,3";
 
 ResultSet sqlResult = sqlStatement.executeQuery(query);
+int i = 0;
 while(sqlResult.next()) {
-    macc = sqlResult.getString("macchina");
-    descr = sqlResult.getString("descr");
+    macc[i] = sqlResult.getString("macchina");
+    descr[i] = sqlResult.getString("descr");
     date = sqlResult.getString("data");
+    i = i+1;
     }
 sqlResult.close(); sqlStatement.close(); conn.close();
 %>
 
+<%
+String alrm11="";
+String alrm12="";
+String alrm13="";
+
+
+
+if(session.getAttribute("alrm11")=="1")
+	alrm11 = "Temp";
+else
+	alrm11 = "";
+	
+if(session.getAttribute("alrm12")=="1")
+	alrm12 = "Carico";
+else
+	alrm12 = "";
+
+if(session.getAttribute("alrm13")=="1")
+	alrm13 = "Pot";
+else
+	alrm13 = "";
+
+if(session.getAttribute("alrm11")=="1" || session.getAttribute("alrm12")=="1" || session.getAttribute("alrm13")=="1")
+	out.println("<div class=\"alert alert-danger\">Allerta Silos:"+alrm11+" "+alrm12+" "+alrm13+"</div>");
+
+out.println("<background-color: \"#ff4444\">");
+%>
 </head>
-<body>
+<BODY STYLE="background-color:#DDDDDD">
+
+
+<!--
 <div id="tab">
 <table class="table">
 <tbody>
@@ -47,21 +79,21 @@ sqlResult.close(); sqlStatement.close(); conn.close();
     </thead>
     <tbody>
     <tr>
-      <td><%=macc%></td>
-      <td><%=descr%></td>
+      <td><%=macc[0]%></td>
+      <td><%=descr[0]%></td>
     </tr>
     <tr>
-       <td>001</td>
-      <td>temp max</td>
+       <td><%=macc[1]%></td>
+      <td><%=descr[1]%></td>
     </tr>
     <tr>
-       <td>001</td>
-      <td>temp max</td>
+       <td><%=macc[2]%></td>
+      <td><%=descr[2]%></td>
     </tr>
     </tbody>
 </table>
 </div>
-
+-->
 
 </body>
 </html>

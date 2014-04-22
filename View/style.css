@@ -143,3 +143,7 @@ body{
 	width: 300px;
 	height: 50;
 }
+
+.alert-danger{
+	width: 300px;
+}

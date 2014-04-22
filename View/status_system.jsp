@@ -14,7 +14,7 @@
   <script src="bootstrap/js/bootstrap-min.js"></script>
  </head>
 
-<body>
+<BODY STYLE="background-color:#DDDDDD">
 <div class="alert alert-success">Nessun problema rilevato</div>
 </body>
 

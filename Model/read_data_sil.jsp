@@ -62,7 +62,7 @@ int soglia = 0;
 valore = Integer.parseInt(temp);
 soglia = Integer.parseInt(soglia11);
 if(valore>soglia){
-	session.setAttribute("alrm", 1);
+	session.setAttribute("alrm11", "1");
 	Class.forName("com.mysql.jdbc.Driver").newInstance();
 	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 	sqlStatement = conn.createStatement();
@@ -71,13 +71,13 @@ if(valore>soglia){
 	sqlResult.close(); sqlStatement.close(); conn.close();
 }
 else
-	session.setAttribute("alrm", 0);
+	session.setAttribute("alrm11", "0");
 	
 //Controllo carico
 valore = Integer.parseInt(car);
 soglia = Integer.parseInt(soglia12);
 if(valore>soglia){
-	session.setAttribute("alrm", 1);
+	session.setAttribute("alrm12", "1");
 	Class.forName("com.mysql.jdbc.Driver").newInstance();
 	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 	sqlStatement = conn.createStatement();
@@ -86,13 +86,13 @@ if(valore>soglia){
 	sqlResult.close(); sqlStatement.close(); conn.close();
 }
 else
-	session.setAttribute("alrm", 0);	
+	session.setAttribute("alrm12", "0");	
 	
 //Controllo potenza
 valore = Integer.parseInt(ener);
 soglia = Integer.parseInt(soglia13);
 if(valore>soglia){
-	session.setAttribute("alrm", 1);
+	session.setAttribute("alrm13", "1");
 	Class.forName("com.mysql.jdbc.Driver").newInstance();
 	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 	sqlStatement = conn.createStatement();
@@ -101,7 +101,7 @@ if(valore>soglia){
 	sqlResult.close(); sqlStatement.close(); conn.close();
 }
 else
-	session.setAttribute("alrm", 0);
+	session.setAttribute("alrm13", "0");
 	
 
 
