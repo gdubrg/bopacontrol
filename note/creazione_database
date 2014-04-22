@@ -26,6 +26,11 @@ create table soglie_estr(temp_estr varchar(20),press_estr varchar(20),ene_estr v
 
 create table soglie_sta(temp_sta varchar(20),press_sta varchar(20),ene_sta varchar(20));
 
+TABELLE ALLARMI:
+create table allarmi(macchina varchar(20),descr varchar(30),data timestamp);
+INSERT INTO allarmi (macchina, descr, data) VALUES ("Silos", "Temp Max", CURRENT_TIMESTAMP)";
+ALTER TABLE allarmi modify descr varchar(30);
+
 
 Valori soglie:
 

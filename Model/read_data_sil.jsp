@@ -54,6 +54,57 @@ session.setAttribute("s13", soglia13);
 
 sqlResult.close(); sqlStatement.close(); conn.close();
 
+//Parte di controllo delle soglie
+int valore = 0;
+int soglia = 0;
+
+//Controllo temperatura
+valore = Integer.parseInt(temp);
+soglia = Integer.parseInt(soglia11);
+if(valore>soglia){
+	session.setAttribute("alrm", 1);
+	Class.forName("com.mysql.jdbc.Driver").newInstance();
+	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
+	sqlStatement = conn.createStatement();
+	String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Silos', 'Temp max raggiunta', CURRENT_TIMESTAMP)";
+	sqlStatement.executeUpdate(ins);
+	sqlResult.close(); sqlStatement.close(); conn.close();
+}
+else
+	session.setAttribute("alrm", 0);
+	
+//Controllo carico
+valore = Integer.parseInt(car);
+soglia = Integer.parseInt(soglia12);
+if(valore>soglia){
+	session.setAttribute("alrm", 1);
+	Class.forName("com.mysql.jdbc.Driver").newInstance();
+	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
+	sqlStatement = conn.createStatement();
+	String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Silos', 'Carico max raggiunto', CURRENT_TIMESTAMP)";
+	sqlStatement.executeUpdate(ins);
+	sqlResult.close(); sqlStatement.close(); conn.close();
+}
+else
+	session.setAttribute("alrm", 0);	
+	
+//Controllo potenza
+valore = Integer.parseInt(ener);
+soglia = Integer.parseInt(soglia13);
+if(valore>soglia){
+	session.setAttribute("alrm", 1);
+	Class.forName("com.mysql.jdbc.Driver").newInstance();
+	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
+	sqlStatement = conn.createStatement();
+	String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Silos', 'Pot max raggiunta', CURRENT_TIMESTAMP)";
+	sqlStatement.executeUpdate(ins);
+	sqlResult.close(); sqlStatement.close(); conn.close();
+}
+else
+	session.setAttribute("alrm", 0);
+	
+
+
 %>
 </head>
 <body>

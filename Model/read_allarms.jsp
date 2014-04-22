@@ -12,6 +12,26 @@
 <title>JDBC test with Connector/J</title>
 
 <%
+String macc ="";
+String descr="";
+String date="";
+
+response.setIntHeader("Refresh", 3);
+
+Class.forName("com.mysql.jdbc.Driver").newInstance();
+java.sql.Connection conn;
+conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
+Statement sqlStatement = conn.createStatement();
+
+String query = "SELECT * FROM allarmi ORDER BY data DESC LIMIT 0,3";
+
+ResultSet sqlResult = sqlStatement.executeQuery(query);
+while(sqlResult.next()) {
+    macc = sqlResult.getString("macchina");
+    descr = sqlResult.getString("descr");
+    date = sqlResult.getString("data");
+    }
+sqlResult.close(); sqlStatement.close(); conn.close();
 %>
 
 </head>
@@ -21,26 +41,22 @@
 <tbody>
     <thead>
     <tr>
-      <th>ID allarme</th>
+      <th>Macchina</th>
       <th>Problema</th>
-      <th>Data</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>001</td>
-      <td>temp max</td>
-      <td>12-12-2003</td>
+      <td><%=macc%></td>
+      <td><%=descr%></td>
     </tr>
     <tr>
        <td>001</td>
       <td>temp max</td>
-      <td>12-12-2003</td>
     </tr>
     <tr>
        <td>001</td>
       <td>temp max</td>
-      <td>12-12-2003</td>
     </tr>
     </tbody>
 </table>
