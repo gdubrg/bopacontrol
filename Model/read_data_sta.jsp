@@ -53,8 +53,56 @@ session.setAttribute("s31", soglia31);
 session.setAttribute("s32", soglia32);
 session.setAttribute("s33", soglia33);   
 
-
 sqlResult.close(); sqlStatement.close(); conn.close();
+
+//Parte di controllo delle soglie
+int valore = 0;
+int soglia = 0;
+
+//Controllo temperatura
+valore = Integer.parseInt(temp);
+soglia = Integer.parseInt(soglia31);
+if(valore>soglia){
+	session.setAttribute("alrm31", "1");
+	Class.forName("com.mysql.jdbc.Driver").newInstance();
+	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
+	sqlStatement = conn.createStatement();
+	String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Stampo', 'Temp max raggiunta', CURRENT_TIMESTAMP)";
+	sqlStatement.executeUpdate(ins);
+	sqlResult.close(); sqlStatement.close(); conn.close();
+}
+else
+	session.setAttribute("alrm31", "0");
+	
+//Controllo pressione
+valore = Integer.parseInt(press);
+soglia = Integer.parseInt(soglia32);
+if(valore>soglia){
+	session.setAttribute("alrm32", "1");
+	Class.forName("com.mysql.jdbc.Driver").newInstance();
+	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
+	sqlStatement = conn.createStatement();
+	String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Stampo', 'Pressione max raggiunta', CURRENT_TIMESTAMP)";
+	sqlStatement.executeUpdate(ins);
+	sqlResult.close(); sqlStatement.close(); conn.close();
+}
+else
+	session.setAttribute("alrm32", "0");	
+	
+//Controllo potenza
+valore = Integer.parseInt(ener);
+soglia = Integer.parseInt(soglia33);
+if(valore>soglia){
+	session.setAttribute("alrm33", "1");
+	Class.forName("com.mysql.jdbc.Driver").newInstance();
+	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
+	sqlStatement = conn.createStatement();
+	String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Stampo', 'Pot max raggiunta', CURRENT_TIMESTAMP)";
+	sqlStatement.executeUpdate(ins);
+	sqlResult.close(); sqlStatement.close(); conn.close();
+}
+else
+	session.setAttribute("alrm33", "0");
 
 %>
 </head>

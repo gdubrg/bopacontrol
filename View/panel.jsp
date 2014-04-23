@@ -28,7 +28,7 @@
     </div>
     <div id="alrm">
         <h2>Allarmi</h2>
-        <iframe src="../../Model/read_allarms.jsp" frameborder="0" scrolling="No" height="150">
+        <iframe src="../../Model/read_allarms.jsp" frameborder="0" scrolling="No" height="150" width="320">
         </iframe>
     </div>
 </div>

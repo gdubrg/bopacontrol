@@ -40,11 +40,16 @@ sqlResult.close(); sqlStatement.close(); conn.close();
 String alrm11="";
 String alrm12="";
 String alrm13="";
+String alrm21="";
+String alrm22="";
+String alrm23="";
+String alrm31="";
+String alrm32="";
+String alrm33="";
 
-
-
+//Controllo soglie Silos
 if(session.getAttribute("alrm11")=="1")
-	alrm11 = "Temp";
+	alrm11 = "Temperatura";
 else
 	alrm11 = "";
 	
@@ -54,46 +59,52 @@ else
 	alrm12 = "";
 
 if(session.getAttribute("alrm13")=="1")
-	alrm13 = "Pot";
+	alrm13 = "Potenza";
 else
 	alrm13 = "";
 
 if(session.getAttribute("alrm11")=="1" || session.getAttribute("alrm12")=="1" || session.getAttribute("alrm13")=="1")
-	out.println("<div class=\"alert alert-danger\">Allerta Silos:"+alrm11+" "+alrm12+" "+alrm13+"</div>");
+	out.println("<div class=\"alert alert-danger\"><b>(!) Silos</b>: "+alrm11+" "+alrm12+" "+alrm13+"</div>");
 
-out.println("<background-color: \"#ff4444\">");
+//Controllo soglie Macchina Estrusione
+if(session.getAttribute("alrm21")=="1")
+	alrm21 = "Temperatura";
+else
+	alrm21 = "";
+	
+if(session.getAttribute("alrm22")=="1")
+	alrm22 = "Pressione";
+else
+	alrm22 = "";
+
+if(session.getAttribute("alrm23")=="1")
+	alrm23 = "Potenza";
+else
+	alrm23 = "";
+
+if(session.getAttribute("alrm21")=="1" || session.getAttribute("alrm22")=="1" || session.getAttribute("alrm23")=="1")
+	out.println("<div class=\"alert alert-danger\"><b>(!) Estrusore</b>: "+alrm21+" "+alrm22+" "+alrm23+"</div>");
+	
+//Controllo soglie Macchina Stampo
+if(session.getAttribute("alrm31")=="1")
+	alrm31 = "Temperatura";
+else
+	alrm31 = "";
+	
+if(session.getAttribute("alrm32")=="1")
+	alrm32 = "Pressione";
+else
+	alrm32 = "";
+
+if(session.getAttribute("alrm33")=="1")
+	alrm33 = "Potenza";
+else
+	alrm33 = "";
+
+if(session.getAttribute("alrm31")=="1" || session.getAttribute("alrm32")=="1" || session.getAttribute("alrm33")=="1")
+	out.println("<div class=\"alert alert-danger\"><b>(!) Stampo</b>: "+alrm31+" "+alrm32+" "+alrm33+"</div>");
 %>
 </head>
 <BODY STYLE="background-color:#DDDDDD">
-
-
-<!--
-<div id="tab">
-<table class="table">
-<tbody>
-    <thead>
-    <tr>
-      <th>Macchina</th>
-      <th>Problema</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td><%=macc[0]%></td>
-      <td><%=descr[0]%></td>
-    </tr>
-    <tr>
-       <td><%=macc[1]%></td>
-      <td><%=descr[1]%></td>
-    </tr>
-    <tr>
-       <td><%=macc[2]%></td>
-      <td><%=descr[2]%></td>
-    </tr>
-    </tbody>
-</table>
-</div>
--->
-
 </body>
 </html>
