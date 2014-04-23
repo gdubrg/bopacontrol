@@ -118,7 +118,7 @@ else
     </thead>
     <tbody>
     <tr>
-      <td>Temperatura [K]</td>
+      <td>Temperatura [°C]</td>
       <td><%=temp%></td>
       <td><%=soglia21%></td>
     </tr>
@@ -128,7 +128,7 @@ else
       <td><%=soglia22%></td>
     </tr>
     <tr>
-      <td>Potenza [KW]</td>
+      <td>Potenza [kW]</td>
       <td><%=ener%></td>
       <td><%=soglia23%></td>
     </tr>

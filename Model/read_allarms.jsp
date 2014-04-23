@@ -12,31 +12,6 @@
 <title>Allarmi</title>
 
 <%
-String[] macc = new String[3];
-String[] descr= new String[3];
-String date="";
-
-response.setIntHeader("Refresh", 3);
-
-Class.forName("com.mysql.jdbc.Driver").newInstance();
-java.sql.Connection conn;
-conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
-Statement sqlStatement = conn.createStatement();
-
-String query = "SELECT * FROM allarmi ORDER BY data DESC LIMIT 0,3";
-
-ResultSet sqlResult = sqlStatement.executeQuery(query);
-int i = 0;
-while(sqlResult.next()) {
-    macc[i] = sqlResult.getString("macchina");
-    descr[i] = sqlResult.getString("descr");
-    date = sqlResult.getString("data");
-    i = i+1;
-    }
-sqlResult.close(); sqlStatement.close(); conn.close();
-%>
-
-<%
 String alrm11="";
 String alrm12="";
 String alrm13="";

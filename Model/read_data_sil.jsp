@@ -120,7 +120,7 @@ else
     </thead>
     <tbody>
     <tr>
-      <td>Temperatura [K]</td>
+      <td>Temperatura [°C]</td>
       <td><%=temp%></td>
       <td><%=soglia11%></td>
     </tr>

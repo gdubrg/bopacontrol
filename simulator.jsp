@@ -27,7 +27,7 @@ sqlStatement.executeUpdate(ins);
 ins = "INSERT INTO estrusione (temperatura, pressione, energia, data) VALUES (FLOOR(273+RAND()*(10-1)), FLOOR(1200+RAND()*(10-1)), FLOOR(7+RAND()*(10-1)), CURRENT_TIMESTAMP)";
 sqlStatement.executeUpdate(ins);
 
-ins = "INSERT INTO stampo (temperatura, pressione, energia, data) VALUES (FLOOR(150+RAND()*(10-1)), FLOOR(800+RAND()*(5-3)), FLOOR(5+RAND()*(10-1)), CURRENT_TIMESTAMP)";
+ins = "INSERT INTO stampo (temperatura, pressione, energia, data) VALUES (FLOOR(150+RAND()*(10-1)), FLOOR(300+RAND()*(8-3)), FLOOR(5+RAND()*(10-1)), CURRENT_TIMESTAMP)";
 sqlStatement.executeUpdate(ins);
 
 

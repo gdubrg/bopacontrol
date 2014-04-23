@@ -1,21 +1,17 @@
 <html>
-<head>
-  <meta charset="utf-8">
-
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Fogli di stile -->
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-  <link href="bootstrap/css/stili-custom.css" rel="stylesheet" media="screen">
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Modernizr -->
-  <script src="bootstrap/js/bootstrap-min.js"></script>
- </head>
+<%@ include file="lib.jsp" %>
 
 <BODY STYLE="background-color:#DDDDDD">
-<div class="alert alert-success">Nessun problema rilevato</div>
+
+<%
+if(session.getAttribute("alrm11")=="1" || session.getAttribute("alrm12")=="1" || session.getAttribute("alrm13")=="1" ||
+	session.getAttribute("alrm21")=="1" || session.getAttribute("alrm22")=="1" || session.getAttribute("alrm23")=="1"||
+	session.getAttribute("alrm31")=="1" || session.getAttribute("alrm32")=="1" || session.getAttribute("alrm33")=="1"){
+		out.println("<div class=\"alert alert-danger\">Warning! Sono presenti degli allarmi</div>");
+	}
+else
+	out.println("<div class=\"alert alert-success\">Non sono stati riscontrati problemi</div>");
+%>
 </body>
 
 </html>
