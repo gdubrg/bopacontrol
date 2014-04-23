@@ -40,11 +40,8 @@
 		cur_date = sqlResult.getString("data");
 	}
 
-	// Estrazione della soglia dal DB
-	query = "SELECT * FROM soglie_sta";
-	sqlResult = sqlStatement.executeQuery(query);
-	sqlResult.next();
-	int thresh_val = sqlResult.getInt("temp_sta");
+	// Estrazione soglia dalle variabili d'ambiente
+	int thresh_value = Integer.parseInt((String)session.getAttribute("s31"));
 
 	DefaultValueDataset dataset = new DefaultValueDataset(Double.parseDouble(cur_temp));
 
@@ -63,14 +60,14 @@
 	plot.setOutlineVisible(false);
 	
 	// Crea i livelli minimi e massimi del termostato
-	int max_level = thresh_val + 100;
+	int max_level = thresh_value + 100;
 	int min_level = 0;
 	int margin = (int)(max_level/10);
 	plot.setRange(min_level, max_level);
 
-	plot.setSubrange(ThermometerPlot.NORMAL, min_level, thresh_val-margin);
-	plot.setSubrange(ThermometerPlot.WARNING, thresh_val-margin, thresh_val);
-	plot.setSubrange(ThermometerPlot.CRITICAL, thresh_val, max_level);
+	plot.setSubrange(ThermometerPlot.NORMAL, min_level, thresh_value-margin);
+	plot.setSubrange(ThermometerPlot.WARNING, thresh_value-margin, thresh_value);
+	plot.setSubrange(ThermometerPlot.CRITICAL, thresh_value, max_level);
         
 	// Chiudi le connsessioni col DB
 	sqlResult.close();

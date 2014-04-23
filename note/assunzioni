@@ -1,0 +1,31 @@
+ASSUNZIONI
+
+SILOS:
+	Temp:
+	
+	Carico:
+			Massimo carico istantaneo possibile: 1000	kG.
+	Potenza:
+			Massima potenza istantanea possibile: 20	kW.
+			
+ESTRUSORE:
+	Temp:
+			Minima temperatura istantanea possibile:  100 C.
+			Massima temperatura istantanea possibile: 700 C.
+	
+	Press:
+			Minima pressione istantanea possibile: 800 	bar.
+			Massima pressione istantanea possibile:1500 bar.
+	
+	Potenza:
+			Massima potenza istantanea possibile: 20	kW.
+			
+STAMPO:
+	Temp:
+			Minima temperatura istantanea possibile:	0 C.
+			Massima temperatura istantanea possibile: 600 C.
+	Press:
+			Minima pressione istantanea possibile:  0 	bar.
+			Massima pressione istantanea possibile: 500 bar.
+	Potenza:
+			Massima potenza istantanea possibile: 20	kW.

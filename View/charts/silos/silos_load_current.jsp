@@ -1,5 +1,7 @@
 <%@ page language = "java" %>
 
+// import per JFreeChart
+<%@ page import = "java.awt.*" %>
 <%@ page import = "org.jfree.chart.*" %>
 <%@ page import = "org.jfree.data.category.*" %>
 <%@ page import = "org.jfree.data.general.DefaultPieDataset" %>
@@ -8,7 +10,9 @@
 <%@ page import = "org.jfree.chart.renderer.category.*" %>
 <%@ page import = "org.jfree.chart.plot.*" %>
 <%@ page import = "org.jfree.chart.axis.NumberAxis" %>
-<%@ page import = "java.awt.*" %>
+<%@ page import = "org.jfree.chart.plot.ValueMarker" %>
+<%@ page import = "org.jfree.ui.Layer" %>
+
 
 // import per DB
 <%@ page import="java.sql.DriverManager" %> 
@@ -50,6 +54,14 @@
 	chart.setBackgroundPaint(new java.awt.Color(221,221,221));
 	CategoryPlot plot = chart.getCategoryPlot(); 
 	
+	// Estrazione soglia dalle variabili d'ambiente
+	int thresh_value = Integer.parseInt((String)session.getAttribute("s12"));
+	
+	// Aggiunta della soglia sul grafico
+	ValueMarker thresh_marker = new ValueMarker(thresh_value);
+	thresh_marker.setPaint(Color.black);
+	plot.addRangeMarker(thresh_marker, Layer.BACKGROUND);
+	
 	// Rendering
 	BarRenderer barRenderer = (BarRenderer)plot.getRenderer();
 	barRenderer.setSeriesPaint(0, Color.yellow);
@@ -59,7 +71,7 @@
 	rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
 	rangeAxis.setRange(0,1000);
 	
-	// Chiudi le connsessioni col DB
+	// Chiudi le connessioni col DB
 	sqlResult.close();
 	sqlStatement.close();
 	conn.close();

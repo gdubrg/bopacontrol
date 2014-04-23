@@ -1,4 +1,6 @@
 <%@ page language = "java" %>
+
+// import per jfreechart
 <%@ page import ="org.jfree.chart.ChartPanel" %>
 <%@ page import ="org.jfree.chart.JFreeChart" %>
 <%@ page import ="org.jfree.chart.plot.ThermometerPlot" %>
@@ -8,6 +10,7 @@
 <%@ page import ="java.awt.Color" %>
 <%@ page import="org.jfree.chart.ChartUtilities"%>
 <%@ page import="org.jfree.chart.plot.dial.*" %>
+
 // import per DB
 <%@ page import="java.sql.DriverManager" %> 
 <%@ page import="java.sql.Statement" %> 
@@ -42,14 +45,17 @@
 	// create the chart...
 	DialPlot plot = new DialPlot(dataset);
 	
+	// Estrazione della soglia dalle variabili d'ambiente
+	int thresh_value = Integer.parseInt((String)session.getAttribute("s22"));
+	
 	// Valori del manometro
     int minimumValue = 0, maximumValue = 1500;
     int majorTicks = 250;
     int minTicks_beween_majorTicks = 10;
     
 	// Evidenzia la zona di pericolo
-    int yellowLine = 900;
-    int redLine = 1200;
+    int yellowLine = thresh_value-100;
+    int redLine = thresh_value;
     
     plot.addLayer(new StandardDialRange(minimumValue, yellowLine, Color.green));
 	plot.addLayer(new StandardDialRange(yellowLine, redLine, Color.yellow));
@@ -57,14 +63,12 @@
 	
     plot.setDialFrame(new StandardDialFrame());
     plot.addLayer(new DialValueIndicator(0));
-    plot.addLayer(new DialPointer.Pointer());
-    
+    plot.addLayer(new DialPointer.Pointer());    
 
 	StandardDialScale scale = new StandardDialScale(minimumValue, maximumValue,-120, -300, majorTicks, minTicks_beween_majorTicks-1);
     scale.setTickRadius(0.88);
     scale.setTickLabelOffset(0.20);
     plot.addScale(0, scale);	
-    
     
     JFreeChart chart = new JFreeChart("Estrusore: pressione rilevata", JFreeChart.DEFAULT_TITLE_FONT, plot, false);
     chart.setBackgroundPaint(new java.awt.Color(221,221,221));

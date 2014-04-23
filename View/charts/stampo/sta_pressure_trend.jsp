@@ -70,11 +70,8 @@
 	plot.setBackgroundPaint(Color.lightGray);
 	plot.setRangeGridlinePaint(Color.white);
 
-	// Estrazione della soglia dal DB
-	query = "SELECT * FROM soglie_sta";
-	sqlResult = sqlStatement.executeQuery(query);
-	sqlResult.next();
-	int thresh_value = sqlResult.getInt("press_sta");
+	// Estrazione soglia dalle variabili d'ambiente
+	int thresh_value = Integer.parseInt((String)session.getAttribute("s32"));
 
 	// Aggiunta della soglia sul grafico
 	ValueMarker thresh_marker = new ValueMarker(thresh_value);
@@ -84,7 +81,7 @@
 	// Impostazioni degli assi
 	NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
 	rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
-	rangeAxis.setRange(500,1000);
+	rangeAxis.setRange(0,500);
 
 	// Impostazioni di rendering
 	LineAndShapeRenderer renderer	= (LineAndShapeRenderer) plot.getRenderer();
@@ -93,7 +90,7 @@
 	renderer.setUseFillPaint(true);
 	renderer.setFillPaint(Color.white);
 
-	// Chiudi le connsessioni col DB
+	// Chiudi le connessioni col DB
 	sqlResult.close();
 	sqlStatement.close();
 	conn.close();

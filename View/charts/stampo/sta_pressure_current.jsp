@@ -39,17 +39,20 @@
 
 	DefaultValueDataset dataset = new DefaultValueDataset(Double.parseDouble(currentPressure));
 	
+	// Estrazione soglia dalle variabili d'ambiente
+	int thresh_value = Integer.parseInt((String)session.getAttribute("s32"));
+	
 	// create the chart...
 	DialPlot plot = new DialPlot(dataset);
 	
 	// Valori del manometro
-    int minimumValue = 0, maximumValue = 1000;
+    int minimumValue = 0, maximumValue = 500;
     int majorTicks = 100;
     int minTicks_beween_majorTicks = 10;
     
 	// Evidenzia la zona di pericolo
-    int yellowLine = 700;
-    int redLine = 800;
+    int yellowLine = thresh_value-80;
+    int redLine = thresh_value;
     
     plot.addLayer(new StandardDialRange(minimumValue, yellowLine, Color.green));
 	plot.addLayer(new StandardDialRange(yellowLine, redLine, Color.yellow));
@@ -65,11 +68,10 @@
     scale.setTickLabelOffset(0.20);
     plot.addScale(0, scale);	
     
-    
     JFreeChart chart = new JFreeChart("Pressione rilevata", JFreeChart.DEFAULT_TITLE_FONT, plot, false);
     chart.setBackgroundPaint(new java.awt.Color(221,221,221));
     
-    // Chiudi le connsessioni col DB
+    // Chiudi le connessioni col DB
 	sqlResult.close();
 	sqlStatement.close();
 	conn.close();

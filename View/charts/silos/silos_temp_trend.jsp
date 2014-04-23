@@ -69,11 +69,8 @@
 	plot.setBackgroundPaint(Color.lightGray);
 	plot.setRangeGridlinePaint(Color.white);
 	
-	// Estrazione della soglia dal DB
-	query = "SELECT * FROM soglie_silos";
-	sqlResult = sqlStatement.executeQuery(query);
-	sqlResult.next();
-	int thresh_value = sqlResult.getInt("temp_sil");
+	// Estrazione soglia dalle variabili d'ambiente
+	int thresh_value = Integer.parseInt((String)session.getAttribute("s11"));
 
 	// Aggiunta della soglia sul grafico
 	ValueMarker thresh_marker = new ValueMarker(thresh_value);
@@ -92,7 +89,7 @@
 	renderer.setUseFillPaint(true);
 	renderer.setFillPaint(Color.white);
 
-	// Chiudi le connsessioni col DB
+	// Chiudi le connessioni col DB
 	sqlResult.close();
 	sqlStatement.close();
 	conn.close();
