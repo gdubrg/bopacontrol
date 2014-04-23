@@ -4,12 +4,12 @@
 <%@ page import="java.sql.Statement" %> 
 <%@ page import="java.sql.ResultSet" %> 
 <%@ page import="java.sql.Date" %>
-<head> 
+
   <!-- Fogli di stile -->
   <link rel="stylesheet" href="../View/bootstrap/css/bootstrap.css">
   <link href="../View/bootstrap/css/stili-custom.css" rel="stylesheet" media="screen">
   <link rel="stylesheet" href="../View/style.css">
-<title>JDBC test with Connector/J</title>
+
 
 <%
 String temp="";
@@ -118,7 +118,7 @@ else
     </thead>
     <tbody>
     <tr>
-      <td>Temperatura [°C]</td>
+      <td>Temperatura [C]</td>
       <td><%=temp%></td>
       <td><%=soglia21%></td>
     </tr>
