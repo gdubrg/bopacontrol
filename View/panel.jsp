@@ -11,14 +11,11 @@
 
 <!--Pannello con lo stato del sistema -->
 <div id="infoSisSx">
+	<h2>Sessione corrente:</h2>
+	Utente: Andrea Palazzi<br>
+	Ultimo accesso: 21/04/2013
     <h2>Stato del sistema:</h2>
     <iframe src="../../View/status_system.jsp" frameborder="0" scrolling="No" height="50" width="320";></iframe>
-    <form method="post">
-    <button type="submit" class="btn btn-primary btn-lg btn-success" onclick="window.open('', 'Start', 'width=400, height=200, left=screen.width/2, resizable=no, status, scrollbars=1, location=no');">START</button>
-    </form>
-    <form method="post">
-    <button type="button" class="btn btn-primary btn-lg btn-danger" onclick="window.open('', 'Stop', 'width=400, height=200, resizable=no, status, scrollbars=1, location');">STOP</button>
-    </form>
 </div>
 
 <!--Pannello con immagine riassuntiva e box allarmi -->

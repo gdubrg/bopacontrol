@@ -66,7 +66,7 @@ if(valore>soglia){
 	Class.forName("com.mysql.jdbc.Driver").newInstance();
 	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 	sqlStatement = conn.createStatement();
-	String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Silos', 'Temp max raggiunta', CURRENT_TIMESTAMP)";
+	String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Silos', 'Temperatura max raggiunta', CURRENT_TIMESTAMP)";
 	sqlStatement.executeUpdate(ins);
 	sqlResult.close(); sqlStatement.close(); conn.close();
 }
@@ -96,7 +96,7 @@ if(valore>soglia){
 	Class.forName("com.mysql.jdbc.Driver").newInstance();
 	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 	sqlStatement = conn.createStatement();
-	String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Silos', 'Pot max raggiunta', CURRENT_TIMESTAMP)";
+	String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Silos', 'Potenza max raggiunta', CURRENT_TIMESTAMP)";
 	sqlStatement.executeUpdate(ins);
 	sqlResult.close(); sqlStatement.close(); conn.close();
 }
