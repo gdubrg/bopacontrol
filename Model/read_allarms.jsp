@@ -12,6 +12,7 @@
 <title>Allarmi</title>
 
 <%
+response.setIntHeader("Refresh", 3);
 String alrm11="";
 String alrm12="";
 String alrm13="";
