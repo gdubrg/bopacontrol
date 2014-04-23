@@ -80,7 +80,7 @@
 	// Impostazioni degli assi
 	NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
 	rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
-	rangeAxis.setRange(10,50);
+	rangeAxis.setRange(0,50);
 
 	// Impostazioni di rendering
 	LineAndShapeRenderer renderer	= (LineAndShapeRenderer) plot.getRenderer();

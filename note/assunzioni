@@ -2,10 +2,14 @@ ASSUNZIONI
 
 SILOS:
 	Temp:
+			Minima temperatura istantanea possibile:  0 C.
+			Massima temperatura istantanea possibile: 50 C.
 	
 	Carico:
+			Minimo carico istantaneo possibile: 0	kG.
 			Massimo carico istantaneo possibile: 1000	kG.
 	Potenza:
+			Minima potenza istantanea possibile: 0	kW.
 			Massima potenza istantanea possibile: 20	kW.
 			
 ESTRUSORE:

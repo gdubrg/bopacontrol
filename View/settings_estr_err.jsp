@@ -20,7 +20,7 @@ String s23 = (String)session.getAttribute("s23");
 </div>
 
 <div id="pnlError">
-    <h2>Errore!<br>Le soglie devono essere valori numerici!</h2>
+    <h2>Errore:<br>Soglia non consentita.</h2>
 </div>
 
 <div id="pnlOnlyCenter">

@@ -8,12 +8,16 @@
  </head>
 
 <%
-//Silos
+
+// --------------- SILOS ----------------
 if(request.getParameter("soglia_temp_silos") != null){
 	int n=0;	
 		try{
 			n = Integer.parseInt(request.getParameter("soglia_temp_silos"));
-			request.getRequestDispatcher("../Model/write_data_sil.jsp").forward(request, response);	
+			if (n < 0 || n > 50) 
+				response.sendRedirect("../View/settings_sil_err.jsp");
+			else
+				request.getRequestDispatcher("../Model/write_data_sil.jsp").forward(request, response);	
 		}
 		catch(Exception ex){
 			response.sendRedirect("../View/settings_sil_err.jsp");
@@ -24,7 +28,10 @@ else if(request.getParameter("soglia_car_silos") != null){
 	int n=0;	
 		try{
 			n = Integer.parseInt(request.getParameter("soglia_car_silos"));
-			request.getRequestDispatcher("../Model/write_data_sil.jsp").forward(request, response);			
+			if (n < 0 || n > 1000) 
+				response.sendRedirect("../View/settings_sil_err.jsp");
+			else
+				request.getRequestDispatcher("../Model/write_data_sil.jsp").forward(request, response);	
 		}
 		catch(Exception ex){
 			response.sendRedirect("../View/settings_sil_err.jsp");
@@ -35,23 +42,27 @@ else if(request.getParameter("soglia_pot_silos") != null){
 	int n=0;	
 		try{
 			n = Integer.parseInt(request.getParameter("soglia_pot_silos"));
-			request.getRequestDispatcher("../Model/write_data_sil.jsp").forward(request, response);			
+			if (n < 0 || n > 20) 
+				response.sendRedirect("../View/settings_sil_err.jsp");
+			else
+				request.getRequestDispatcher("../Model/write_data_sil.jsp").forward(request, response);			
 		}
 		catch(Exception ex){
 			response.sendRedirect("../View/settings_sil_err.jsp");
 		}		
 }
 
-//Estrusione
+//--------------- ESTRUSORE ---------------
 else if(request.getParameter("soglia_temp_estr") != null){
 	int n=0;	
 		try{
 			n = Integer.parseInt(request.getParameter("soglia_temp_estr"));
-			request.getRequestDispatcher("../Model/write_data_estr.jsp").forward(request, response);			
-			//response.sendRedirect("../Model/write_data_sil.jsp");
+			if (n < 100 || n > 700)
+				response.sendRedirect("../View/settings_estr_err.jsp");
+			else
+				request.getRequestDispatcher("../Model/write_data_estr.jsp").forward(request, response);			
 		}
 		catch(Exception ex){
-			//request.getRequestDispatcher("../View/settings_sil_err.jsp").forward(request, response);
 			response.sendRedirect("../View/settings_estr_err.jsp");
 		}		
 }
@@ -60,7 +71,10 @@ else if(request.getParameter("soglia_press_estr") != null){
 	int n=0;	
 		try{
 			n = Integer.parseInt(request.getParameter("soglia_press_estr"));
-			request.getRequestDispatcher("../Model/write_data_estr.jsp").forward(request, response);			
+			if (n < 800 || n > 1500)
+				response.sendRedirect("../View/settings_estr_err.jsp");
+			else
+				request.getRequestDispatcher("../Model/write_data_estr.jsp").forward(request, response);			
 		}
 		catch(Exception ex){
 			response.sendRedirect("../View/settings_estr_err.jsp");
@@ -71,23 +85,28 @@ else if(request.getParameter("soglia_pot_estr") != null){
 	int n=0;	
 		try{
 			n = Integer.parseInt(request.getParameter("soglia_pot_estr"));
-			request.getRequestDispatcher("../Model/write_data_estr.jsp").forward(request, response);			
+			if (n < 0 || n > 20)
+				response.sendRedirect("../View/settings_estr_err.jsp");
+			else
+				request.getRequestDispatcher("../Model/write_data_estr.jsp").forward(request, response);			
 		}
 		catch(Exception ex){
 			response.sendRedirect("../View/settings_estr_err.jsp");
 		}		
 }
 
-//Stampa
+//--------------- STAMPO --------------- 
 else if(request.getParameter("soglia_temp_sta") != null){
 	int n=0;	
 		try{
 			n = Integer.parseInt(request.getParameter("soglia_temp_sta"));
-			request.getRequestDispatcher("../Model/write_data_sta.jsp").forward(request, response);			
+			if ( n < 0 || n > 600)
+				response.sendRedirect("../View/settings_sta_err.jsp");
+			else
+				request.getRequestDispatcher("../Model/write_data_sta.jsp").forward(request, response);			
 		}
 		catch(Exception ex){
 			response.sendRedirect("../View/settings_sta_err.jsp");
-			//out.print(ex);
 		}		
 }
 
@@ -95,7 +114,10 @@ else if(request.getParameter("soglia_press_sta") != null){
 	int n=0;	
 		try{
 			n = Integer.parseInt(request.getParameter("soglia_press_sta"));
-			request.getRequestDispatcher("../Model/write_data_sta.jsp").forward(request, response);			
+			if ( n < 0 || n > 500)
+				response.sendRedirect("../View/settings_sta_err.jsp");
+			else
+				request.getRequestDispatcher("../Model/write_data_sta.jsp").forward(request, response);				
 		}
 		catch(Exception ex){
 			response.sendRedirect("../View/settings_sta_err.jsp");
@@ -106,7 +128,10 @@ else if(request.getParameter("soglia_pot_sta") != null){
 	int n=0;	
 		try{
 			n = Integer.parseInt(request.getParameter("soglia_pot_sta"));
-			request.getRequestDispatcher("../Model/write_data_sta.jsp").forward(request, response);			
+			if ( n < 0 || n > 20)
+				response.sendRedirect("../View/settings_sta_err.jsp");
+			else
+				request.getRequestDispatcher("../Model/write_data_sta.jsp").forward(request, response);			
 		}
 		catch(Exception ex){
 			response.sendRedirect("../View/settings_sta_err.jsp");
