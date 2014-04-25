@@ -28,7 +28,7 @@
 	
 	response.setIntHeader("Refresh", 3);
 	
-	// QQuery al DB per ottenere le ultime pressioni rilevate nell'estrusore
+	// Query al DB
 	ArrayList<String> energies = new ArrayList<String>();
 	ArrayList<String> dates = new ArrayList<String>();
 	
