@@ -29,7 +29,7 @@ String s23 = (String)session.getAttribute("s23");
     <INPUT TYPE="text" NAME="soglia_temp_estr" STYLE="color: black"/>
     <button type="submit" class="btn btn-primary btn-large"/>Salva</button>
     </p>
-    Hai impostato il valore di soglia della temperatura a: <b><%=s21%> </b>K
+    Hai impostato il valore di soglia della temperatura a: <b><%=s21%> </b>C
     </form>
    
     <br><br>

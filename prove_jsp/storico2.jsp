@@ -22,6 +22,7 @@
     <%@ page import="org.jfree.chart.plot.PlotOrientation"%>
     <%@ page import="org.jfree.chart.ChartUtilities"      %>
 	<%@ page import = "org.jfree.chart.axis.NumberAxis" %>
+	<%@ page import = "org.jfree.chart.axis.CategoryAxis" %>
 	<%@ page import = "org.jfree.chart.renderer.category.LineAndShapeRenderer" %>
 	<%@ page import = "org.jfree.chart.plot.ValueMarker" %>
 	<%@ page import = "org.jfree.ui.Layer" %>
@@ -43,7 +44,12 @@
 	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 	Statement sqlStatement = conn.createStatement();
 	
-	String query = "SELECT * FROM estrusione ORDER BY data DESC LIMIT 0,100";
+	String from_when = new String();
+	String to_when = new String();
+	
+	// Selezione intervallo temporale di interesse
+	from_when = "'2014-04-10 12:20'";
+	String query = "SELECT * FROM estrusione WHERE data >= "+from_when+" ORDER BY data DESC LIMIT 0,1000";
 
 	ResultSet sqlResult = sqlStatement.executeQuery(query);
 	while(sqlResult.next()) {
@@ -64,7 +70,7 @@
 
 	// Crea il grafico
 	JFreeChart chart = ChartFactory.createLineChart(
-		"Storico sensori Estrusore (ultimi 100 rilevamenti)", // chart title
+		"Storico sensori Estrusore dal "+from_when, // chart title
 		"", // domain axis label
 		"", // range axis label
 		dataset, // data
@@ -88,13 +94,19 @@
 	// Impostazioni degli assi
 	NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
 	rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
-	
+	if(temperatures.size()>15){ // con troppi valori le labels si sovrappongono
+		CategoryAxis domainAxis = (CategoryAxis) plot.getDomainAxis();
+		domainAxis.setTickLabelsVisible(false);
+	}
 	// Cerca i massimi tra le y per visualizzare il grafico correttamente
+	int max_range = 1000;
 	ArrayList<Integer> maxima = new ArrayList<Integer>();
-	maxima.add(Collections.max(temperatures));
-	maxima.add(Collections.max(pressures));
-	maxima.add(Collections.max(energies));
-	int max_range = Collections.max(maxima) + 50;
+	if (temperatures.size()>0) {
+		maxima.add(Collections.max(temperatures));
+		maxima.add(Collections.max(pressures));
+		maxima.add(Collections.max(energies));
+	max_range = Collections.max(maxima) + 50;
+	}
 	rangeAxis.setRange(0,max_range);
 
 	// Impostazioni di rendering
@@ -112,7 +124,7 @@
 	
     // Crea lo stream in output
     response.setContentType("image/png");
-    ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,1280,720);
+    ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,1280,600);
 
 
 
