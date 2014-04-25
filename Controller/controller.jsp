@@ -8,6 +8,18 @@
  </head>
 
 <%
+// --------------- LOGIN ----------------
+if(request.getParameter("username") != null && request.getParameter("password") != null){
+	String username=request.getParameter("username");
+    String password=request.getParameter("password");
+	if((username.equals("admin") && password.equals("admin")))
+            {
+            session.setAttribute("username",username);
+            response.sendRedirect("../View/panel.jsp");
+            }
+        else
+            response.sendRedirect("../View/ErrorLogin.jsp");
+}
 
 // --------------- SILOS ----------------
 if(request.getParameter("soglia_temp_silos") != null){

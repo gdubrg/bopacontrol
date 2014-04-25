@@ -15,15 +15,16 @@
   <!-- Modernizr -->
   <script src="View/bootstrap/js/bootstrap-min.js"></script>
 
-  <!-- respond.js per IE8 -->
-  <!--[if lt IE 9]>
-  <script src="js/respond.min.js"></script>
-  <![endif]-->
- </head>
   <!-- jQuery e plugin JavaScript  -->
  <script src="View/bootstrap/js/query.js"></script>
  <script src="View/bootstrap/js/bootstrap.min.js"></script>
+ </head>
  
+ <body>
+ <div id="loginTop">
+ <p>BoPa Controller</p>
+ </div>
+ <br>
 <div id="carousel-example-generic" class="carousel slide">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -37,19 +38,16 @@
     <div class="item active">
       <img src="View/img/1.jpg" alt="">
       <div class="carousel-caption">
-        slide 1
       </div>
     </div>
 <div class="item">
       <img src="View/img/2.jpg" alt="">
       <div class="carousel-caption">
-        slide 2
       </div>
     </div>
 <div class="item">
       <img src="View/img/3.jpg" alt="">
       <div class="carousel-caption">
-        slide 3
       </div>
     </div>
   </div>
@@ -62,3 +60,16 @@
     <span class="icon-next"></span>
   </a>
 </div>
+
+    <div id="loginBottom">
+            <p>Accedi inserendo le tue credenziali</p>
+            <form action="Controller/controller.jsp" method="post">
+            Username:&nbsp;<input type="text" name="username">
+            <br/>Password:&nbsp;&nbsp;<input type="password" name="password">
+            <br/><input type="submit" value="Submit">
+            </form>
+            </div>
+    </body>
+</html>
+
+
