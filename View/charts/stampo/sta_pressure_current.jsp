@@ -68,7 +68,7 @@
     scale.setTickLabelOffset(0.20);
     plot.addScale(0, scale);	
     
-    JFreeChart chart = new JFreeChart("Pressione rilevata", JFreeChart.DEFAULT_TITLE_FONT, plot, false);
+    JFreeChart chart = new JFreeChart("Attualmente rilevata", JFreeChart.DEFAULT_TITLE_FONT, plot, false);
     chart.setBackgroundPaint(new java.awt.Color(221,221,221));
     
     // Chiudi le connessioni col DB

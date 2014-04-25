@@ -47,7 +47,7 @@
 
 	// Creazione del grafico
 	final ThermometerPlot plot = new ThermometerPlot(dataset);
-	final JFreeChart chart = new JFreeChart("Silos: temperatura rilevata",  // chart title
+	final JFreeChart chart = new JFreeChart("Attualmente rilevata",  // chart title
 									  JFreeChart.DEFAULT_TITLE_FONT,
 									  plot,                 // plot
 									  false);               // include legend

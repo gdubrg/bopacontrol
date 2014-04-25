@@ -53,8 +53,8 @@
 
 	// Crea il grafico
 	JFreeChart chart = ChartFactory.createLineChart(
-		 "Silos: storico temperatura",// chart title
-		null, // domain axis label
+		 "Andamento recente",// chart title
+		"Minuti e secondi ora corrente", // domain axis label
 		"Gradi Celsius", // range axis label
 		dataset, // data
 		PlotOrientation.VERTICAL, // orientation

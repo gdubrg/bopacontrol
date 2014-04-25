@@ -54,7 +54,7 @@
 
 	// Crea il grafico
 	JFreeChart chart = ChartFactory.createLineChart(
-		"Andamento temperatura Stampo", // chart title
+		"Andamento recente", // chart title
 		"Minuti e secondi ora corrente", // domain axis label
 		"Gradi Celsius", // range axis label
 		dataset, // data

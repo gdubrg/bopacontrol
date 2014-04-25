@@ -48,7 +48,7 @@
 
 	// create the chart...
 	JFreeChart chart = ChartFactory.createBarChart
-		("Silos: carico rilevato",cur_date.substring(11), "KG", dataset, 
+		("Attualmente rilevato",cur_date.substring(11), "KG", dataset, 
 		PlotOrientation.VERTICAL, false, true, false);
        
 	chart.setBackgroundPaint(new java.awt.Color(221,221,221));

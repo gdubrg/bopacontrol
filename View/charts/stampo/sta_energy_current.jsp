@@ -49,7 +49,7 @@
 
 	// create the chart...
 	JFreeChart chart = ChartFactory.createBarChart
-		("Stampo: potenza rilevata",cur_date.substring(11), "Potenza [kW]", dataset, 
+		("Attualmente rilevata" ,cur_date.substring(11), "Potenza [kW]", dataset, 
 		PlotOrientation.VERTICAL, false, true, false);
        
     chart.setBackgroundPaint(new java.awt.Color(221,221,221));
