@@ -25,6 +25,13 @@
 		<iframe src="charts/stampo/sta_temp_current.jsp" frameborder="0" scrolling="No" height="350px" width="350px"></iframe>
     </div>
 </div>
+<div id="pnlSlim">
+	<div id="btnOne">
+		<form method="post" action="detail_sil.jsp">
+		<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
+		</form>
+    </div>
+</div>
 </div>
 <div class="tab-pane" id="tab-2">
 	<h3>Pressione</h3>
@@ -36,6 +43,13 @@
 		<iframe src="charts/stampo/sta_pressure_current.jsp" frameborder="0" scrolling="No" height="350px" width="350px"></iframe>
     </div>
 </div>
+<div id="pnlSlim">
+	<div id="btnOne">
+		<form method="post" action="detail_sil.jsp">
+		<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
+		</form>
+    </div>
+</div>
 </div>
 <div class="tab-pane" id="tab-3">
 	<h3>Potenza</h3>
@@ -45,6 +59,13 @@
     </div>
     <div id="graRight">
 		<iframe src="charts/stampo/sta_energy_current.jsp" frameborder="0" scrolling="No" height="350px" width="350px"></iframe>
+    </div>
+</div>
+<div id="pnlSlim">
+	<div id="btnOne">
+		<form method="post" action="detail_sil.jsp">
+		<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
+		</form>
     </div>
 </div>
 </div>

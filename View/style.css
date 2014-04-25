@@ -78,7 +78,7 @@ body{
 }
 
 #pnlDown {
-	margin-top: 100px;
+	margin-top: 50px;
 	border-top: 1px solid #000;
 	text-align: center;
 	clear:both;
@@ -106,6 +106,13 @@ body{
     background-color: #DDDDDD;
 }
 
+#pnlSlim{
+	margin-left: 10px;
+    margin-right: 10px;
+	height: 60px;
+	background-color: #DDDDDD;
+}
+
 #graLeft{
     float: left;
     margin-top: 5px;
@@ -128,6 +135,13 @@ body{
 #btnPnl{
 	margin-left: 50px;
 	margin-right: 50px;
+}
+
+#btnOne{
+	margin-left: 450px;
+	margin-right: 450px;
+	padding-top: 10px;
+	clear: both;
 }
 
 #pnlError{
