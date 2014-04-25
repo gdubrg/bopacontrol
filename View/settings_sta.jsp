@@ -50,5 +50,8 @@ String s33 = (String)session.getAttribute("s33");
 		
     <br><br>
 </div>
+<div id="pnlDown">
+    <h5>BoPa Controller - Progetto SAR 2014 - Guido Borghi, Andrea Palazzi</h5>
+</div>
 </body>
 </html>
