@@ -12,8 +12,8 @@
 <!--Pannello con lo stato del sistema -->
 <div id="infoSisSx">
 	<h2>Sessione corrente:</h2>
-	Utente: <%=session.getAttribute("username")%><br>
-	Ultimo accesso: 21/04/2013
+	<b>Numero Tessera: </b><%=session.getAttribute("numTessera")%><br>
+	<b>Ultimo accesso: </b><%=session.getAttribute("ultimoAcc") %>
     <h2>Stato del sistema:</h2>
     <iframe src="../../View/status_system.jsp" frameborder="0" scrolling="No" height="50" width="320";></iframe>
 </div>

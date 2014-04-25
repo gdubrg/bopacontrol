@@ -34,6 +34,8 @@
         </ul>
       </li>
     </ul>
+     <ul class="nav navbar-nav">
+    <li><a href="../View/confirm.jsp">Esci</a></li>
   </div>
 </nav>
 

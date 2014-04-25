@@ -2,6 +2,8 @@
 <link rel="stylesheet" href="../View/bootstrap/css/bootstrap.css">
   <link href="../View/bootstrap/css/stili-custom.css" rel="stylesheet" media="screen">
   <link rel="stylesheet" href="../View/style.css">
+  <%@ page import = "java.text.*" %>
+  <%@ page import = "java.util.*" %>
 
   <!-- Modernizr -->
   <script src="../View/bootstrap/js/bootstrap-min.js"></script>
@@ -9,20 +11,31 @@
 
 <%
 // --------------- LOGIN ----------------
-if(request.getParameter("username") != null && request.getParameter("password") != null){
-	String username=request.getParameter("username");
-    String password=request.getParameter("password");
-	if((username.equals("admin") && password.equals("admin")))
-            {
-            session.setAttribute("username",username);
-            response.sendRedirect("../View/panel.jsp");
-            }
-        else
-            response.sendRedirect("../View/ErrorLogin.jsp");
+if(request.getParameter("numTessera") != null){
+	int n=0;
+		try{
+			n = Integer.parseInt(request.getParameter("numTessera"));
+			session.setAttribute("numTessera", n);	
+				
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+			String data = sdf.format(new Date());
+			
+			session.setAttribute("ultimoAcc", data);
+			response.sendRedirect("../View/panel.jsp");	
+		}
+		catch(Exception ex){
+			response.sendRedirect("../View/login_err.jsp");
+		}
+}
+
+// --------------- LOGOUT ----------------
+else if(request.getParameter("uscita") != null){
+	session.invalidate();
+	response.sendRedirect("../index.html");
 }
 
 // --------------- SILOS ----------------
-if(request.getParameter("soglia_temp_silos") != null){
+else if(request.getParameter("soglia_temp_silos") != null){
 	int n=0;	
 		try{
 			n = Integer.parseInt(request.getParameter("soglia_temp_silos"));
