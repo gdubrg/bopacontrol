@@ -36,7 +36,7 @@ while(sqlResult.next()) {
 	<%
 	// Compila la lista con le date possibili
 	for(int i=0; i<days.size(); ++i)
-		out.print("<li><form action=\"../Controller/controller.jsp\" method=\"post\"> <button type=\"hidden\" name=\"action1\" class=\"btn btn-primary btn-lg\">"+days.get(i)+"</button></form><a href=\"../Controller/controller.jsp\"></li>");
+		out.print("<li><form action=\"../Controller/controller.jsp\" method=\"post\"> <button type=\"hidden\" name=\"action1\" class=\"btn btn-primary btn-xs\">"+days.get(i)+"</button></form><a href=\"../Controller/controller.jsp\"></li>");
 		out.print("<li><a href=\"../Controller/controller.jsp\">Item 4</a></li>");
 	%>
  </ul>
