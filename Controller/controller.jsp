@@ -162,4 +162,8 @@ else if(request.getParameter("soglia_pot_sta") != null){
 			response.sendRedirect("../View/settings_sta_err.jsp");
 		}		
 }
+
+else if(request.getParameter("action1") != null){
+	out.print("CIAO");
+}
 %>
