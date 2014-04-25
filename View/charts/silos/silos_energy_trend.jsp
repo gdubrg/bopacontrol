@@ -54,7 +54,7 @@
 
 	// Crea il grafico
 	JFreeChart chart = ChartFactory.createLineChart(
-		"Andamento potenza Silos", // chart title
+		"Andamento recente", // chart title
 		"Minuti e secondi ora corrente", // domain axis label
 		"kW", // range axis label
 		dataset, // data
