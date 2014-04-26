@@ -27,7 +27,7 @@
 </div>
 <div id="pnlSlim">
 	<div id="btnOne">
-		<form method="post" action="detail_sil.jsp">
+		<form method="post" action="history_silos.jsp">
 		<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
 		</form>
     </div>
@@ -45,7 +45,7 @@
 </div>
 <div id="pnlSlim">
 	<div id="btnOne">
-		<form method="post" action="detail_sil.jsp">
+		<form method="post" action="history_silos.jsp">
 		<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
 		</form>
     </div>
@@ -63,7 +63,7 @@
 </div>
 <div id="pnlSlim">
 	<div id="btnOne">
-		<form method="post" action="detail_sil.jsp">
+		<form method="post" action="history_silos.jsp">
 		<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
 		</form>
     </div>

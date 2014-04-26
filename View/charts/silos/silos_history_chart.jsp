@@ -35,7 +35,7 @@
 	response.setIntHeader("Refresh", 3);
 		
 	ArrayList<Integer> temperatures = new ArrayList<Integer>();
-	ArrayList<Integer> pressures = new ArrayList<Integer>();
+	ArrayList<Integer> loads = new ArrayList<Integer>();
 	ArrayList<Integer> energies = new ArrayList<Integer>();
 	ArrayList<String> dates = new ArrayList<String>();
 	
@@ -44,7 +44,7 @@
 	
 	// Se la data iniziale non è stata ancora decisa, di default si usa il giorno corrente
 	if (from_when==null)
-		from_when = new SimpleDateFormat("yyyy-mm-dd").format(new java.util.Date());
+		from_when = new SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
 	
 	// Apertura connessioni col DB
 	Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -53,12 +53,12 @@
 	Statement sqlStatement = conn.createStatement();
 	
 	// Query al DB
-	String query = "SELECT * FROM estrusione WHERE data >= '"+from_when+"' ORDER BY data DESC";
+	String query = "SELECT * FROM silos WHERE data >= '"+from_when+"' ORDER BY data DESC";
 	ResultSet sqlResult = sqlStatement.executeQuery(query);
 	
 	while(sqlResult.next()) {
 		temperatures.add(sqlResult.getInt("temperatura"));
-		pressures.add(sqlResult.getInt("pressione"));
+		loads.add(sqlResult.getInt("carico"));
 		energies.add(sqlResult.getInt("energia"));
 		dates.add(sqlResult.getString("data"));
 	}
@@ -68,13 +68,13 @@
       
     for (int i=(energies.size()-1); i>=0; --i){
 		dataset.addValue(temperatures.get(i), "Temperatura [C]", dates.get(i).substring(14));
-		dataset.addValue(pressures.get(i), "Pressione [bar]", dates.get(i).substring(14));
+		dataset.addValue(loads.get(i), "Pressione [bar]", dates.get(i).substring(14));
 		dataset.addValue(energies.get(i), "Potenza [kW]", dates.get(i).substring(14));
 	}
 
 	// Crea il grafico
 	JFreeChart chart = ChartFactory.createLineChart(
-		"Storico sensori Estrusore dal "+from_when, // chart title
+		"Storico sensori Silos dal "+from_when, // chart title
 		"", // domain axis label
 		"", // range axis label
 		dataset, // data
@@ -107,7 +107,7 @@
 	ArrayList<Integer> maxima = new ArrayList<Integer>();
 	if (temperatures.size()>0) {
 		maxima.add(Collections.max(temperatures));
-		maxima.add(Collections.max(pressures));
+		maxima.add(Collections.max(loads));
 		maxima.add(Collections.max(energies));
 	max_range = Collections.max(maxima) + 50;
 	}

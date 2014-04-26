@@ -44,7 +44,7 @@
 	
 	// Se la data iniziale non è stata ancora decisa, di default si usa il giorno corrente
 	if (from_when==null)
-		from_when = new SimpleDateFormat("yyyy-mm-dd").format(new java.util.Date());
+		from_when = new SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
 	
 	// Apertura connessioni col DB
 	Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -53,7 +53,7 @@
 	Statement sqlStatement = conn.createStatement();
 	
 	// Query al DB
-	String query = "SELECT * FROM estrusione WHERE data >= '"+from_when+"' ORDER BY data DESC";
+	String query = "SELECT * FROM stampo WHERE data >= '"+from_when+"' ORDER BY data DESC";
 	ResultSet sqlResult = sqlStatement.executeQuery(query);
 	
 	while(sqlResult.next()) {
@@ -74,7 +74,7 @@
 
 	// Crea il grafico
 	JFreeChart chart = ChartFactory.createLineChart(
-		"Storico sensori Estrusore dal "+from_when, // chart title
+		"Storico sensori Stampo dal "+from_when, // chart title
 		"", // domain axis label
 		"", // range axis label
 		dataset, // data

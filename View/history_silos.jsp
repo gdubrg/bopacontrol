@@ -19,7 +19,7 @@ java.sql.Connection conn;
 conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 Statement sqlStatement = conn.createStatement();
 
-String query = "SELECT DISTINCT(DATE(data)) FROM estrusione";
+String query = "SELECT DISTINCT(DATE(data)) FROM silos";
 
 ResultSet sqlResult = sqlStatement.executeQuery(query);
 while(sqlResult.next()) {
@@ -37,12 +37,12 @@ while(sqlResult.next()) {
 	// Compila la lista con le date possibili
 	for(int i=0; i<days.size(); ++i)
 		out.print("<li><form action=\"../Controller/controller.jsp\" method=\"POST\">"+
-		"<button type=\"submit\" name=\"storico_estr\" class=\"btn btn-primary btn-xs\">"+days.get(i)+"</button>"+
+		"<button type=\"submit\" name=\"storico_silos\" class=\"btn btn-primary btn-xs\">"+days.get(i)+"</button>"+
 		"<input type=\"hidden\" name=\"data1\" value=\""+days.get(i)+"\"></form></li>");
 	%>
  </ul>
 </div>
 
-<iframe src="charts/estrusore/estr_history_chart.jsp" frameborder="0" scrolling="No" height="610px" width="1290px"></iframe>
+<iframe src="charts/silos/silos_history_chart.jsp" frameborder="0" scrolling="No" height="610px" width="1290px"></iframe>
 
 </html>

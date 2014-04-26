@@ -44,7 +44,7 @@
 	
 	// Se la data iniziale non è stata ancora decisa, di default si usa il giorno corrente
 	if (from_when==null)
-		from_when = new SimpleDateFormat("yyyy-mm-dd").format(new java.util.Date());
+		from_when = new SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
 	
 	// Apertura connessioni col DB
 	Class.forName("com.mysql.jdbc.Driver").newInstance();

@@ -35,7 +35,7 @@ else if(request.getParameter("uscita") != null){
 	response.sendRedirect("../index.jsp");
 }
 
-// --------------- SILOS ----------------
+// --------------- SOGLIE SILOS ----------------
 else if(request.getParameter("soglia_temp_silos") != null){
 	int n=0;	
 		try{
@@ -78,7 +78,7 @@ else if(request.getParameter("soglia_pot_silos") != null){
 		}		
 }
 
-//--------------- ESTRUSORE ---------------
+//--------------- SOGLIE ESTRUSORE ---------------
 else if(request.getParameter("soglia_temp_estr") != null){
 	int n=0;	
 		try{
@@ -121,7 +121,7 @@ else if(request.getParameter("soglia_pot_estr") != null){
 		}		
 }
 
-//--------------- STAMPO --------------- 
+//--------------- SOGLIE STAMPO --------------- 
 else if(request.getParameter("soglia_temp_sta") != null){
 	int n=0;	
 		try{
@@ -164,7 +164,21 @@ else if(request.getParameter("soglia_pot_sta") != null){
 		}		
 }
 
-else if(request.getParameter("action1") != null){
-	out.print("CIAO");
+//--------------- STORICO SILOS---------------
+else if(request.getParameter("storico_silos") != null){
+	session.setAttribute("data_inizio", request.getParameter("data1"));
+	response.sendRedirect("../View/history_silos.jsp");
+}
+	
+//--------------- STORICO ESTRUSORE---------------
+else if(request.getParameter("storico_estr") != null){
+	session.setAttribute("data_inizio", request.getParameter("data1"));
+	response.sendRedirect("../View/history_estr.jsp");
+}
+
+//--------------- STORICO ESTRUSORE---------------
+else if(request.getParameter("storico_sta") != null){
+	session.setAttribute("data_inizio", request.getParameter("data1"));
+	response.sendRedirect("../View/history_sta.jsp");
 }
 %>
