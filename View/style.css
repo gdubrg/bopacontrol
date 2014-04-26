@@ -175,7 +175,10 @@ body{
 	font-size: 15px;
 }
 
-.btn-xs:hover,
+.btn-xs:hover{
+	background-color: #DDDDDD;
+	color: #000000;
+}
 .btn-xs:focus,
 .btn-xs:active{
 	background-color: #ffffff;
