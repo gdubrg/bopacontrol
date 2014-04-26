@@ -24,7 +24,7 @@ if(request.getParameter("numTessera") != null){
 			response.sendRedirect("../View/panel.jsp");	
 		}
 		catch(Exception ex){
-			session.setAttribute("loginOk", "errore");
+			session.setAttribute("loginOk", "0");
 			response.sendRedirect("../index.jsp");
 		}
 }
