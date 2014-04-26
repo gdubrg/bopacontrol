@@ -18,9 +18,7 @@ String s33 = (String)session.getAttribute("s33");
 <h1>Impostazioni Macchina Stampa</h1>
 </div>
 
-<div id="pnlError">
-    <h2>Errore:<br>Soglia non consentita.</h2>
-</div>
+
 
 <div id="pnlOnlyCenter">
     <form ACTION="../Controller/controller.jsp" method="POST">
@@ -50,6 +48,9 @@ String s33 = (String)session.getAttribute("s33");
     </form>
     
     <br><br>
+</div>
+<div id="pnlError">
+    <h2>Errore:<br>Soglia non consentita.</h2>
 </div>
 <div id="pnlDown">
     <h5>BoPa Controller - Progetto SAR 2014 - Guido Borghi, Andrea Palazzi</h5>

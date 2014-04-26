@@ -54,7 +54,9 @@ for(int i=0;i<mac.size();i++){
 </table>
 <body>
 
-
+<iframe src="../../Model/read_data_sil.jsp" frameborder="0" scrolling="No" height="0" width="0"></iframe>
+<iframe src="../../Model/read_data_estr.jsp" frameborder="0" scrolling="No" height="0" width="0"></iframe>
+<iframe src="../../Model/read_data_sta.jsp" frameborder="0" scrolling="No" height="0" width="0"></iframe>
   
   
 </body>

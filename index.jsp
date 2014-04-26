@@ -24,6 +24,7 @@
  <div id="loginTop">
  <p>BoPa Controller</p>
  </div>
+
  <br>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
