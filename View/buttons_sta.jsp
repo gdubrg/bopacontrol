@@ -3,7 +3,7 @@
 <%@ include file="lib.jsp" %>
 <body>
 
-<div id="btnPnl"><form></form>
+<div id="btnPnl">
     <form method="post" action="detail_sta.jsp">
     <button type="submit" class="btn btn-primary btn-large btn-block">Dettaglio</button>
     </form> 

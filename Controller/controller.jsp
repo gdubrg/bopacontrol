@@ -24,14 +24,15 @@ if(request.getParameter("numTessera") != null){
 			response.sendRedirect("../View/panel.jsp");	
 		}
 		catch(Exception ex){
-			response.sendRedirect("../View/login_err.jsp");
+			session.setAttribute("loginOk", "errore");
+			response.sendRedirect("../index.jsp");
 		}
 }
 
 // --------------- LOGOUT ----------------
 else if(request.getParameter("uscita") != null){
 	session.invalidate();
-	response.sendRedirect("../index.html");
+	response.sendRedirect("../index.jsp");
 }
 
 // --------------- SILOS ----------------

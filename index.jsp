@@ -68,7 +68,7 @@
             <input type="submit" value="Submit">
             </form>
             <%if(session.getAttribute("loginOk") == "errore")
-				out.print("<p><font color=red>Attenzione, numero della tessera non valido!</p></font>");%>
+            out.print("<p><font color=red>Attenzione, numero della tessera non valido!</p></font>");%>
             </div>
     </body>
 </html>
