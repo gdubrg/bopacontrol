@@ -168,9 +168,11 @@ body{
 
 .btn-xs {
 	padding: 3px 5px;
+	margin-left: 35px;
 	background-color: #ffffff;
 	border-color: #ffffff;
 	color: #000000;
+	font-size: 15px;
 }
 
 .btn-xs:hover,
