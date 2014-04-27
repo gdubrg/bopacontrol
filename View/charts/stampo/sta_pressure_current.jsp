@@ -42,6 +42,15 @@
 	// Estrazione soglia dalle variabili d'ambiente
 	int thresh_value = Integer.parseInt((String)session.getAttribute("s32"));
 	
+	// Scrittura dell'eventuale allarme
+	if(Integer.parseInt(currentPressure)>thresh_value){
+		session.setAttribute("alrm32", "1");
+		String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Stampo', 'Pressione max raggiunta', CURRENT_TIMESTAMP)";
+		sqlStatement.executeUpdate(ins);
+	} else {
+		session.setAttribute("alrm32", "0");
+	}
+	
 	// create the chart...
 	DialPlot plot = new DialPlot(dataset);
 	

@@ -48,6 +48,15 @@
 	// Estrazione della soglia dalle variabili d'ambiente
 	int thresh_value = Integer.parseInt((String)session.getAttribute("s22"));
 	
+	// Scrittura dell'eventuale allarme
+	if(Integer.parseInt(currentPressure)>thresh_value){
+		session.setAttribute("alrm22", "1");
+		String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Estr', 'Pressione max raggiunta', CURRENT_TIMESTAMP)";
+		sqlStatement.executeUpdate(ins);
+	} else {
+		session.setAttribute("alrm22", "0");
+	}
+	
 	// Valori del manometro
     int minimumValue = 0, maximumValue = 1500;
     int majorTicks = 250;
