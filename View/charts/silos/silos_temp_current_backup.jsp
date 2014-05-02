@@ -16,10 +16,10 @@
 <%@ page import="java.sql.ResultSet" %> 
 <%@ page import="java.sql.Date" %>
 
-
 <%
+	
 	// Refresh della pagina
-	response.setHeader("Refresh", "3; url=../../../Model/check_alarms.jsp");
+	response.setIntHeader("Refresh", 3);
 	
 	// Query al DB
 	String cur_temp = new String();
@@ -42,6 +42,15 @@
 
 	// Estrazione soglia dalle variabili d'ambiente
 	int thresh_value = Integer.parseInt((String)session.getAttribute("s11"));
+
+	// Scrittura dell'eventuale allarme
+	if(Integer.parseInt(cur_temp)>thresh_value){
+		session.setAttribute("alrm11", "1");
+		String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Silos', 'Temperatura max raggiunta', CURRENT_TIMESTAMP)";
+		sqlStatement.executeUpdate(ins);
+	} else {
+		session.setAttribute("alrm11", "0");
+	}
 	
 	// Creazione del dataset
 	DefaultValueDataset dataset = new DefaultValueDataset(Double.parseDouble(cur_temp));
