@@ -28,26 +28,5 @@
      Welcome to Tomcat
   </description>
 
-<security-constraint>
-  <web-resource-collection>
-    <web-resource-name>mywebapp</web-resource-name>
-    <url-pattern>/*</url-pattern>
-  </web-resource-collection>
-  <auth-constraint>
-    <role-name>admin</role-name>
-  </auth-constraint>
-</security-constraint>
-
-<login-config>
-  <auth-method>BASIC</auth-method>
-  <realm-name>mywebapp</realm-name>
-</login-config>
-
- <security-role>
-    <description>
-      The role that is required to access the HTML Manager pages
-    </description>
-    <role-name>admin</role-name>
-  </security-role>
 
 </web-app>
