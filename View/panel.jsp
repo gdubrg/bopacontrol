@@ -54,6 +54,8 @@
     <%@ include file="buttons_sil.jsp" %>
 </div>
 
+<iframe src="../Model/check_alarms.jsp" frameborder="0" height="0" width="0"></iframe>
+
 <!-- Footer -->
 <div id="pnlDown">
     <h5>BoPa Controller - Progetto SAR 2014 - Guido Borghi, Andrea Palazzi</h5>

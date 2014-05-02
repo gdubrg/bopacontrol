@@ -57,15 +57,6 @@
 	// Estrazione soglia dalle variabili d'ambiente
 	int thresh_value = Integer.parseInt((String)session.getAttribute("s13"));
 	
-	// Scrittura dell'eventuale allarme
-	if(Integer.parseInt(cur_energy)>thresh_value){
-		session.setAttribute("alrm13", "1");
-		String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Silos', 'Potenza max raggiunta', CURRENT_TIMESTAMP)";
-		sqlStatement.executeUpdate(ins);
-	} else {
-		session.setAttribute("alrm13", "0");
-	}
-	
 	// Aggiunta della soglia sul grafico
 	ValueMarker thresh_marker = new ValueMarker(thresh_value);
 	thresh_marker.setPaint(Color.black);

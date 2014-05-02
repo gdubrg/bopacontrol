@@ -53,72 +53,8 @@ session.setAttribute("s22", soglia22);
 session.setAttribute("s23", soglia23);
 
 sqlResult.close(); sqlStatement.close(); conn.close();
-
-//Parte di controllo delle soglie
-int valore = 0;
-int soglia = 0;
-
-//Controllo temperatura
-try{
-valore = Integer.parseInt(temp);
-soglia = Integer.parseInt(soglia21);
-}
-catch(NumberFormatException ex){
-	valore = 0;
-}
-if(valore>soglia){
-	session.setAttribute("alrm21", "1");
-	Class.forName("com.mysql.jdbc.Driver").newInstance();
-	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
-	sqlStatement = conn.createStatement();
-	String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Estr', 'Temperatura max raggiunta', CURRENT_TIMESTAMP)";
-	sqlStatement.executeUpdate(ins);
-	sqlResult.close(); sqlStatement.close(); conn.close();
-}
-else
-	session.setAttribute("alrm21", "0");
-	
-//Controllo pressione
-try{
-valore = Integer.parseInt(press);
-soglia = Integer.parseInt(soglia22);
-}
-catch(NumberFormatException ex){
-	valore = 0;
-}
-if(valore>soglia){
-	session.setAttribute("alrm22", "1");
-	Class.forName("com.mysql.jdbc.Driver").newInstance();
-	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
-	sqlStatement = conn.createStatement();
-	String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Estr', 'Pressione max raggiunta', CURRENT_TIMESTAMP)";
-	sqlStatement.executeUpdate(ins);
-	sqlResult.close(); sqlStatement.close(); conn.close();
-}
-else
-	session.setAttribute("alrm22", "0");	
-	
-//Controllo potenza
-try{
-valore = Integer.parseInt(ener);
-soglia = Integer.parseInt(soglia23);
-}
-catch(NumberFormatException ex){
-	valore = 0;
-}
-if(valore>soglia){
-	session.setAttribute("alrm23", "1");
-	Class.forName("com.mysql.jdbc.Driver").newInstance();
-	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
-	sqlStatement = conn.createStatement();
-	String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Estr', 'Potenza max raggiunta', CURRENT_TIMESTAMP)";
-	sqlStatement.executeUpdate(ins);
-	sqlResult.close(); sqlStatement.close(); conn.close();
-}
-else
-	session.setAttribute("alrm23", "0");
-	
 %>
+
 </head>
 <body>
 <div id="tab">

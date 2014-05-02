@@ -18,8 +18,7 @@
 
 
 <%
-	// Refresh della pagina
-	response.setHeader("Refresh", "3; url=../../../Model/check_alarms.jsp");
+	response.setIntHeader("Refresh", 3);
 	
 	// Query al DB
 	String cur_temp = new String();

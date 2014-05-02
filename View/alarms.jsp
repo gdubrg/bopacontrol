@@ -7,8 +7,7 @@
 	<%@ page import="java.sql.Statement" %> 
 	<%@ page import="java.sql.ResultSet" %> 
 	<%@ page import="java.sql.Date" %>
-<%@ include file="header.jsp" %>
-
+	<%@ include file="lib.jsp" %>
 <%
 
 ArrayList<String> mac = new ArrayList<String>();
@@ -53,11 +52,6 @@ for(int i=0;i<mac.size();i++){
  </tbody>
 </table>
 <body>
-
-<iframe src="../../Model/read_data_sil.jsp" frameborder="0" scrolling="No" height="0" width="0"></iframe>
-<iframe src="../../Model/read_data_estr.jsp" frameborder="0" scrolling="No" height="0" width="0"></iframe>
-<iframe src="../../Model/read_data_sta.jsp" frameborder="0" scrolling="No" height="0" width="0"></iframe>
-  
-  
+    
 </body>
 </html>

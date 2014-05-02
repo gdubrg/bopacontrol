@@ -42,15 +42,6 @@
 
 	// Estrazione soglia dalle variabili d'ambiente
 	int thresh_value = Integer.parseInt((String)session.getAttribute("s31"));
-
-	// Scrittura dell'eventuale allarme
-	if(Integer.parseInt(cur_temp)>thresh_value){
-		session.setAttribute("alrm31", "1");
-		String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Stampo', 'Temperatura max raggiunta', CURRENT_TIMESTAMP)";
-		sqlStatement.executeUpdate(ins);
-	} else {
-		session.setAttribute("alrm31", "0");
-	}
 	
 	DefaultValueDataset dataset = new DefaultValueDataset(Double.parseDouble(cur_temp));
 

@@ -6,6 +6,9 @@
 
 <%
 
+// Refresh della pagina
+	response.setIntHeader("Refresh", 3);
+
 // Apertura connesione col DB
 Class.forName("com.mysql.jdbc.Driver").newInstance();
 java.sql.Connection conn;
@@ -137,14 +140,5 @@ if(Integer.parseInt(cur_energy)>thresh3){
 } else {
 	session.setAttribute("alrm33", "0");
 }
-
-response.sendRedirect("../View/charts/silos/silos_temp_current.jsp");
-
-
-
-
-
-
-
 
 %>
