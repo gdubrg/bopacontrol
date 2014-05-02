@@ -176,9 +176,20 @@ else if(request.getParameter("storico_estr") != null){
 	response.sendRedirect("../View/history_estr.jsp");
 }
 
-//--------------- STORICO ESTRUSORE---------------
+//--------------- STORICO STAMPO---------------
 else if(request.getParameter("storico_sta") != null){
 	session.setAttribute("data_inizio", request.getParameter("data1"));
 	response.sendRedirect("../View/history_sta.jsp");
 }
+
+//--------------- CANCELLA LOG ALLARMI---------------
+else if(request.getParameter("cancella_allarmi") != null){
+	response.sendRedirect("../Model/delete_alarms.jsp");
+}
+
+//--------------- CANCELLA LOG ESTRUSORE---------------
+else if(request.getParameter("cancella_sensori") != null){
+	response.sendRedirect("../Model/delete_sensors.jsp");
+}
+
 %>
