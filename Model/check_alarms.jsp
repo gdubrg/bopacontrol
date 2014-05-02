@@ -140,5 +140,5 @@ if(Integer.parseInt(cur_energy)>thresh3){
 } else {
 	session.setAttribute("alrm33", "0");
 }
-
+sqlResult.close(); sqlStatement.close(); conn.close();
 %>
