@@ -29,8 +29,31 @@ create table soglie_sta(temp_sta varchar(20),press_sta varchar(20),ene_sta varch
 TABELLE ALLARMI:
 create table allarmi(macchina varchar(20),descr varchar(30),data timestamp);
 INSERT INTO allarmi (macchina, descr, data) VALUES ("Silos", "Temp Max", CURRENT_TIMESTAMP)";
-ALTER TABLE allarmi modify descr varchar(30);
 
+MODIFICHE PER PORTARE VALORI STRING -> INT:
+ALTER TABLE soglie_silos modify car_sil int;
+ALTER TABLE soglie_silos modify ene_sil int;
+ALTER TABLE soglie_silos modify temp_sil int;
+
+ALTER TABLE soglie_estr modify press_estr int;
+ALTER TABLE soglie_estr modify temp_estr int;
+ALTER TABLE soglie_estr modify ene_estr int;
+
+ALTER TABLE soglie_sta modify temp_sta int;
+ALTER TABLE soglie_sta modify press_sta int;
+ALTER TABLE soglie_sta modify ene_sta int;
+
+ALTER TABLE silos modify temperatura int;
+ALTER TABLE silos modify carico int;
+ALTER TABLE silos modify energia int;
+
+ALTER TABLE estrusione modify temperatura int;
+ALTER TABLE estrusione modify pressione int;
+ALTER TABLE estrusione modify energia int;
+
+ALTER TABLE stampo modify temperatura int;
+ALTER TABLE stampo modify pressione int;
+ALTER TABLE stampo modify energia int;
 
 Valori soglie:
 

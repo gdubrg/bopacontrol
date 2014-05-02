@@ -34,8 +34,12 @@
         </ul>
       </li>
     </ul>
+    <ul class="nav navbar-nav">
+    <li><a href="../View/delete_db.jsp" >Reset</a></li>
+    </ul>
      <ul class="nav navbar-nav navbar-right">
     <li><a href="../View/confirm.jsp" >Esci</a></li>
+    </ul>
     
   </div>
 </nav>

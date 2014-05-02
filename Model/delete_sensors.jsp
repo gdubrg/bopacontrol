@@ -15,7 +15,7 @@ java.sql.Connection conn;
 conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 Statement sqlStatement = conn.createStatement();
 	
-String query = "DELETE * FROM estrusione, silos, stampo";
+String query = "DELETE FROM estrusione, silos, stampo";
 
 sqlStatement.executeUpdate(query);
 
