@@ -4,7 +4,7 @@
 	<h3>Elimina <b>tutti</b> i valori dei <b>sensori</b> dal database</h3>
 	<div style="text-align:center">
 	<form action="../Controller/controller.jsp" method="post">
-            <button type="submit" name="cancella_valori" class="btn btn-primary btn-lg">Elimina</button>  
+            <button type="submit" name="cancella_sensori" class="btn btn-primary btn-lg">Elimina</button>  
     </form>
     </div>
 

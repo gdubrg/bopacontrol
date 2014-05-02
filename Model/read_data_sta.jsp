@@ -60,8 +60,13 @@ int valore = 0;
 int soglia = 0;
 
 //Controllo temperatura
+try{
 valore = Integer.parseInt(temp);
 soglia = Integer.parseInt(soglia31);
+}
+catch(NumberFormatException ex){
+	valore = 0;
+}
 if(valore>soglia){
 	session.setAttribute("alrm31", "1");
 	Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -75,8 +80,13 @@ else
 	session.setAttribute("alrm31", "0");
 	
 //Controllo pressione
+try{
 valore = Integer.parseInt(press);
 soglia = Integer.parseInt(soglia32);
+}
+catch(NumberFormatException ex){
+	valore = 0;
+}
 if(valore>soglia){
 	session.setAttribute("alrm32", "1");
 	Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -90,8 +100,13 @@ else
 	session.setAttribute("alrm32", "0");	
 	
 //Controllo potenza
+try{
 valore = Integer.parseInt(ener);
 soglia = Integer.parseInt(soglia33);
+}
+catch(NumberFormatException ex){
+	valore = 0;
+}
 if(valore>soglia){
 	session.setAttribute("alrm33", "1");
 	Class.forName("com.mysql.jdbc.Driver").newInstance();
