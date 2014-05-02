@@ -15,13 +15,12 @@ java.sql.Connection conn;
 conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 Statement sqlStatement = conn.createStatement();
 	
-// Inserire qui la tabella del db giusta a seconda della macchina
 String query = "DELETE * FROM estrusione, silos, stampo";
 
-ResultSet sqlResult = sqlStatement.executeQuery(query);
+sqlStatement.executeUpdate(query);
 
 session.setAttribute("cancellazione_ok", "1");
 
-// Torna alla pagina di
+// Torna alla pagina di reset
 response.sendRedirect("../View/delete_db.jsp");
 %>

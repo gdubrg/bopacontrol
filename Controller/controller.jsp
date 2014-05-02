@@ -187,7 +187,7 @@ else if(request.getParameter("cancella_allarmi") != null){
 	response.sendRedirect("../Model/delete_alarms.jsp");
 }
 
-//--------------- CANCELLA LOG ESTRUSORE---------------
+//--------------- CANCELLA LOG SENSORI---------------
 else if(request.getParameter("cancella_sensori") != null){
 	response.sendRedirect("../Model/delete_sensors.jsp");
 }
