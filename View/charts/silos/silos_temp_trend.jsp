@@ -25,9 +25,10 @@
 	<%@ page import = "org.jfree.ui.Layer" %>
 	<%
 	
+	// Imposta frequenza refresh del grafico
 	response.setIntHeader("Refresh", 3);
 	
-	// Query al DB per ottenere le ultime temperature rilevate nel silos
+	// Apertura connessioni col db
 	ArrayList<String> temperatures = new ArrayList<String>();
 	ArrayList<String> dates = new ArrayList<String>();
 	
@@ -37,6 +38,7 @@
 	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 	Statement sqlStatement = conn.createStatement();
 	
+	// Select al db per ottenere i valori
 	String query = "SELECT * FROM silos ORDER BY data DESC LIMIT 0,10";
 
 	ResultSet sqlResult = sqlStatement.executeQuery(query);
@@ -45,13 +47,12 @@
 		dates.add(sqlResult.getString("data"));
 	}
 
-	// Popola il dataset
-    DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-      
+	// Creazione e popolamento del dataset
+    DefaultCategoryDataset dataset = new DefaultCategoryDataset();  
     for (int i=(temperatures.size()-1); i>=0; --i)
 		dataset.addValue(Integer.parseInt(temperatures.get(i)), "Classes", dates.get(i).substring(14));
 
-	// Crea il grafico
+	// Creazione del grafico
 	JFreeChart chart = ChartFactory.createLineChart(
 		 "Andamento recente",// chart title
 		"Minuti e secondi ora corrente", // domain axis label
@@ -64,7 +65,7 @@
 	);
 	chart.setBackgroundPaint(new java.awt.Color(221,221,221));
 	
-	// Impostazioni plotting
+	// Impostazioni plot
 	CategoryPlot plot = (CategoryPlot) chart.getPlot();
 	plot.setBackgroundPaint(Color.lightGray);
 	plot.setRangeGridlinePaint(Color.white);
@@ -94,7 +95,7 @@
 	sqlStatement.close();
 	conn.close();
 	
-    // Crea lo stream in output
+    // Creazione dello stream in output
     response.setContentType("image/png");
     ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,740,340);
 

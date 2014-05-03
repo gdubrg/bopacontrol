@@ -19,9 +19,10 @@
 
 <%
 
+	// Imposta frequenza refresh del grafico
 	response.setIntHeader("Refresh", 3);
 	
-	// QUERY
+	// Apertura connessioni col db
 	String currentPressure = new String();
 	String currentDate = new String();
 	
@@ -31,7 +32,7 @@
 	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 	Statement sqlStatement = conn.createStatement();
 	
-	// Inserire qui la tabella del db giusta a seconda della macchina
+	// Select al db per ottenere la pressione corrente
 	String query = "SELECT pressione, data FROM estrusione ORDER BY data DESC LIMIT 0,1";
 
 	ResultSet sqlResult = sqlStatement.executeQuery(query);
@@ -39,10 +40,11 @@
 		currentPressure = sqlResult.getString("pressione");
 		currentDate = sqlResult.getString("data");
 	}
-
+	
+	// Creazione e popolamento del dataset
 	DefaultValueDataset dataset = new DefaultValueDataset(Double.parseDouble(currentPressure));
 	
-	// create the chart...
+	// Creazione del grafico
 	DialPlot plot = new DialPlot(dataset);
 	
 	// Estrazione della soglia dalle variabili d'ambiente
@@ -57,6 +59,7 @@
     int yellowLine = thresh_value-100;
     int redLine = thresh_value;
     
+    // Impostazioni plot
     plot.addLayer(new StandardDialRange(minimumValue, yellowLine, Color.green));
 	plot.addLayer(new StandardDialRange(yellowLine, redLine, Color.yellow));
 	plot.addLayer(new StandardDialRange(redLine, maximumValue, Color.red));
@@ -78,7 +81,7 @@
 	sqlStatement.close();
 	conn.close();
 	
-	//CREATE OUTPUT STREAM.
+	// Creazione dello stream in output
 	response.setContentType("image/png");
 	ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,340,340);
     

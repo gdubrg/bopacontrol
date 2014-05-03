@@ -15,10 +15,10 @@
 <%@ page import="java.sql.Date" %>
 
 <%
-
+	// Imposta frequenza aggiornamento del grafico
 	response.setIntHeader("Refresh", 3);
 	
-	// QUERY
+	// Apertura connessione col db
 	String currentPressure = new String();
 	String currentDate = new String();
 	
@@ -28,7 +28,7 @@
 	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 	Statement sqlStatement = conn.createStatement();
 	
-	// Inserire qui la tabella del db giusta a seconda della macchina
+	// Select al db per ottenere i valori di interesse
 	String query = "SELECT pressione, data FROM stampo ORDER BY data DESC LIMIT 0,1";
 
 	ResultSet sqlResult = sqlStatement.executeQuery(query);
@@ -37,12 +37,13 @@
 		currentDate = sqlResult.getString("data");
 	}
 
+	// Creazione e popolamento del dataset
 	DefaultValueDataset dataset = new DefaultValueDataset(Double.parseDouble(currentPressure));
 	
 	// Estrazione soglia dalle variabili d'ambiente
 	int thresh_value = Integer.parseInt((String)session.getAttribute("s32"));
 	
-	// create the chart...
+	// Creazione del grafico
 	DialPlot plot = new DialPlot(dataset);
 	
 	// Valori del manometro
@@ -54,14 +55,14 @@
     int yellowLine = thresh_value-80;
     int redLine = thresh_value;
     
+    // Impostazioni plot
     plot.addLayer(new StandardDialRange(minimumValue, yellowLine, Color.green));
 	plot.addLayer(new StandardDialRange(yellowLine, redLine, Color.yellow));
 	plot.addLayer(new StandardDialRange(redLine, maximumValue, Color.red));
 	
     plot.setDialFrame(new StandardDialFrame());
     plot.addLayer(new DialValueIndicator(0));
-    plot.addLayer(new DialPointer.Pointer());
-    
+    plot.addLayer(new DialPointer.Pointer()); 
 
 	StandardDialScale scale = new StandardDialScale(minimumValue, maximumValue,-120, -300, majorTicks, minTicks_beween_majorTicks-1);
     scale.setTickRadius(0.88);
@@ -76,7 +77,7 @@
 	sqlStatement.close();
 	conn.close();
 
-	//CREATE OUTPUT STREAM.
+	// Creazione dello stream in output
 	response.setContentType("image/png");
 	ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,340,340);
     

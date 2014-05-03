@@ -22,9 +22,10 @@
 
 <%
 
+	// Imposta frequenza refresh del grafico
 	response.setIntHeader("Refresh", 3);
 	
-	// QUERY
+	// Apertura connessioni col db
 	String cur_load = new String();
 	String cur_date = new String();
 	
@@ -34,7 +35,7 @@
 	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 	Statement sqlStatement = conn.createStatement();
 	
-	// Inserire qui la tabella del db giusta a seconda della macchina
+	// Select al db per ottenere i valori
 	String query = "SELECT carico, data FROM silos ORDER BY data DESC LIMIT 0,1";
 
 	ResultSet sqlResult = sqlStatement.executeQuery(query);
@@ -43,15 +44,16 @@
 		cur_date = sqlResult.getString("data");
 	}
 
+	// Creazione e popolamento del dataset
 	DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 	dataset.setValue(Double.parseDouble(cur_load), "", "");
 
-	// create the chart...
+	// Creazione del grafico
 	JFreeChart chart = ChartFactory.createBarChart
 		("Attualmente rilevato",cur_date.substring(11), "KG", dataset, 
 		PlotOrientation.VERTICAL, false, true, false);
-       
 	chart.setBackgroundPaint(new java.awt.Color(221,221,221));
+	
 	CategoryPlot plot = chart.getCategoryPlot(); 
 	
 	// Estrazione soglia dalle variabili d'ambiente
@@ -76,7 +78,7 @@
 	sqlStatement.close();
 	conn.close();
 	
-	//CREATE OUTPUT STREAM.
+	// Creazione dello stream in output
 	response.setContentType("image/png");
 	ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,340,340);
     

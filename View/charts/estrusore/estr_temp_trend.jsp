@@ -26,9 +26,10 @@
 	
 	<%
 	
+	// Imposta frequenza refresh del grafico
 	response.setIntHeader("Refresh", 3);
 	
-	// Query al DB per ottenere le ultime temperature rilevate nell'estrusore
+	// Apertura connessioni col db
 	ArrayList<String> temperatures = new ArrayList<String>();
 	ArrayList<String> dates = new ArrayList<String>();
 	
@@ -38,6 +39,7 @@
 	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 	Statement sqlStatement = conn.createStatement();
 	
+	// Select al db per ottenere gli N valori più recenti
 	String query = "SELECT * FROM estrusione ORDER BY data DESC LIMIT 0,10";
 
 	ResultSet sqlResult = sqlStatement.executeQuery(query);
@@ -46,13 +48,12 @@
 		dates.add(sqlResult.getString("data"));
 	}
 
-	// Popola il dataset
+	// Creazione e popolamento del dataset
     DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-      
     for (int i=(temperatures.size()-1); i>=0; --i)
 		dataset.addValue(Integer.parseInt(temperatures.get(i)), "Classes", dates.get(i).substring(14));
 
-	// Crea il grafico
+	// Creazione del grafico
 	JFreeChart chart = ChartFactory.createLineChart(
 		"Andamento recente", // chart title
 		"Minuti e secondi ora corrente", // domain axis label

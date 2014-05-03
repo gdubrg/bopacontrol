@@ -31,7 +31,7 @@
 	
 	<%
 	
-	// Impostazioni aggiornamento del grafico
+	// Imposta frequenza refresh del grafico
 	response.setIntHeader("Refresh", 3);
 		
 	ArrayList<Integer> temperatures = new ArrayList<Integer>();

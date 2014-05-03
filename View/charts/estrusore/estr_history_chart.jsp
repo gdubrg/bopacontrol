@@ -31,9 +31,10 @@
 	
 	<%
 	
-	// Impostazioni aggiornamento del grafico
+	// Imposta frequenza refresh del grafico
 	response.setIntHeader("Refresh", 3);
 		
+	// Variabili di appoggio
 	ArrayList<Integer> temperatures = new ArrayList<Integer>();
 	ArrayList<Integer> pressures = new ArrayList<Integer>();
 	ArrayList<Integer> energies = new ArrayList<Integer>();

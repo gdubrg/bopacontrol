@@ -18,10 +18,10 @@
 
 <%
 	
-	// Refresh della pagina
+	// Imposta frequenza refresh del grafico
 	response.setIntHeader("Refresh", 3);
 	
-	// Query al DB
+	// Apertura connessioni col db
 	String cur_temp = new String();
 	String cur_date = new String();
 	
@@ -31,7 +31,7 @@
 	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 	Statement sqlStatement = conn.createStatement();
 	
-	// Inserire qui la tabella del db giusta a seconda della macchina
+	// Select al db per ottenere i valori
 	String query = "SELECT temperatura, data FROM silos ORDER BY data DESC LIMIT 0,1";
 
 	ResultSet sqlResult = sqlStatement.executeQuery(query);
@@ -61,9 +61,9 @@
 									  JFreeChart.DEFAULT_TITLE_FONT,
 									  plot,                 // plot
 									  false);               // include legend
-									  
-									  
 	chart.setBackgroundPaint(new java.awt.Color(221,221,221));
+	
+	// Impostazioni plot
 	plot.setThermometerStroke(new BasicStroke(2.0f));
 	plot.setThermometerPaint(new java.awt.Color(0,0,0));
 	plot.setBackgroundPaint(new java.awt.Color(221,221,221));
@@ -84,7 +84,7 @@
 	sqlStatement.close();
 	conn.close();
 	
-	// Crea lo stream di output
+	// Creazione dello stream di output
 	response.setContentType("image/png");
 	ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,340,340);
     

@@ -21,10 +21,10 @@
 <%@ page import="java.sql.Date" %>
 
 <%
-
+	// Imposta frequenza aggiornamento del grafico
 	response.setIntHeader("Refresh", 3);
 	
-	// QUERY
+	// Apertura connessione col db
 	String cur_energy = new String();
 	String cur_date = new String();
 	
@@ -34,7 +34,7 @@
 	conn = DriverManager.getConnection("jdbc:mysql://localhost/controllo?user=root&password=root"); 
 	Statement sqlStatement = conn.createStatement();
 	
-	// Inserire qui la tabella del db giusta a seconda della macchina
+	// Select al db per ottenere i valori di interesse
 	String query = "SELECT energia, data FROM stampo ORDER BY data DESC LIMIT 0,1";
 
 	ResultSet sqlResult = sqlStatement.executeQuery(query);
@@ -43,11 +43,11 @@
 		cur_date = sqlResult.getString("data");
 	}
 
-
+	// Creazione e popolamento del dataset
 	DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 	dataset.setValue(Double.parseDouble(cur_energy), "", "");
 
-	// create the chart...
+	// Creazione del grafico
 	JFreeChart chart = ChartFactory.createBarChart
 		("Attualmente rilevata" ,cur_date.substring(11), "Potenza [kW]", dataset, 
 		PlotOrientation.VERTICAL, false, true, false);
@@ -73,7 +73,7 @@
 	sqlStatement.close();
 	conn.close();
 	
-	//CREATE OUTPUT STREAM.
+	// Creazione dello stream in output
 	response.setContentType("image/png");
 	ChartUtilities.writeChartAsJPEG(response.getOutputStream(),chart,340,340);
     
