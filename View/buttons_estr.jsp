@@ -2,7 +2,8 @@
 <!--Incluse librerie bootstrap e css -->
 <%@ include file="lib.jsp" %>
 <body>
-	
+
+<!--Pulsanti di dettaglio e impostazioni dell'estrusore -->	
 <div id="btnPnl">
     <form method="post" action="detail_estr.jsp">
     <button type="submit" class="btn btn-primary btn-large btn-block">Dettaglio</button>
