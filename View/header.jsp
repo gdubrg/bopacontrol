@@ -1,6 +1,5 @@
 
-<!--Incluse librerie bootstrap e css -->
-<%@ include file="lib.jsp" %>
+<!--Barra di navigazione presente in tutte le pagine -->
 
 <br>
  <nav class="navbar navbar-default">
@@ -44,6 +43,6 @@
   </div>
 </nav>
 
- <!-- jQuery e plugin JavaScript  -->
+ <!-- plugin dedicati per la barra di navigazione -->
  <script src="bootstrap/js/query.js"></script>
  <script src="bootstrap/js/bootstrap.min.js"></script>
