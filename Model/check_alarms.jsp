@@ -7,7 +7,7 @@
 <%
 
 // Refresh della pagina
-	response.setIntHeader("Refresh", 3);
+response.setIntHeader("Refresh", 3);
 
 // Apertura connesione col DB
 Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -42,7 +42,7 @@ thresh3 = Integer.parseInt((String)session.getAttribute("s13"));
 if(Integer.parseInt(cur_temp)>thresh1){
 	session.setAttribute("alrm11", "1");
 	String ins = "INSERT INTO allarmi (macchina, descr, data) VALUES ('Silos', 'Temperatura max raggiunta', CURRENT_TIMESTAMP)";
-		sqlStatement.executeUpdate(ins);
+	sqlStatement.executeUpdate(ins);
 } else {
 	session.setAttribute("alrm11", "0");
 }
