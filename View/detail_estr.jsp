@@ -1,11 +1,14 @@
 <html>
 	<head>
+		<!-- incluse librerie bootstrap e fogli di stile -->
 		<title>Dettaglio Estrusore</title>
 		<%@ include file="lib.jsp" %>
 	</head>
 	
 	<body>
+		<!-- inclusa barra di navigazione -->
 		<%@ include file="header.jsp" %>
+		
 		<!--Pannello con nome della pagina -->
 		<div id="pnlTop">
 			<h2>Dettaglio Macchina Estrusione</h2>
@@ -31,7 +34,7 @@
 		<div id="pnlSlim">
 			<div id="btnOne">
 				<form method="post" action="history_estr.jsp">
-				<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
+					<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
 				</form>
 		    </div>
 		</div>
@@ -49,7 +52,7 @@
 		<div id="pnlSlim">
 			<div id="btnOne">
 				<form method="post" action="history_estr.jsp">
-				<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
+					<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
 				</form>
 		    </div>
 		</div>
@@ -67,7 +70,7 @@
 		<div id="pnlSlim">
 			<div id="btnOne">
 				<form method="post" action="history_estr.jsp">
-				<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
+					<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
 				</form>
 		    </div>
 		</div>

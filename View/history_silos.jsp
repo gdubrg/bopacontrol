@@ -1,9 +1,9 @@
 <html>
 	<head>
 		<title>Storico Silos</title>
+		<!-- incluse librerie bootstrap e fogli di stile -->
 		<%@ include file ="lib.jsp" %>
 		<%@page language="java"%>
-		<%@ include file ="header.jsp" %>
 		<%@ page import="java.io.*" %>
 		<%@ page import="java.util.*" %>
 		<%@ page import="java.sql.DriverManager" %> 
@@ -14,6 +14,8 @@
 	
 
 	<body>
+		<!-- inclusa barra di navigazione -->
+		<%@ include file ="header.jsp" %>
 		<%	
 			// Query al DB
 			ArrayList<String> days = new ArrayList<String>();
@@ -48,6 +50,7 @@
 		 </ul>
 		</div>
 		
+		<!-- Check degli allarmi -->
 		<iframe src="charts/silos/silos_history_chart.jsp" frameborder="0" scrolling="No" height="610px" width="1290px"></iframe>
 	</body>
 </html>

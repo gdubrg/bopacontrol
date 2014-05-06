@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<!-- incluse librerie fogli di stile -->
+		<!-- incluse librerie bootstrap e fogli di stile -->
 		<%@ include file="lib.jsp"%>
 		<title>Pannello Principale</title>
 	</head>
@@ -63,8 +63,7 @@
 		<!-- Footer -->
 		<div id="pnlDown">
 		    <h5>BoPa Controller - Progetto SAR 2014 - Guido Borghi, Andrea Palazzi</h5>
-		</div>
-	
+		</div>	
 	</body>
 </html>
 

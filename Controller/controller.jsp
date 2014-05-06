@@ -1,13 +1,13 @@
-<head>
-<link rel="stylesheet" href="../View/bootstrap/css/bootstrap.css">
-  <link href="../View/bootstrap/css/stili-custom.css" rel="stylesheet" media="screen">
-  <link rel="stylesheet" href="../View/style.css">
-  <%@ page import = "java.text.*" %>
-  <%@ page import = "java.util.*" %>
+	<head>
+		  <link rel="stylesheet" href="../View/bootstrap/css/bootstrap.css">
+		  <link href="../View/bootstrap/css/stili-custom.css" rel="stylesheet" media="screen">
+		  <link rel="stylesheet" href="../View/style.css">
+		  <%@ page import = "java.text.*" %>
+		  <%@ page import = "java.util.*" %>
 
-  <!-- Modernizr -->
-  <script src="../View/bootstrap/js/bootstrap-min.js"></script>
- </head>
+		  <!-- Modernizr -->
+		  <script src="../View/bootstrap/js/bootstrap-min.js"></script>
+	</head>
 
 <%
 // --------------- LOGIN ----------------

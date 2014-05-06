@@ -1,16 +1,19 @@
 <html>
 	<head>
 		<title>Impostazioni Silos</title>
+		<!-- incluse librerie bootstrap e fogli di stile -->
 		<%@ include file="lib.jsp" %>
 		<%@page language="java"%>
 		<%@ page import="java.sql.DriverManager" %> 
 		<%@ page import="java.sql.Statement" %> 
 		<%@ page import="java.sql.ResultSet" %> 
 		<%@ page import="java.sql.Date" %>
-		<%@ include file="header.jsp" %>
 	</head>
 	
 	<body>
+		<!-- inclusa barra di navigazione -->
+		<%@ include file="header.jsp" %>
+		
 		<%
 		String s21 = (String)session.getAttribute("s21");
 		String s22 = (String)session.getAttribute("s22");

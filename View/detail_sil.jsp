@@ -1,10 +1,12 @@
 <html>
 	<head>
+		<!-- incluse librerie bootstrap e fogli di stile -->
 		<%@ include file="lib.jsp" %>
 		<title>Dettaglio Silos Polimeri</title>
 	</head>
 
 	<body>
+		<!-- inclusa barra di navigazione -->
 		<%@ include file="header.jsp" %>
 		
 		<!--Pannello con nome della pagina -->
@@ -32,7 +34,7 @@
 		<div id="pnlSlim">
 			<div id="btnOne">
 				<form method="post" action="history_silos.jsp">
-				<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
+					<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
 				</form>
 		    </div>
 		</div>
@@ -50,7 +52,7 @@
 		<div id="pnlSlim">
 			<div id="btnOne">
 				<form method="post" action="history_silos.jsp">
-				<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
+					<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
 				</form>
 		    </div>
 		</div>
@@ -68,7 +70,7 @@
 		<div id="pnlSlim">
 			<div id="btnOne">
 				<form method="post" action="history_silos.jsp">
-				<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
+					<button type="submit" class="btn btn-primary btn-large btn-block">Storico</button>
 				</form>
 		    </div>
 		</div>

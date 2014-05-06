@@ -12,7 +12,8 @@
 
 	<body>
 		<%
-	
+		//Estrazione dal DB del LOG degli allarmi
+		
 		// Dichiarazione variabili
 		ArrayList<String> mac = new ArrayList<String>();
 		ArrayList<String> descr = new ArrayList<String>();
@@ -42,6 +43,7 @@
 		sqlResult.close(); sqlStatement.close(); conn.close();
 		%>
 	
+		<!-- Inizio tabella log allarmi -->
 		<table class="table">
 		  <thead>
 		    <tr>
@@ -57,8 +59,8 @@
 				out.println("<tbody><tr><td>"+mac.get(i)+"</td><td>"+descr.get(i)+"</td><td>"+date.get(i)+"</td></tr>");
 			}
 		%>
-		
-	 </tbody>
+		<!-- fine tabella log allarmi -->
+		</tbody>
 	</table>
 </body>
 </html>
